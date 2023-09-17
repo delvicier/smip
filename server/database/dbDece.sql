@@ -1,11 +1,11 @@
 -- Tabla estudiantes
 CREATE TABLE estudiantes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombres VARCHAR(50),
-    apellidos VARCHAR(50),
-    cedula VARCHAR(15),
+    nombres VARCHAR(140),
+    cedula VARCHAR(17) UNIQUE,
     curso VARCHAR(50),
-    nacimiento DATETIME
+    especialidad VARCHAR(50),
+    nacimiento VARCHAR(17)
 );
 
 
@@ -17,6 +17,7 @@ CREATE TABLE detalles (
     lugar_naci VARCHAR(50),
     etnia ENUM('blanco', 'mestizo', 'indigena', 'afroecuatoriano', 'otros'),
     religion VARCHAR(50),
+    edad VARCHAR(17),
     tipo_sangre VARCHAR(50),
     domicilio VARCHAR(50),
     cambio_domi VARCHAR(50),
@@ -44,10 +45,10 @@ CREATE TABLE academico (
 CREATE TABLE salud (
     id_salud INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_salud_id INT UNIQUE,
-    discapacidad TINYINT,
+    discapacidad ENUM('Si', 'No'),
     detallar_disc VARCHAR(50),
     num_carnet VARCHAR(15),
-    atencion_med ENUM('privada', 'subcentro', 'hospitalpublico', 'iess'),
+    atencion_med ENUM('Privada', 'Subcentro de salud', 'Hospital Publico', 'IESS'),
     medic_regular VARCHAR(50),
     observacion VARCHAR(140),
     FOREIGN KEY (estudiante_salud_id) REFERENCES estudiantes(id)
@@ -62,6 +63,7 @@ CREATE TABLE enfermedades (
     accidentes VARCHAR(140),
     alergias VARCHAR(140),
     cirugias VARCHAR(140),
+    perdida_conoci VARCHAR(17),
     otros VARCHAR(140),
     FOREIGN KEY (estudiante_enfe_id) REFERENCES estudiantes(id)
 );
@@ -91,12 +93,12 @@ CREATE TABLE embarazo (
 CREATE TABLE patologias (
     id_pato INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_pato_id INT UNIQUE,
-    obesidad TINYINT,
-    cardiacas TINYINT,
-    hipertension TINYINT,
-    diabetes TINYINT,
-    mentales TINYINT,
-    otros_pato TINYINT,
+    obesidad ENUM('Si', 'No'),
+    cardiacas ENUM('Si', 'No'),
+    hipertension ENUM('Si', 'No'),
+    diabetes ENUM('Si', 'No'),
+    mentales ENUM('Si', 'No'),
+    otros_pato ENUM('Si', 'No'),
     otros_detalle VARCHAR(240),
     observaciones VARCHAR(240),
     FOREIGN KEY (estudiante_pato_id) REFERENCES estudiantes(id)
@@ -110,7 +112,7 @@ CREATE TABLE representante (
     descripcion_hijo VARCHAR(240),
     nombres_repre VARCHAR(50),
     cedula_repre VARCHAR(15),
-    fecha_repre DATETIME,
+    fecha_repre VARCHAR(17),
     FOREIGN KEY (estudiante_repre_id) REFERENCES estudiantes(id)
 );
 
@@ -181,7 +183,7 @@ CREATE TABLE familia (
 );
 
 
--- Tabla referencias familiares
+-- Tabla referencias familiares 
 CREATE TABLE refe_familiares (
     id_refefa INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_refefa_id INT UNIQUE,
@@ -196,7 +198,7 @@ CREATE TABLE refe_familiares (
     respuesta1_8 VARCHAR(240),
     respuesta1_9 VARCHAR(240),
     respuesta1_10 VARCHAR(240),
-    discapacitados TINYINT,
+    discapacitados ENUM('Si', 'No'),
     respuesta1_11 VARCHAR(240),
     respuesta1_12 VARCHAR(240),
     FOREIGN KEY (estudiante_refefa_id) REFERENCES estudiantes(id)
@@ -229,11 +231,13 @@ CREATE TABLE vivienda (
 CREATE TABLE ren_academico (
     id_renacad INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_renacad_id INT UNIQUE,
-    fecha_ingreso DATETIME,
+    fecha_ingreso VARCHAR(17),
     ingreso_curso VARCHAR(50),
     repitio_anio VARCHAR(50),
     institucion_origen VARCHAR(50),
+    institucion_lugar VARCHAR(50),
     problem_academico VARCHAR(50),
+    problem_disciplina VARCHAR(50),
     relacion_pares VARCHAR(50),
     otros_renacad VARCHAR(50),
     bulliyng VARCHAR(50),

@@ -3,8 +3,8 @@ CREATE TABLE estudiantes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombres VARCHAR(50),
     apellidos VARCHAR(50),
-    cedula VARCHAR(15),
-    nacimiento DATE
+    cedula VARCHAR(17) UNIQUE,
+    nacimiento VARCHAR(17)
 );
 
 
@@ -38,7 +38,7 @@ CREATE TABLE matricula (
     curso VARCHAR(50),
     jornada ENUM('Matutina', 'Vespertina'),
     anio_lectivo INT,
-    fecha_matri DATE,
+    fecha_matri VARCHAR(17),
     especialidad VARCHAR(50),
     FOREIGN KEY (estudiante_matri_id) REFERENCES estudiantes(id)
 );
@@ -164,4 +164,5 @@ CREATE TABLE titulos_doc_s (
     amie VARCHAR(50) UNIQUE,
     institucion VARCHAR(50) UNIQUE 
 );
+
 

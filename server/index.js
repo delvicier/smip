@@ -20,11 +20,11 @@ app.use(express.json());
 const secret = process.env.JWT_SECRET
 
 app.post("/login", (req, res) => {
-  const {id:sub,name} = {id: "1", name: "2"}
+  const {id:name,pass} = {name: "1", pass: "2"}
 
   const token = jwt.sign({
-    sub,
     name,
+    pass,
     exp: Date.now() + 3600 * 1000
   }, secret)
   res.send({token})
