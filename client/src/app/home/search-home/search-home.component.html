@@ -1,1 +1,57 @@
-<p>search-home works!</p>
+
+<div class="titulo">
+
+    <div class="titulo-foto">
+  
+        <img src="../../../assets/img/foto-perfil3.png" width="172" height="172"  alt="foto-perfil">
+        <h3>Buscar por cedula..</h3>
+        <br>
+  
+        <form [formGroup]="searchForm" method="get" action="">
+          <div class="buscadorx">
+            <input formControlName="cedula" class="input-buscar" type="text" name="search_post" placeholder="Buscar...">
+  
+            <button (click)="buscar()" class="buscador__btn">
+  
+             <img class="icon-search" src="../../../assets/icons/search.png" width="18" height="18" alt="logo">
+            </button>
+          </div>
+        </form>
+  
+    </div>
+  
+    <div class="titulos-estudiantes">
+  
+      <div class="titulo-estudiante">
+        <h1>Datos del estudiante</h1>
+      </div>
+  
+  
+      <div *ngIf="estudiante.length > 0">
+        <div *ngFor="let estudiante of estudiante" class="titulo-detalles">
+            <p>{{ estudiante.nombres }}</p>
+            <p>{{ estudiante.apellidos }}</p>
+            <p>{{ estudiante.cedula }}</p>
+            <p>{{ estudiante.nacimiento }}</p>
+            <p>{{ estudiante.curso }}</p>
+            <p>{{ estudiante.especialidad }}</p>
+            <p>{{ estudiante.jornada }}</p>
+            <p>{{ estudiante.celular }}</p>
+        </div>
+      </div>
+  
+      <div *ngIf="estudiante.length === 0" class="titulo-detalles">
+        <p>Nombres: </p>
+        <p>Apellidos: </p>
+        <p>Cédula: </p>
+        <p>Edad: </p>
+        <p>Curso: </p>
+        <p>Especialidad: </p>
+        <p>Jornada: </p>
+        <p>Celular: </p>
+      </div>
+  
+  
+    </div>
+  </div>
+  

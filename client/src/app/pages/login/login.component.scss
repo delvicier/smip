@@ -1,0 +1,145 @@
+:root {
+    --white: #fafafb;
+    --purple:#676eea;
+    --blue-light:#6c35b5;
+    --blue-dark:#2a73c2;
+    --green: #2c7b90;
+   }
+  
+   a:link,
+  a:visited,
+  a:active {
+      text-decoration: none;
+      color: #fff;
+  
+  }
+  
+  a {
+    border: none;
+  
+  }
+  
+  .login{
+    background-color: #2c7ac3;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1012%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(24%2c 47%2c 93%2c 1)'%3e%3c/rect%3e%3cpath d='M525 9L524 151' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M593 509L592 798' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M727 393L726 177' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M111 40L110 340' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M232 524L231 205' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M1186 354L1185 684' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M708 332L707 543' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M233 311L232 70' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M1025 500L1024 787' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M1318 301L1317 675' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M396 270L395 7' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M1069 379L1068 39' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M725 295L724 547' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M541 363L540 156' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M227 343L226 13' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M1230 161L1229 303' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M646 460L645 690' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M276 303L275 -12' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M313 27L312 417' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M378 414L377 666' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M1414 542L1413 820' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M1181 279L1180 -130' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M1105 214L1104 -47' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M1290 492L1289 113' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M299 289L298 48' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M862 162L861 -212' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M163 128L162 505' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M454 349L453 594' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M1162 151L1161 387' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M760 99L759 336' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M708 335L707 -33' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M458 206L457 64' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M44 386L43 686' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M931 50L930 196' stroke-width='10' stroke='url(%26quot%3b%23SvgjsLinearGradient1013%26quot%3b)' stroke-linecap='round' class='Down'%3e%3c/path%3e%3cpath d='M251 472L250 705' stroke-width='8' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3cpath d='M81 516L80 208' stroke-width='6' stroke='url(%26quot%3b%23SvgjsLinearGradient1014%26quot%3b)' stroke-linecap='round' class='Up'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1012'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='0%25' x2='0%25' y2='100%25' id='SvgjsLinearGradient1013'%3e%3cstop stop-color='rgba(28%2c 83%2c 142%2c 0)' offset='0'%3e%3c/stop%3e%3cstop stop-color='%231c538e' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='0%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1014'%3e%3cstop stop-color='rgba(28%2c 83%2c 142%2c 0)' offset='0'%3e%3c/stop%3e%3cstop stop-color='%231c538e' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+  }
+  
+  
+  .login{
+    background-image: url("../../../assets/fondos/fondo5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .card{
+        width: 50%;
+        display: flex;
+        background-color: white;
+        border-radius: 25px;
+        min-height: 480px;
+        overflow: hidden;
+        border: 2px solid #ffffff;
+  
+        .left{
+          flex: 1;
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1139%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%231e3266'%3e%3c/rect%3e%3cpath d='M1560 560L0 560 L0 145.44Q46 119.44%2c 72 165.43Q139.63 161.06%2c 144 228.7Q170.21 182.91%2c 216 209.11Q220.6 141.71%2c 288 146.31Q355.69 94%2c 408 161.69Q489.69 171.38%2c 480 253.07Q550.22 203.29%2c 600 273.52Q610.13 211.65%2c 672 221.79Q705.35 135.14%2c 792 168.49Q842.12 98.61%2c 912 148.73Q970.29 135.02%2c 984 193.32Q1006.84 144.16%2c 1056 166.99Q1143.76 134.75%2c 1176 222.51Q1231.88 206.39%2c 1248 262.28Q1254.93 197.21%2c 1320 204.14Q1368.5 132.64%2c 1440 181.14Q1538.14 159.28%2c 1560 257.43z' fill='%23182f5d'%3e%3c/path%3e%3cpath d='M1488 560L0 560 L0 261.79Q111.7 253.49%2c 120 365.19Q148.31 273.5%2c 240 301.81Q259.66 249.47%2c 312 269.12Q394.41 231.53%2c 432 313.95Q521.05 283%2c 552 372.05Q593 293.06%2c 672 334.06Q689.55 279.61%2c 744 297.16Q790.5 223.66%2c 864 270.16Q965.25 251.42%2c 984 352.67Q1032.41 281.08%2c 1104 329.49Q1116.56 270.05%2c 1176 282.6Q1195.11 229.71%2c 1248 248.81Q1330.5 211.31%2c 1368 293.82Q1436.95 242.77%2c 1488 311.72z' fill='%2325467d'%3e%3c/path%3e%3cpath d='M1536 560L0 560 L0 474.4Q1.28 355.68%2c 120 356.96Q243.75 360.7%2c 240 484.45Q292.11 416.56%2c 360 468.67Q376.41 413.08%2c 432 429.48Q450.41 375.89%2c 504 394.3Q589.5 359.8%2c 624 445.29Q704.86 406.14%2c 744 487Q751.58 374.58%2c 864 382.16Q885.74 331.9%2c 936 353.64Q977.9 323.54%2c 1008 365.44Q1088.26 373.69%2c 1080 453.95Q1126.35 428.3%2c 1152 474.65Q1169.86 372.51%2c 1272 390.37Q1289.75 336.13%2c 1344 353.88Q1390.96 328.84%2c 1416 375.8Q1529.94 369.74%2c 1536 483.68z' fill='%23356cb1'%3e%3c/path%3e%3cpath d='M1488 560L0 560 L0 486.16Q86.92 453.08%2c 120 539.99Q203.84 503.83%2c 240 587.67Q283.12 558.78%2c 312 601.9Q318.54 536.44%2c 384 542.98Q391.94 478.92%2c 456 486.87Q483.15 442.02%2c 528 469.18Q613.41 434.59%2c 648 520Q711.18 511.18%2c 720 574.37Q736.83 471.2%2c 840 488.03Q884.46 460.49%2c 912 504.94Q1001.07 474%2c 1032 563.07Q1040 451.07%2c 1152 459.06Q1210.22 445.28%2c 1224 503.5Q1305.49 512.99%2c 1296 594.48Q1271.69 498.17%2c 1368 473.86Q1458.97 444.83%2c 1488 535.81z' fill='white'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1139'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+          background-size: cover;
+        }
+  
+        .left{
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 15px;
+            color: white;
+  
+  
+            img{
+              display: block;
+              margin: 0 auto;
+            }
+            h1{
+                font-size: 50px;
+                line-height: 50px;
+  
+            }
+            p{
+                font-size: 16px;
+  
+            }
+            span{
+                font-size: 16px;
+                padding-bottom: 10px;
+  
+            }
+            button{
+                width: 120px;
+                padding: 10px;
+                border: none;
+                background-image: linear-gradient(to bottom right, #2d5293, #356cb1);
+                box-shadow: 0 1px 3px 0 rgba(31, 71, 135, 0.37);
+                color: #589dd2;
+                font-weight: bold;
+                border-radius: 10px;
+                cursor: pointer;
+  
+            }
+  
+            button:hover{
+              background-image: linear-gradient(to bottom right, #2d5292, #468be0);
+              color: #ffffff;
+  
+            }
+  
+        }
+  
+        .right{
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 50px;
+            h1{
+              font-family: Arial, Helvetica, sans-serif;
+                color: rgb(93, 93, 93);
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                input{
+                    border: none;
+                    border-bottom: 1px solid lightgray;
+                    padding: 20px 10px;
+  
+                }
+                button{
+                    width: 50%;
+                    padding: 10px 5px;
+                    margin-top: 20px;
+                    border: none;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    background-image: linear-gradient(to bottom right, #2d5293, #356cb1);
+                    box-shadow: 0 1px 3px 0 rgba(31, 71, 135, 0.37);
+                }
+                button:hover{
+                  background-image: linear-gradient(to bottom right, #2d5292, #468be0);
+                  color: #ffffff;
+  
+                }
+            }
+        }
+    }
+  }
+  

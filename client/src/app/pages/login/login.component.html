@@ -1,1 +1,22 @@
-<p>login works!</p>
+
+<div class="login">
+    <div class="card">
+  
+      <div class="left">
+        <h1>Luis Tello</h1>
+        <h2>Unidad Educativa Fiscal</h2>
+        <img src="../../../assets/pdf/logo.png" width="200px" height="224px" alt="logo">
+      </div>
+  
+      <div class="right">
+        <h1>Iniciar Sesión</h1>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+          <input type="text" placeholder="Nombre de Usuario" formControlName="name" required/>
+          <input type="password" placeholder="Contraseña" formControlName="pass" required/>
+          <button type="submit"><a routerLink="/inicio">Iniciar Sesion</a></button>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+  

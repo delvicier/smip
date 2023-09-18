@@ -1,0 +1,29 @@
+.cuerpo {
+    display: grid;
+    grid-template-columns: 250px 2fr 180px;
+    min-height: 100vh;
+    gap: 5px;
+  }
+  
+  .cuerpo-izquierda{
+    height: 100vh;
+  }
+  
+  .cuerpo-derecha{
+    background-color: #ffffff00;
+  }
+  
+  .cuerpo-derecha:hover{
+    background-color: #ffffff00;
+  
+    border-radius: 40px 0px 0px 40px;
+  }
+  
+  @media (max-width: 1380px) {
+    .cuerpo {
+      grid-template-columns: 175px 2fr 150px;
+  
+    }
+  
+  }
+  

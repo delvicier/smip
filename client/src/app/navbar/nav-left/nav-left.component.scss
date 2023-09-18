@@ -1,0 +1,128 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .nav-left{
+    position: fixed;
+    z-index: 999;
+  
+  }
+  
+  .logo {
+    h1, h2, h3, h4, p{
+      color: #fff;
+      padding-top: 15px;
+    }
+    h2, h3, h4, p{
+      color: #fff;
+      padding-top: 8px;
+    }
+    img {
+      margin-top: 20px;
+      margin-bottom: 3px;
+    }
+  }
+  
+  a:link,
+  a:visited,
+  a:active {
+      text-decoration: none;
+      color: #fff;
+      margin: auto;
+      width: 70px;
+  }
+  
+  a {
+    border: none;
+    border-radius: 25px;
+    background-size: 100% auto;
+    font-size: 17px;
+    padding: 7px 12px 7px 12px;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    border: none;
+    color: #ffffff;
+    background-image: linear-gradient(30deg, #29508b, #30589c);
+    border-radius: 15px;
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+  
+  }
+  
+  
+  .nav-left {
+    border-radius: 20px;
+    margin: 25px 20px;
+    width: 210px;
+    height: 94%;
+    text-align: center;
+    box-shadow: 0 1px 8px 0 rgba(31, 76, 135, 0.291);
+  
+  }
+  
+  
+  .nav-left {
+  
+    background-image: url("../../../assets/navbar/fond5.svg");
+    background-size: cover;
+    background-position-x: -25px;
+  
+  }
+  
+  .menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  
+  @media (max-width: 1380px) {
+  
+    .nav-left {
+      border-radius: 20px;
+      width: 145px;
+    }
+  
+    .logo {
+  
+      h1, p{
+        color: #fff;
+        padding: 7px 0px;
+        margin: 7px 0px;
+      }
+  
+      h1{
+        margin-top: 20px;
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+  
+      img {
+        margin-top: 5px;
+        margin-bottom: 3px;
+        width: 80px;
+        height: 85px;
+      }
+  
+    }
+  
+    br{
+      display: none;
+    }
+  
+  }
+  
+  @media (max-width: 1280px) and (max-height: 800px) {
+  
+    .nav-left {
+      height: 90%;
+    }
+  
+  }
+  

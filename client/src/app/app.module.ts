@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPrintModule } from 'ngx-print';
+import { NgChartsModule } from 'ng2-charts';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PdfMatriculaComponent } from './pdf/pdf-matricula/pdf-matricula.component';
@@ -49,6 +54,8 @@ import { RecordEditComponent } from './estudiante-edit/record-edit/record-edit.c
 import { MatriculaAddComponent } from './estudiante-add/matricula-add/matricula-add.component';
 import { DeceAddComponent } from './estudiante-add/dece-add/dece-add.component';
 import { RecordAddComponent } from './estudiante-add/record-add/record-add.component';
+import { NavLeft3Component } from './navbar/nav-left3/nav-left3.component';
+import { LayoutHomeComponent } from './home/layout-home/layout-home.component';
 
 @NgModule({
   declarations: [
@@ -98,11 +105,18 @@ import { RecordAddComponent } from './estudiante-add/record-add/record-add.compo
     RecordEditComponent,
     MatriculaAddComponent,
     DeceAddComponent,
-    RecordAddComponent
+    RecordAddComponent,
+    NavLeft3Component,
+    LayoutHomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    NgChartsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,236 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /*
+   CSS for the main interaction
+  */
+  
+  .tabset{
+  
+    box-shadow: 2px 2px 6px rgba(58, 58, 58, 0.1);
+    margin-left: 9px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 98%;
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 5px 17px 0 rgba(31, 76, 135, 0.261);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+  }
+  
+  
+  input{
+    text-decoration: none;
+    background-color: #86c8ff62;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2px;
+    border: none;
+  }
+  
+  .tab-panel{
+    td, th{
+      text-align: center;
+    }
+    h2{
+      padding-bottom: 8px;
+    }
+  }
+  
+  .tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+  }
+  
+  .tabset .tab-panel {
+    display: none;
+  
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  /*
+   Styling
+  */
+  
+  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  input:focus-visible + label {
+    outline: 2px solid rgba(0,102,204,1);
+    border-radius: 3px;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label,
+  .tabset > input:checked + label {
+    color: #06c;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background: #06c;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: transparent;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+  }
+  
+  .tab-panel {
+    padding: 0px;
+    border-color: transparent;
+    h2{
+      margin-top: 5px;
+      margin-bottom: 5px;
+      color: #03396e;
+    }
+    p{
+      margin-top: 3px;
+    }
+  }
+  
+  .parentesco{
+    display: flex;
+    flex-direction: row;
+    p{
+      margin: 25px 40px 15px 5px;
+      border-top: 1px solid #747474;
+    }
+  }
+  
+  .celular{
+    display: flex;
+    flex-direction: row;
+    p{
+      margin: 15px 150px 5px 0px;
+    }
+  }
+  
+  .titulo-art{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #03396e;
+  }
+  
+  /*
+   Demo purposes only
+  */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  
+  
+  
+  
+  
+  
+  // tablas Record Escolar
+  
+  $gl-ms         : "screen and (max-width: 23.5em)"; // up to 360px
+  $gl-xs         : "screen and (max-width: 35.5em)"; // up to 568px
+  $gl-sm         : "screen and (max-width: 48em)";   // max 768px
+  $gl-md         : "screen and (max-width: 64em)";   // max 1024px
+  $gl-lg         : "screen and (max-width: 80em)";   // max 1280px
+  
+  // table style
+  
+  table 			      {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background:white;
+    border-radius:6px;
+    overflow:hidden;
+    max-width:900px;
+    width:100%;
+    margin:0 auto;
+    position:relative;
+  
+    *               { position:relative }
+  
+    td,th           { padding-left:8px}
+  
+    thead tr        {
+      height:60px;
+      background:#FFED86;
+      font-size:16px;
+    }
+  
+    tbody tr        { height:48px; border-bottom:1px solid #E3F1D5 ;
+      &:last-child  { border:0; }
+    }
+  
+       td,th 					{ text-align:left;
+          &.l 					{ text-align:right }
+          &.c 					{ text-align:center }
+          &.r 					{ text-align:center }
+      }
+  }
+  
+  
+  @media #{$gl-xs}              {
+  
+    table					              { display:block;
+        > *,tr,td,th              { display:block }
+  
+      thead                     { display:none }
+      tbody tr                  { height:auto; padding:8px 0;
+        td                      { padding-left:45%; margin-bottom:12px;
+          &:last-child          { margin-bottom:0 }
+          &:before              {
+            position:absolute;
+            font-weight:700;
+            width:40%;
+            left:10px;
+            top:0
+          }
+  
+          &:nth-child(1):before { content:"Code";}
+          &:nth-child(2):before { content:"Stock";}
+          &:nth-child(3):before { content:"Cap";}
+          &:nth-child(4):before { content:"Inch";}
+          &:nth-child(5):before { content:"Box Type";}
+        }
+      }
+    }
+  }
+  
+  
+  blockquote {
+    color:white;
+    text-align:center;
+  }
+  
+  
