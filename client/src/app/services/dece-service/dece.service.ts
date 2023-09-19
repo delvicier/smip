@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter  } from '@angular/core';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,41 @@ export class DeceService {
 
   private apiUrl = 'http://localhost:4000';
 
+  private resultadosSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
   constructor( private http: HttpClient) { }
 
+  cedulaid: any;
+
+  numero: number | null = null;
+
+  mostrarComponente(numeroComponente: number) {
+    this.numero = numeroComponente;
+  }
+
+  ocultarComponente() {
+    this.numero = null;
+  }
+
   emitLabelClickEvent() {
     this.labelClickEvent.emit();
+  }
+
+  buscarPorCedula(cedula: string): void {
+    this.http.get<any[]>(`${this.apiUrl}/decehoja1/${cedula}`).subscribe(
+      (resultados: any[]) => {
+        this.resultadosSubject.next(resultados);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getResultadosbuscarPorCedula(): Observable<any[]> {
+    return this.resultadosSubject.asObservable();
   }
 
   getHoja1Dece(id: string){

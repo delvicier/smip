@@ -1,1 +1,234 @@
-<p>matricula-editpdf works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="body" *ngIf="estudiante.length > 0">
+    <div class="tab-panelx" *ngFor="let estudiante of estudiante">
+
+      <div>
+
+        <h2 class="titulo-extra">Datos de Matricula</h2>
+        <div class="contenedor">
+          <label><strong>Especialidad:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.especialidad" placeholder="Especialidad" formControlName="especialidad">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>Curso o Grado:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.curso" placeholder="Curso"
+          formControlName="curso">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>Jornada:</strong> {{estudiante.jornada}}</label>
+        </div>
+        <div class="contenedor">
+          <input [(ngModel)]="estudiante.jornada" placeholder="Jornada"
+          formControlName="jornada" type="radio" name="jornada" value="Matutina"><strong></strong> Matutina
+          <input [(ngModel)]="estudiante.jornada"  placeholder="Jornada"
+          formControlName="jornada" type="radio" name="jornada" value="Vespertina"><strong></strong> Vespertina
+        </div>
+
+        <p class="titulo-art"><strong>1.	DATOS DEL ESTUDIANTE</strong> </p>
+
+        <div class="contenedor">
+          <label><strong>1.1.	 Cédula de Identidad:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.cedula" placeholder="Cédula"
+          formControlName="cedula">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.2.	 Apellidos:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.apellidos" placeholder="Apellidos"
+          formControlName="apellidos">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.3.	 Nombres:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.nombres" placeholder="Nombres"
+          formControlName="nombres">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.4.	 Fecha de nacimiento:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.nacimiento" placeholder="Fecha de nacimiento"
+          formControlName="nacimiento">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.5.	 Ciudad donde nació:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.ciudad_naci" placeholder="Ciudad donde nació"
+          formControlName="ciudad_naci">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.6.	 Etnia:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.etnia" placeholder="Etnia"
+          formControlName="etnia">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.7.	 Genero:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.genero" placeholder="genero"
+          formControlName="genero">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.7.1	 Discapacidad:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.discapacidad" placeholder="discapacidad"
+          formControlName="discapacidad">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>1.7.2	 Porcentaje Discapacidad:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.disca_porcentaje" placeholder="Porcentaje Discapacidad"
+          formControlName="disca_porcentaje">
+        </div>
+
+        <p class="titulo-art"><strong>2.	DIRECCIÓN DOMICILIARIA DEL ESTUDIANTE:</strong> </p>
+
+        <div class="contenedor">
+          <label><strong>2.1.  Provincia:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.provincia" placeholder="Provincia"
+          formControlName="provincia">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>2.2.  Cantón:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.canton" placeholder="Cantón"
+          formControlName="canton">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>2.3.  Parroquia:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.parroquia" placeholder="Parroquia"
+          formControlName="parroquia">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>2.4.  Dirección de Vivienda:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.direccion_detallada" placeholder="Dirección de Vivienda"
+          formControlName="direccion_detallada">
+        </div>
+
+      </div>
+
+      <div>
+        <br>
+        <h2>Representante</h2>
+        <p class="titulo-art"><strong>3.	DATOS DEL REPRESENTANTE:</strong> </p>
+
+        <div class="contenedor">
+          <label><strong>3.1.  Cédula de Identidad:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.cedula_repre" placeholder="Cédula de Identidad"
+          formControlName="cedula_repre">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>3.2.  Apellidos:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.apellidos_repre" placeholder="Apellidos"
+          formControlName="apellidos_repre">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>3.3.  Nombres:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.nombres_repre" placeholder="Nombres"
+          formControlName="nombres_repre">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>3.4.  Parentesco:</strong> {{estudiante.parentesco}}</label>
+        </div>
+        <div class="parentesco">
+          <input [(ngModel)]="estudiante.parentesco"  placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Padre"> Padre
+          <input [(ngModel)]="estudiante.parentesco"  placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Madre"> Madre
+          <input [(ngModel)]="estudiante.parentesco"  placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Abuelo/a"> Abuelo/a<br>
+          <input [(ngModel)]="estudiante.parentesco"  placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Tio/a"> Tio/a
+
+          <input [(ngModel)]="estudiante.parentesco"  placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Hermano/a"> Hermano/a
+          <input [(ngModel)]="estudiante.parentesco"  placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Otros"> Otros
+        </div>
+
+        <div class="contenedor">
+          <label><strong>3.5.	 Teléfono convencional:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="tel" [(ngModel)]="estudiante.telefono" placeholder="Teléfono convencional"
+          formControlName="telefono">
+        </div>
+
+        <div class="contenedor">
+          <label><strong>3.6.	 Teléfono celular:</strong></label>
+        </div>
+        <div class="contenedor">
+          <input type="tel" [(ngModel)]="estudiante.celular" placeholder="Teléfono celular"
+          formControlName="celular">
+        </div>
+
+        <div class="contenedor">
+          <label class="titulo-art"><strong>4.	FECHA DE MATRICULA: </strong> </label>
+        </div>
+
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.fecha_matri" placeholder="Fecha de matricula"
+          formControlName="fecha_matri">
+        </div>
+
+        <div class="contenedor">
+          <label >4.1	Año Lectivo: </label>
+        </div>
+
+        <div class="contenedor">
+          <input type="text" [(ngModel)]="estudiante.anio_lectivo" placeholder="Año lectivo"
+          formControlName="anio_lectivo">
+        </div>
+
+        <br>
+        <button class="boton" >Guardar</button>
+      </div>
+
+    </div>
+
+  </div>
+</form>
+
+

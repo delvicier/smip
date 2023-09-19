@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Injectable, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
+import { HomeService} from 'src/app/services/home-service/home.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   formulario: FormGroup;
-  loginServicio = inject(MatriculaService);
+  loginServicio = inject(HomeService);
   router = inject(Router);
 
   constructor() {

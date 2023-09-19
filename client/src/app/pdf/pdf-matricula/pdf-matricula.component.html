@@ -1,1 +1,182 @@
-<p>pdf-matricula works!</p>
+
+<div class="wrapper-botones">
+    <div class="botones">
+  
+      <button (click)="cambiarComponente(5)" class="boton2">
+        <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
+      </button>
+  
+      <button (click)="cambiarComponente(6)" class="boton2">
+        <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
+      </button>
+  
+      <button (click)="convertirADivsAPDF()" class="boton2">
+        <img src="../../../assets/icons/descargar3.png" width="40" height="40" alt="descargar pdf">
+      </button>
+  
+      <button
+        [printStyle]="formatoEstilos"
+        printTitle="Matriculado"
+        printSectionId="pdf"
+        ngxPrint
+        class="boton2" type="button">
+        <img src="../../../assets/icons/impresora3.png" width="40" height="40" alt="imprimir pdf">
+      </button>
+  
+    </div>
+  </div>
+  
+  <div class="titulo">
+    <h1>Ficha Matricula</h1>
+  </div>
+  
+  <section *ngIf="homeService.numero === null || homeService.numero === 5">
+    <app-matricula-editpdf></app-matricula-editpdf>
+  </section>
+  
+  <section *ngIf="homeService.numero === 6">
+  
+    <br>
+  
+    <div id="pdf">
+  
+      <div class="hoja" id="hoja_pdf1" *ngIf="estudiante.length > 0">
+        <div class="pdf-matriculas" *ngFor="let estudiante of estudiante">
+            <img
+            class="logo-doc"
+            src="../../../assets/pdf/logo.png"
+            width="55px"
+            height="60px"
+            />
+          <br><br><br><br><br/>
+          <h2> <strong>UNIDAD EDUCATIVA FISCAL <br> “LUIS TELLO”</strong></h2>
+          <p class="p-encabezado">TELEFONOS Nº. 062700425- Km.2 ½ Vía Refinería</p>
+          <p class="p-encabezado" style="color: #5890da">
+            Correo electrónico: inst.tecno.ind.luistello@hotmail.com
+          </p>
+  
+          <div class="png-perfil">
+            <img class="png-perfil" src="../../../assets/pdf/foto-perfil.avif" width="80px" height="100px" alt="" >
+          </div>
+          <br><br>
+          <h1>ESTUDIANTE</h1>
+          <h3>Año lectivo 2024 – 2025</h3><br>
+          <p>
+            Nombre de la Institución educativa: <strong>UNIDAD EDUCATIVA FISCAL “LUIS
+            TELLO”</strong>
+          </p>
+  
+          <p>
+            Especialidad: {{estudiante.especialidad }}
+            Curso y Paralelo: {{estudiante.curso }} Jornada: {{estudiante.jornada }}
+          </p>
+          <p>1. DATOS DEL ESTUDIANTE:</p>
+  
+          <div class="sub-parrafos">
+            <p>1.1. Cédula de Identidad: {{estudiante.cedula}}</p>
+            <p> 1.2. Apellidos: {{estudiante.apellidos }}</p>
+            <p> 1.3. Nombres: {{estudiante.nombres }}</p>
+            <p>1.4. Fecha de nacimiento: {{estudiante.nacimiento }}</p>
+            <p> 1.5. Ciudad donde nació: {{estudiante.ciudad_naci }}</p>
+            <p> 1.6. Etnia: {{estudiante.etnia }} </p>
+            <p> 1.7. Genero: {{estudiante.genero }} Discapacidad: {{estudiante.discapacidad }} Porcentaje {{estudiante.disca_porcentaje }}</p>
+  
+          </div>
+  
+          <p>2. DIRECCIÓN DOMICILIARIA DEL ESTUDIANTE:</p>
+  
+          <div class="sub-parrafos">
+            <p>2.1. Provincia: {{estudiante.provincia }} </p>
+            <p> 2.2. Cantón: {{estudiante.canton }} </p>
+            <p> 2.3. Parroquia: {{estudiante.parroquia }} </p>
+            <p>
+              2.4. DIRECCIÓN DE LA VIVIENDA: (dirección detallada y exacta.
+              Señalar un lugar de referencia)
+              <br>
+            </p>
+            <p>
+              {{estudiante.direccion_detallada }}
+            </p>
+          </div>
+  
+        </div>
+      </div>
+  
+      <br>
+  
+      <div class="hoja" id="hoja_pdf2" *ngIf="estudiante.length > 0">
+        <div class="pdf-matriculas" *ngFor="let estudiante of estudiante">
+            <img
+              class="logo-doc"
+              src="../../../assets/pdf/logo.png"
+              width="60px"
+              height="65px"
+            />
+            <br><br><br><br><br/>
+            <h2> <strong>UNIDAD EDUCATIVA FISCAL <br> “LUIS TELLO”</strong></h2>
+            <p class="p-encabezado">TELEFONOS Nº. 062700425- Km.2 ½ Vía Refinería</p>
+            <p class="p-encabezado" style="color: #5890da">
+              Correo electrónico: inst.tecno.ind.luistello@hotmail.com
+            </p>
+          <br/><br/><br/>
+          <h1>REPRESENTANTE</h1>
+          <br/><br/><br/><br/>
+          <p>3. DATOS DEL REPRESENTANTE:</p>
+          <div class="sub-parrafos">
+            <p>3.1. Cédula de Identidad: {{estudiante.cedula_repre }} </p>
+            <p>3.2. Apellidos: {{estudiante.apellidos_repre }} </p>
+            <p>3.3. Nombres: {{estudiante.nombres_repre }} </p>
+            <p>3.4. Parentesco: {{estudiante.parentesco }} </p>
+            <br />
+  
+  
+            <div class="parentesco">
+  
+              <label class="cuadrado-p" *ngIf="estudiante.parentesco === 'Padre'; else Padre">Si</label>
+              <ng-template #Padre><p >……………</p></ng-template>
+  
+              <label class="cuadrado-p" *ngIf="estudiante.parentesco === 'Madre'; else Madre">SI</label>
+              <ng-template #Madre><p >……………</p></ng-template>
+  
+              <label class="cuadrado-p" *ngIf="estudiante.parentesco === 'Abuelo/a'; else Abuelo">Si</label>
+              <ng-template #Abuelo><p >……………</p></ng-template>
+  
+              <label class="cuadrado-p" *ngIf="estudiante.parentesco === 'Tio/a'; else Tio">Si</label>
+              <ng-template #Tio><p >……………</p></ng-template>
+  
+              <label class="cuadrado-p" *ngIf="estudiante.parentesco === 'Hermano/a'; else Hermano">Si</label>
+              <ng-template #Hermano><p >……………</p></ng-template>
+  
+              <label class="cuadrado-p" *ngIf="estudiante.parentesco === 'Otros'; else Otros">Si</label>
+              <ng-template #Otros><p >……………</p></ng-template>
+  
+              <p >Padre</p>
+              <p >Madre</p>
+              <p >Abuelo/a</p>
+              <p >Tío/a</p>
+              <p >Hermano/a</p>
+              <p >Otros</p>
+  
+            </div>
+            <br/><br/>
+  
+            <p>3.5. Teléfono convencional {{estudiante.telefono }} </p>
+            <p>3.6. Teléfono celular {{estudiante.celular }} </p>
+          </div>
+          <br>
+          <p>4. FECHA DE MATRICULA: {{estudiante.fecha_matri }} </p>
+          <br /><br />
+          <br /><br />
+          <br /><br />
+          <p style="margin: auto">………………………………………………………</p>
+        </div>
+      </div>
+  
+    </div>
+  
+    <br>
+  
+  </section>
+  
+  <br><br>
+  

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 
 @Component({
   selector: 'app-dece',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dece.component.scss']
 })
 export class DeceComponent {
+
+  constructor(public vistas: VistasService) {
+
+  }
 
 }

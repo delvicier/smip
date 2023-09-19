@@ -1,0 +1,166 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .contenido{
+    display: grid;
+    grid-template-columns: 240px 3fr;
+  
+  }
+  
+  
+    .titulo{
+      text-align: center;
+    }
+    h1{
+      color: #1c3663;
+      margin: 22px 0px 0px 27px;
+      display: inline-block;
+      border-bottom: 4px solid #2ea0e2;
+      padding-bottom: 1px;
+    }
+  
+  
+  .tarjetas{
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  
+  
+  h2{
+    text-align: center;
+    color: #03396e;
+    font-size: 1.6rem;
+  }
+  
+  .wrapper-botones{
+    position: relative;
+  }
+  
+  .botones{
+    position: absolute;
+    top: -6px;
+    right: 3px;
+  }
+  
+  .boton{
+    margin-left: 5px;
+    padding: 0px 5px;
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  
+  
+  .radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 160px;
+    font-size: 14px;
+  
+  }
+  
+  .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: #03396e;
+    transition: all .15s ease-in-out;
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: #fff;
+    font-weight: 600;
+  }
+  
+  
+  .datos-estudiantes{
+    align-items: center;
+    max-width: 870px;
+    margin: 0px auto;
+  }
+  
+  .tabla {
+    border-radius: 5px 5px 0px 0px;
+    background-color: #248de3;
+    overflow: hidden;
+    margin: 0px auto;
+  
+  }
+  
+  .tableizer-table {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin: auto;
+  
+  }
+  
+  .tcabezera {
+    background: linear-gradient( #2f5390, #3161ae);
+  
+  }
+  
+  .tcabezera th {
+    border: 1px solid #248de3;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px;
+    margin: 8px;
+    text-align: center;
+  
+  }
+  
+  .tcuerpo {
+    border: 1px solid #248de3;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #fff;
+    overflow: hidden;
+  
+  }
+  
+  .tcuerpo td {
+    padding: 6px;
+    margin: 12px 6px;
+    border: 1px solid #248de3;
+    text-align: center;
+    background-color: #fff;
+  
+  }
+  
+  .title-tabla{
+    font-size: 20px;
+  }
+  
+  
+  @media (max-width: 1240px) {
+  
+    .contenido {
+      grid-template-columns: 145px 3fr;
+    }
+  
+  }
+  

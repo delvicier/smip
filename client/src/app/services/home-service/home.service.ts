@@ -4,6 +4,7 @@ import { Estudiantes } from 'src/app/models/estudiantes';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
 import { Record } from 'src/app/models/record';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,7 @@ export class HomeService {
   ocultarComponente() {
     this.numero = null;
   }
+  
   numero2: number | null = null;
 
   mostrarComponente2(numeroComponente2: number) {
@@ -61,6 +63,12 @@ export class HomeService {
 
   actualizarValor(nuevoValor: string) {
     this.estadisticasObs.next(nuevoValor);
+  }
+
+  login(formValue: any) {
+    return firstValueFrom(
+      this.http.post<any>(`${this.apiUrl2}login`, formValue )
+    );
   }
 
   getAllMatriEstudiantes(){

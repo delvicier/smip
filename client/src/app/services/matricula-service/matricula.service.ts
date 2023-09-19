@@ -11,6 +11,7 @@ export class MatriculaService {
 
   private apiUrl = 'http://localhost:4000/estudiante';
   private apiUrl2 = 'http://localhost:4000/';
+
   private resultadosSubject: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject2: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
 
@@ -45,10 +46,31 @@ export class MatriculaService {
   emitLabelClickEvent() {
     this.labelClickEvent.emit();
   }
+
+  numero: number | null = null;
+
+  mostrarComponente(numeroComponente: number) {
+    this.numero = numeroComponente;
+  }
+
+  ocultarComponente() {
+    this.numero = null;
+  }
+
+  numero2: number | null = null;
+
+  mostrarComponente2(numeroComponente2: number) {
+    this.numero2 = numeroComponente2;
+  }
+
+  ocultarComponente2() {
+    this.numero2 = null;
+  }
+
   
   login(formValue: any) {
     return firstValueFrom(
-      this.http.post<any>(`${this.apiUrl2}/login`, formValue )
+      this.http.post<any>(`${this.apiUrl2}login`, formValue )
     );
   }
 
@@ -56,8 +78,8 @@ export class MatriculaService {
     return this.http.get<Estudiantes[]>(this.apiUrl + 'stotales');
   }
 
-  getMatriEstudiante(id: string){
-    return this.http.get<Estudiantes[]>(`${this.apiUrl}/${id}`);
+  getMatriEstudiante(cedula: string){
+    return this.http.get<Estudiantes[]>(`${this.apiUrl}/${cedula}`);
   }
 
   buscarPorCedula(cedula: string): void {

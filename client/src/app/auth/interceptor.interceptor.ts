@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class InterceptorInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
 
   constructor() {}
 
@@ -25,6 +25,5 @@ export class InterceptorInterceptor implements HttpInterceptor {
     const headersClone = request.clone({headers})
     return next.handle(headersClone)
 
-    return next.handle(request);
   }
 }

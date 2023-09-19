@@ -23,15 +23,6 @@ export class RecordService {
   jornadaid: any;
   anioid: any;
 
-  matriculados: any;
-  hombres: any;
-  mujeres: any;
-  electromecanica: any;
-  instalaciones: any;
-  mecanizado: any;
-  seguridad: any;
-  soldadura: any;
-
   private estadisticasObs = new BehaviorSubject<string>('0');
 
   estadisticas$: Observable<string> = this.estadisticasObs.asObservable();
@@ -42,6 +33,16 @@ export class RecordService {
 
   emitLabelClickEvent() {
     this.labelClickEvent.emit();
+  }
+
+  numero: number | null = null;
+
+  mostrarComponente(numeroComponente: number) {
+    this.numero = numeroComponente;
+  }
+
+  ocultarComponente() {
+    this.numero = null;
   }
 
   getRecordEstudiante(id: string): Observable<Record[]> {

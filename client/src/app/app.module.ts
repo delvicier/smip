@@ -2,17 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgxPrintModule } from 'ngx-print';
 import { NgChartsModule } from 'ng2-charts';
+
+import { AuthInterceptor } from './auth/interceptor.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PdfMatriculaComponent } from './pdf/pdf-matricula/pdf-matricula.component';
 import { PdfDeceComponent } from './pdf/pdf-dece/pdf-dece.component';
-import { MatriculaLayoutComponent } from './layouts/matricula-layout/matricula-layout.component';
-import { DeceLayoutComponent } from './layouts/dece-layout/dece-layout.component';
-import { RecordLayoutComponent } from './layouts/record-layout/record-layout.component';
 import { MatriculaComponent } from './pages/matricula/matricula.component';
 import { DeceComponent } from './pages/dece/dece.component';
 import { RecordComponent } from './pages/record/record.component';
@@ -56,15 +55,16 @@ import { DeceAddComponent } from './estudiante-add/dece-add/dece-add.component';
 import { RecordAddComponent } from './estudiante-add/record-add/record-add.component';
 import { NavLeft3Component } from './navbar/nav-left3/nav-left3.component';
 import { LayoutHomeComponent } from './home/layout-home/layout-home.component';
+import { LayoutRecordComponent } from './pdf/layout-record/layout-record.component';
+import { TextGeneroComponent } from './graficos/text-genero/text-genero.component';
+import { TextSegurosComponent } from './graficos/text-seguros/text-seguros.component';
+import { TextMatriculaComponent } from './graficos/text-matricula/text-matricula.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PdfMatriculaComponent,
     PdfDeceComponent,
-    MatriculaLayoutComponent,
-    DeceLayoutComponent,
-    RecordLayoutComponent,
     MatriculaComponent,
     DeceComponent,
     RecordComponent,
@@ -107,7 +107,11 @@ import { LayoutHomeComponent } from './home/layout-home/layout-home.component';
     DeceAddComponent,
     RecordAddComponent,
     NavLeft3Component,
-    LayoutHomeComponent
+    LayoutHomeComponent,
+    LayoutRecordComponent,
+    TextGeneroComponent,
+    TextSegurosComponent,
+    TextMatriculaComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +122,13 @@ import { LayoutHomeComponent } from './home/layout-home/layout-home.component';
     ReactiveFormsModule,
     NgxPrintModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

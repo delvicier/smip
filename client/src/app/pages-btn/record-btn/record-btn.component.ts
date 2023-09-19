@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 
 @Component({
   selector: 'app-record-btn',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class RecordBtnComponent {
 
+  constructor(public vistas: VistasService) {
+
+  }
+
+  mostrarComponente(numeroComponente3: number) {
+    this.vistas.mostrarComponente3(numeroComponente3);
+  }
+
+  ocultarComponente() {
+    this.vistas.ocultarComponente3();
+  }
 }
+

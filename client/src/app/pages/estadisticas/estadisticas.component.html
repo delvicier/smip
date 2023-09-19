@@ -1,1 +1,200 @@
-<p>estadisticas works!</p>
+
+<div class="cuerpo">
+
+    <div class="contenido">
+  
+      <app-nav-left2></app-nav-left2>
+  
+      <div class="contenedor">
+        <div class="titulo">
+        </div>
+  
+        <div class="tarjetas">
+  
+          <div>
+            <app-grafic-matricula></app-grafic-matricula>
+  
+            <app-text-matricula></app-text-matricula>
+          </div>
+  
+          <div>
+            <app-grafic-seguros></app-grafic-seguros>
+          </div>
+  
+          <div>
+            <app-grafic-genero></app-grafic-genero>
+  
+            <app-text-genero></app-text-genero>
+          </div>
+  
+        </div>
+  
+        <div class="datos-estudiantes">
+  
+          <div class="wrapper-botones">
+            <div class="botones">
+              <div class="radio-inputs">
+                <label class="radio">
+                  <input
+                    (click)="mostrarComponente2(1)"
+                    type="radio"
+                    name="radio"
+                    checked=""
+                  />
+                  <span class="name">Pag 1</span>
+                </label>
+                <label class="radio">
+                  <input (click)="mostrarComponente2(2)" type="radio" name="radio" />
+                  <span class="name">Pag 2</span>
+                </label>
+  
+                <label class="radio">
+                  <input (click)="mostrarComponente2(3)" type="radio" name="radio" />
+                  <span class="name">Pag 3</span>
+                </label>
+              </div>
+            </div>
+          </div>
+  
+          <h2>Registro Total de Estudiantes</h2>
+  
+          <br>
+  
+          <section *ngIf="componente2 === null || componente2 === 1">
+  
+            <div class="wrapper-tabla">
+              <table class="tableizer-table">
+                <div class="tabla">
+                  <thead class="tcabezera">
+                    <tr class="tableizer-firstrow">
+                      <th class="title-tabla" colspan="10">DATOS DE LOS ESTUDIANTES</th>
+                    </tr>
+                    <tr class="tableizer-firstrow">
+                      <th>ID</th>
+                      <th>Cedula</th>
+                      <th>Nombres</th>
+                      <th>Apellidos</th>
+                      <th>Fecha de Nacimiento</th>
+                      <th>Curso</th>
+                      <th>Jornada</th>
+                      <th>Especialidad</th>
+                      <th>Año Lectivo</th>
+                      <th>Fecha Matricula</th>
+                    </tr>
+                  </thead>
+  
+                  <tbody class="tcuerpo">
+                    <tr *ngFor="let item of estudiantes">
+                      <td>{{item.id}}</td>
+                      <td>{{item.cedula}}</td>
+                      <td>{{item.nombres}}</td>
+                      <td>{{item.apellidos}}</td>
+                      <td>{{item.nacimiento}}</td>
+                      <td>{{item.curso}}</td>
+                      <td>{{item.jornada}}</td>
+                      <td>{{item.especialidad}}</td>
+                      <td>{{item.anio_lectivo}}</td>
+                      <td>{{item.fecha_matri}}</td>
+                    </tr>
+                  </tbody>
+                </div>
+              </table>
+            </div>
+  
+          </section>
+  
+          <br>
+  
+          <section *ngIf=" componente2 === 2">
+  
+            <div class="wrapper-tabla">
+              <table class="tableizer-table">
+                <div class="tabla">
+                  <thead class="tcabezera">
+                    <tr class="tableizer-firstrow">
+                      <th class="title-tabla" colspan="10">DETALLES DE LOS ESTUDIANTES</th>
+                    </tr>
+                    <tr class="tableizer-firstrow">
+                      <th>Cedula</th>
+                      <th>Etnia</th>
+                      <th>Genero</th>
+                      <th>Discapacidad</th>
+                      <th>Ciudad Nacimiento</th>
+                      <th>Provincia</th>
+                      <th>Canton</th>
+                      <th>Parroquia</th>
+                      <th>Dirección</th>
+                    </tr>
+                  </thead>
+  
+                  <tbody class="tcuerpo">
+                    <tr *ngFor="let item of estudiantes">
+                      <td>{{item.cedula}}</td>
+                      <td>{{item.etnia}}</td>
+                      <td>{{item.genero}}</td>
+                      <td>{{item.disca_porcentaje}}</td>
+                      <td>{{item.ciudad_naci}}</td>
+                      <td>{{item.provincia}}</td>
+                      <td>{{item.canton}}</td>
+                      <td>{{item.parroquia}}</td>
+                      <td>{{item.direccion_detallada}}</td>
+                    </tr>
+                  </tbody>
+                </div>
+              </table>
+            </div>
+  
+          </section>
+  
+          <br>
+  
+          <section *ngIf=" componente2 === 3">
+  
+            <div class="wrapper-tabla">
+              <table class="tableizer-table">
+                <div class="tabla">
+                  <thead class="tcabezera">
+                    <tr class="tableizer-firstrow">
+                      <th class="title-tabla" colspan="8">REPRESENTANTE DE LOS ESTUDIANTES</th>
+                    </tr>
+                    <tr class="tableizer-firstrow">
+                      <th>Cedula Estudiante</th>
+                      <th>Cedula Representante</th>
+                      <th>Nombres</th>
+                      <th>Apellidos</th>
+                      <th>Parentesco</th>
+                      <th>Telefono</th>
+                      <th>Celular</th>
+                    </tr>
+                  </thead>
+  
+                  <tbody class="tcuerpo">
+                    <tr *ngFor="let item of estudiantes">
+                      <td>{{item.cedula}}</td>
+                      <td>{{item.cedula_repre}}</td>
+                      <td>{{item.nombres_repre}}</td>
+                      <td>{{item.apellidos_repre}}</td>
+                      <td>{{item.parentesco}}</td>
+                      <td>{{item.telefono}}</td>
+                      <td>{{item.celular}}</td>
+                    </tr>
+                  </tbody>
+                </div>
+              </table>
+            </div>
+  
+          </section>
+  
+        </div>
+  
+        <section style="text-align: center;">
+  
+          <br> <br>
+        </section>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  

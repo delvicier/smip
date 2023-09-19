@@ -1,0 +1,197 @@
+<div class="wrapper-botones">
+    <div class="botones">
+      <button class="boton" (click)="todasLasMatriculas()">
+        <img src="../../../assets/icons/actualizar.png" width="40" height="40" alt="Actualizar">
+      </button>
+      <button class="boton" (click)="onSubmit()">
+        <img src="../../../assets/icons/guardar1.png" width="40" height="40" alt="Guardar"></button>
+    </div>
+  </div>
+  
+  <div class="titulo">
+    <h1>Calificaciones</h1>
+  </div>
+  
+  <br>
+  
+  <form [formGroup]="formrecord" (ngSubmit)="onSubmit()">
+  
+    <div class="wrapper-tabla">
+  
+      <table class="tableizer-table">
+        <div class="tabla">
+  
+          <!-- Encabezado 2 -->
+          <thead class="tcabezera">
+            <tr class="tableizer-firstrow">
+              <th class="title-tabla" colspan="15">DATOS DE LOS ESTUDIANTES</th>
+            </tr>
+            <tr class="tableizer-firstrow">
+              <th colspan="10">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+              <th rowspan="2">PROMEDIO BASICA</th>
+              <th colspan="3">CALIFICACIONES BACHILLERATO</th>
+              <th rowspan="2">PROMEDIO BACHILLER</th>
+            </tr>
+            <tr class="tableizer-firstrow">
+              <th>1°</th>
+              <th>2°</th>
+              <th>3°</th>
+              <th>4°</th>
+              <th>5°</th>
+              <th>6°</th>
+              <th>7°</th>
+              <th>8°</th>
+              <th>9°</th>
+              <th>10°</th>
+              <th>1°</th>
+              <th>2°</th>
+              <th>3°</th>
+            </tr>
+          </thead>
+  
+          <!-- Calificaciones -->
+  
+          <tbody class="tcuerpo" *ngIf="record.length > 0; else tbody2">
+            <tr *ngFor="let item of record">
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.primero" placeholder="primero" formControlName="primero">
+              </td>
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.segundo" placeholder="segundo" formControlName="segundo">
+              </td>
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.tercero" placeholder="tercero" formControlName="tercero">
+              </td>
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.cuarto" placeholder="cuarto" formControlName="cuarto">
+              </td>
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.quinto" placeholder="quinto" formControlName="quinto">
+              </td>
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.sexto" placeholder="sexto" formControlName="sexto">
+              </td>
+              <td>
+                <input class="input1"  type="text" [(ngModel)]="item.septimo" placeholder="septimo" formControlName="septimo">
+              </td>
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.octavo" placeholder="octavo" formControlName="octavo">
+              </td>
+              <td>
+                <input class="input1"  type="text" [(ngModel)]="item.noveno" placeholder="noveno" formControlName="noveno">
+              </td>
+              <td>
+                <input class="input1"  type="text" [(ngModel)]="item.decimo" placeholder="decimo" formControlName="decimo">
+              </td>
+              <td>
+                <input class="input2" type="text" [(ngModel)]="item.promedio_basic" placeholder="promedio_basic" formControlName="promedio_basic">
+              </td>
+              <td>
+                <input class="input1"  type="text" [(ngModel)]="item.primero_bgu" placeholder="primero_bgu" formControlName="primero_bgu">
+              </td>
+              <td>
+                <input class="input1"  type="text" [(ngModel)]="item.segundo_bgu" placeholder="segundo_bgu" formControlName="segundo_bgu">
+              </td>
+              <td>
+                <input class="input1" type="text" [(ngModel)]="item.tercero_bgu" placeholder="tercero_bgu" formControlName="tercero_bgu">
+              </td>
+              <td>
+                <input class="input2" type="text" [(ngModel)]="item.promedio_bgu" placeholder="promedio_bgu" formControlName="promedio_bgu">
+              </td>
+            </tr>
+          </tbody>
+  
+          <ng-template #tbody2>
+            <tbody class="tcuerpo">
+              <tr>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+                <td>
+                  Vacio
+                </td>
+              </tr>
+            </tbody>
+          </ng-template>
+  
+        </div>
+      </table>
+    </div>
+  
+    <br>
+  
+    <div>
+  
+      <div *ngIf="record.length > 0 else detalles2"  class="detalles-notas">
+          <div *ngFor="let item of record">
+            <h3>Proyecto</h3>
+            <input class="input-text" type="text" [(ngModel)]="item.proyecto" placeholder="proyecto" formControlName="proyecto">
+  
+            <h3>Participación Estudiantil</h3>
+            <input class="input-text" type="text" [(ngModel)]="item.participacion" placeholder="participacion" formControlName="participacion">
+  
+            <h3>Observaciones</h3>
+            <input class="input-text" type="text" [(ngModel)]="item.observaciones" placeholder="observaciones" formControlName="observaciones">
+          </div>
+      </div>
+  
+      <ng-template #detalles2>
+        <div class="detalles-notas">
+          <div >
+            <h3>Proyecto:</h3>
+            <input class="input-text" type="text" placeholder="proyecto" formControlName="proyecto">
+  
+            <h3>Participación Estudiantil:</h3>
+            <input class="input-text" type="text" placeholder="participacion" formControlName="participacion">
+  
+            <h3>Observaciones:</h3>
+            <input class="input-text" type="text" placeholder="observaciones" formControlName="observaciones">
+          </div>
+        </div>
+      </ng-template>
+  
+      <br>
+  
+    </div>
+  
+  </form>
+  

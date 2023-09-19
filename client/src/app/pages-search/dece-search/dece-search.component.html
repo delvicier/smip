@@ -1,1 +1,41 @@
-<p>dece-search works!</p>
+
+<div class="titulo">
+
+    <div class="titulo-foto">
+  
+      <div class="titulo_matric">
+        <h1>DECE</h1>
+        <!--
+        <a class="btn-cambiar" (click)="ocultarComponente()">
+          <img src="../../../assets/reload.png" width="54" height="54" alt="">
+        </a>
+        -->
+      </div>
+  
+        <img src="../../../assets/img/foto-perfil3.png" width="224" height="224"  alt="foto-perfil">
+  
+        <div class="titulo-estudiante">
+          <h2>Buscar por estudiante...</h2>
+        </div>
+  
+        <form [formGroup]="searchForm" method="get" action="">
+          <div class="buscadorx">
+            <input formControlName="cedula" class="input-buscar" type="text" name="search_post" placeholder="Buscar...">
+  
+            <button (click)="buscar()" class="buscador__btn">
+  
+             <img class="icon-search" src="../../../assets/icons/search.png" width="18" height="18" alt="logo">
+            </button>
+          </div>
+        </form>
+  
+        <div class="titulo-detalles">
+  
+        </div>
+  
+    </div>
+  
+  
+  </div>
+  
+  
