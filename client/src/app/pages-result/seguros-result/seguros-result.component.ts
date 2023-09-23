@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Estudiantes } from 'src/app/models/estudiantes';
-import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
 import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
+import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
 
 @Component({
-  selector: 'app-matricula-result',
-  templateUrl: './matricula-result.component.html',
-  styleUrls: ['./matricula-result.component.scss']
+  selector: 'app-seguros-result',
+  templateUrl: './seguros-result.component.html',
+  styleUrls: ['./seguros-result.component.scss']
 })
-export class MatriculaResultComponent {
+export class SegurosResultComponent {
 
 
   estudiante: Estudiantes[] = [];

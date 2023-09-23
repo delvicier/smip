@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DeceService } from 'src/app/services/dece-service/dece.service';
-import { VistasService } from 'src/app/services/vistas-service/vistas.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-dece-search',
@@ -12,7 +12,7 @@ export class DeceSearchComponent {
 
   searchForm: FormGroup;
 
-  constructor( private deceService:DeceService, public vistas: VistasService ) {
+  constructor( private deceService:DeceService, public vistas2: Vistas2Service ) {
     this.searchForm = new FormGroup({
       cedula: new FormControl,
     });
@@ -33,12 +33,12 @@ export class DeceSearchComponent {
   }
 
   mostrarComponente(numeroComponente2: number) {
-    this.vistas.mostrarComponente2(numeroComponente2);
+    this.vistas2.mostrarComponente2(numeroComponente2);
   }
   ocultarComponente() {
-    this.vistas.ocultarComponente2();
+    this.vistas2.ocultarComponente2();
   }
-  
+
   reloadPage(): void {
     location.reload();
   }

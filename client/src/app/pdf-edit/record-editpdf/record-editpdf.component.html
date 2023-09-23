@@ -1,1 +1,213 @@
-<p>record-editpdf works!</p>
+<div class="wrapper-botones">
+  <div class="botones">
+    <div class="radio-inputs">
+      <label class="radio">
+        <input
+          (click)="mostrarComponente2(1)"
+          type="radio"
+          name="radio"
+          checked=""
+        />
+        <span class="name">Pag 1</span>
+      </label>
+      <label class="radio">
+        <input (click)="mostrarComponente2(2)" type="radio" name="radio" />
+        <span class="name">Pag 2</span>
+      </label>
+
+      <label class="radio">
+        <input (click)="mostrarComponente2(3)" type="radio" name="radio" />
+        <span class="name">Pag 3</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<h2>{{cursoid}} / {{jornadaid}} / {{anioid}}</h2>
+
+<br>
+
+  <div class="wrapper-tabla">
+
+    <table class="tableizer-table">
+      <div class="tabla">
+
+        <!-- Encabezado 2 -->
+        <thead class="tcabezera">
+          <tr class="tableizer-firstrow">
+            <th class="title-tabla" colspan="21">DATOS DE LOS ESTUDIANTES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th rowspan="2">No.</th>
+            <th rowspan="2">NOMBRES Y APELLIDOS</th>
+            <th rowspan="2">No. <br> CÉDULA</th>
+            <th colspan="10">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+            <th rowspan="2">PROMEDIO BASICA</th>
+            <th colspan="3">CALIFICACIONES BACHILLERATO</th>
+            <th rowspan="2">PROMEDIO BACHILLER</th>
+            <th rowspan="2">PROYECTO</th>
+            <th rowspan="2">PARTICIPACIÓN</th>
+            <th rowspan="2">OBSERVACIONES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th>1°</th>
+            <th>2°</th>
+            <th>3°</th>
+            <th>4°</th>
+            <th>5°</th>
+            <th>6°</th>
+            <th>7°</th>
+            <th>8°</th>
+            <th>9°</th>
+            <th>10°</th>
+            <th>1°</th>
+            <th>2°</th>
+            <th>3°</th>
+          </tr>
+        </thead>
+
+        <!-- Calificaciones -->
+
+        <tbody class="tcuerpo" *ngIf="record.length > 0; else tbody2">
+          <tr *ngFor="let item of record">
+            <td>
+              {{item.id}}
+            </td>
+            <td>
+              {{item.nombres}}, {{item.apellidos}}
+            </td>
+            <td>
+              {{item.cedula}}
+            </td>
+            <td>
+              {{item.primero}}
+            </td>
+            <td>
+              {{item.segundo}}
+            </td>
+            <td>
+              {{item.tercero}}
+            </td>
+            <td>
+              {{item.cuarto}}
+            </td>
+            <td>
+              {{item.quinto}}
+            </td>
+            <td>
+              {{item.sexto}}
+            </td>
+            <td>
+              {{item.septimo}}
+            </td>
+            <td>
+              {{item.octavo}}
+            </td>
+            <td>
+              {{item.noveno}}
+            </td>
+            <td>
+              {{item.decimo}}
+            </td>
+            <td>
+
+              {{item.promedio_basic}}
+            </td>
+            <td>
+
+              {{item.primero_bgu}}
+            </td>
+            <td>
+
+              {{item.segundo_bgu}}
+            </td>
+            <td>
+
+              {{item.tercero_bgu}}
+            </td>
+            <td>
+
+              {{item.promedio_bgu}}
+            </td>
+            <td>
+
+              {{item.proyecto}}
+            </td>
+            <td>
+              {{item.participacion}}
+            </td>
+            <td>
+              {{item.observaciones}}
+            </td>
+          </tr>
+        </tbody>
+
+        <ng-template #tbody2>
+          <tbody class="tcuerpo">
+            <tr>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+              <td>
+                Vacio
+              </td>
+            </tr>
+          </tbody>
+        </ng-template>
+
+      </div>
+    </table>
+  </div>
+
+  <br>
+
+

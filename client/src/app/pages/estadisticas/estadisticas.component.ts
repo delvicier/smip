@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Estudiantes } from 'src/app/models/estudiantes';
 import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-estadisticas',
@@ -11,10 +12,9 @@ export class EstadisticasComponent {
 
   estudiantes: Estudiantes[] = [];
 
-  constructor(private matriculaServicio: MatriculaService) {
+  constructor(private matriculaServicio: MatriculaService, public vistas2: Vistas2Service) {
 
   }
-  componente2 = this.matriculaServicio.numero2;
 
   matriculadosAño = 0;
   hombres = 0;
@@ -135,11 +135,11 @@ export class EstadisticasComponent {
   }
 
   mostrarComponente2(numero2: number) {
-    this.matriculaServicio.mostrarComponente2(numero2);
+    this.vistas2.mostrarComponente2(numero2);
   }
 
   ocultarComponente2() {
-    this.matriculaServicio.ocultarComponente2();
+    this.vistas2.ocultarComponente2();
   }
 
 

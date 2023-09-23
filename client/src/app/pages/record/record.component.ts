@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VistasService } from 'src/app/services/vistas-service/vistas.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-record',
@@ -8,7 +8,7 @@ import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 })
 export class RecordComponent {
 
-  constructor(public vistas: VistasService) {
+  constructor(public vistas2: Vistas2Service) {
 
   }
 

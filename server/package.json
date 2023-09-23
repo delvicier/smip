@@ -1,13 +1,5 @@
 {
-  "name": "smip",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon server/index.js"
-  },
   "author": "Christopher Delvicier",
-  "license": "MIT",
   "dependencies": {
     "bcrypt": "5.1.1",
     "dotenv": "16.3.1",
@@ -16,5 +8,13 @@
     "mongoose": "7.5.2",
     "mysql2": "3.6.1",
     "nodemon": "3.0.1"
-  }
+  },
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "smip",
+  "scripts": {
+    "dev": "nodemon server/index.js"
+  },
+  "version": "1.0.0"
 }

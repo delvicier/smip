@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VistasService } from 'src/app/services/vistas-service/vistas.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-seguros-btn',
@@ -8,15 +8,15 @@ import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 })
 export class SegurosBtnComponent {
 
-  constructor(public vistas: VistasService) {
+  constructor(public vistas2: Vistas2Service) {
 
   }
 
   mostrarComponente(numeroComponente4: number) {
-    this.vistas.mostrarComponente4(numeroComponente4);
+    this.vistas2.mostrarComponente4(numeroComponente4);
   }
 
   ocultarComponente() {
-    this.vistas.ocultarComponente4();
+    this.vistas2.ocultarComponente4();
   }
 }

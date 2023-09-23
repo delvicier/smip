@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Estudiantes } from 'src/app/models/estudiantes';
 import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
-import { VistasService } from 'src/app/services/vistas-service/vistas.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-matricula2-search',
@@ -15,7 +15,7 @@ export class Matricula2SearchComponent {
   estudiante: Estudiantes[] = [];
   searchForm: FormGroup;
 
-  constructor( private matriculaService: MatriculaService, public vistas: VistasService) {
+  constructor( private matriculaService: MatriculaService, public vistas2: Vistas2Service) {
     this.searchForm = new FormGroup({
       cedula: new FormControl,
     });
@@ -40,11 +40,11 @@ export class Matricula2SearchComponent {
   }
 
   mostrarComponente(numeroComponente: number) {
-    this.vistas.mostrarComponente(numeroComponente);
+    this.vistas2.mostrarComponente(numeroComponente);
   }
 
   ocultarComponente() {
-    this.vistas.ocultarComponente();
+    this.vistas2.ocultarComponente();
   }
 
   reloadPage(): void {

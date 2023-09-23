@@ -1,1 +1,53 @@
-<p>seguros works!</p>
+
+<div class="cuerpo">
+
+  <div class="contenedor">
+
+    <div class="contenido1">
+      <app-nav-left2></app-nav-left2>
+    </div>
+
+    <div class="contenido2">
+
+        <div class="sub-contenido1">
+
+          <div class="graficas-sub-contenido1">
+
+            <app-text-seguros></app-text-seguros>
+          </div>
+
+          <div *ngIf="vistas2.numero4 === null || vistas2.numero4 === 1 || vistas2.numero4 === 2 || vistas2.numero4 === 3">
+            <app-seguros-search></app-seguros-search>
+
+          </div>
+
+
+          <!-- BOTONES -->
+          <div>
+            <app-seguros-btn></app-seguros-btn>
+          </div>
+
+        </div>
+
+        <div class="sub-contenido2">
+
+
+          <div class="contenido-resultado">
+
+            <div *ngIf="vistas2.numero4 === 1">
+              <app-seguros-doc></app-seguros-doc>
+            </div>
+
+            <div *ngIf="vistas2.numero4 === null || vistas2.numero4 === 3">
+              <app-seguros-result></app-seguros-result>
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+
+  </div>
+</div>
+
+

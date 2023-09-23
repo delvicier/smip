@@ -1,1 +1,208 @@
-<p>matricula-add works!</p>
+<div class="body">
+
+  <div class="titulo">
+    <h1>Agregar Estudiantes</h1>
+  </div>
+
+  <form [formGroup]="formulario" (ngSubmit)="onSubmitMatri()">
+    <div class="tab-panelx">
+
+      <div>
+        <h2>Ficha Matricula</h2>
+        <div class="contenedor">
+          <label>Especialidad:</label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="especialidad" placeholder="Especialidad">
+        </div>
+        <div class="contenedor">
+          <label>Curso o Grado:</label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="curso" placeholder="Curso">
+        </div>
+
+
+        <div class="contenedor">
+          <label>Jornada:</label>
+        </div>
+        <div class="contenedor">
+          <input placeholder="Jornada"
+          formControlName="jornada" type="radio" name="jornada" value="Matutina"><strong></strong> Matutina
+          <input placeholder="Jornada"
+          formControlName="jornada" type="radio" name="jornada" value="Vespertina"><strong></strong> Vespertina
+        </div>
+
+
+        <p class="titulo-art"><strong>1.	DATOS DEL ESTUDIANTE</strong> </p>
+        <div class="contenedor">
+          <label>1.1.	 Cédula de Identidad:</label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="cedula" placeholder="Cédula">
+        </div>
+        <div class="contenedor">
+          <label>1.2.	 Apellidos:</label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="apellidos" placeholder="Apellidos">
+        </div>
+        <div class="contenedor">
+          <label>1.3.	 Nombres: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="nombres" placeholder="Nombres">
+        </div>
+        <div class="contenedor">
+          <label>1.4.	 Fecha de nacimiento: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="nacimiento" placeholder="Fecha de nacimiento">
+        </div>
+        <div class="contenedor">
+          <label>1.5.	 Ciudad donde nació: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="ciudad_naci" placeholder="Ciudad donde nació">
+        </div>
+        <div class="contenedor">
+          <label>1.6.	 Etnia: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="etnia" placeholder="Etnia">
+        </div>
+
+        <div class="contenedor">
+          <label>1.7.	 Genero: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="genero" placeholder="Genero">
+        </div>
+
+        <div class="contenedor">
+          <label>1.8.	 Discapacidad: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="discapacidad" placeholder="Discapacidad">
+        </div>
+
+        <div class="contenedor">
+          <label>1.9.	 Porcentaje Discapacidad: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="disca_porcentaje" placeholder="Porcentaje">
+        </div>
+
+        <p class="titulo-art"><strong>2.	DIRECCIÓN DOMICILIARIA DEL ESTUDIANTE:</strong> </p>
+        <div class="contenedor">
+          <label>2.1.  Provincia: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="provincia" placeholder="Provincia">
+        </div>
+        <div class="contenedor">
+          <label>2.2.  Cantón: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="canton" placeholder="Cantón">
+        </div>
+        <div class="contenedor">
+          <label>2.3.  Parroquia: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="parroquia" placeholder="Parroquia">
+        </div>
+        <div class="contenedor">
+          <label>2.4.  Dirección de Vivienda: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="direccion_detallada" placeholder="Dirección de Vivienda">
+        </div>
+
+      </div>
+
+
+
+      <div>
+        <h2>Representante</h2>
+        <p class="titulo-art"><strong>3.	DATOS DEL REPRESENTANTE:</strong> </p>
+        <div class="contenedor">
+          <label>3.1.  Cédula de Identidad: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="cedula_repre" placeholder="Cédula de Identidad">
+        </div>
+        <div class="contenedor">
+          <label>3.2.  Apellidos: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="apellidos_repre" placeholder="Apellidos">
+        </div>
+        <div class="contenedor">
+          <label>3.3.  Nombres: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="nombres_repre" placeholder="Nombres">
+        </div>
+
+
+        <div class="contenedor">
+          <label>3.4.  Parentesco:</label>
+        </div>
+        <div class="parentesco">
+          <input placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Padre"> Padre
+          <input  placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Madre"> Madre
+          <input placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Abuelo/a"> Abuelo/a
+
+          <br>
+
+          <input placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Tio/a"> Tio/a
+
+          <input placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Hermano/a"> Hermano/a
+          <input placeholder="Parentesco"
+          formControlName="parentesco" type="radio" name="parentesco" value="Otros"> Otros
+        </div>
+
+
+        <div class="contenedor">
+          <label>3.5.	 Teléfono convencional: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="telefono" placeholder="Teléfono convencional">
+        </div>
+
+        <div class="contenedor">
+          <label>3.6.	 Teléfono celular: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="celular" placeholder="Teléfono celular">
+        </div>
+
+        <div class="contenedor">
+          <label class="titulo-art"><strong>4.	FECHA DE MATRICULA:</strong> </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="fecha_matri" placeholder="Fecha de matricula">
+        </div>
+
+        <div class="contenedor">
+          <label>4.1	Año Lectivo: </label>
+        </div>
+        <div class="contenedor">
+          <input type="text" formControlName="anio_lectivo" placeholder="Año lectivo">
+        </div>
+
+        <br>
+        <button class="boton">Guardar</button>
+      </div>
+
+
+    </div>
+  </form>
+
+</div>

@@ -1,18 +1,18 @@
 <div class="wrapper-botones">
     <div class="botones">
-  
+
       <button (click)="cambiarComponDece(7)" (click)="onLabel3Click()" class="boton2">
         <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
       </button>
-  
+
       <button (click)="cambiarComponDece(8)" class="boton2">
         <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
       </button>
-  
+
       <button (click)="convertirPDF()" class="boton2">
         <img src="../../../assets/icons/descargar3.png" width="40" height="40" alt="descargar pdf">
       </button>
-  
+
       <button
         [printStyle]="formatoEstilos"
         printTitle="Dece"
@@ -21,33 +21,33 @@
         class="boton2" type="button">
         <img src="../../../assets/icons/impresora3.png" width="40" height="40" alt="imprimir pdf dece">
       </button>
-  
+
     </div>
   </div>
-  
+
   <div class="titulo">
     <h1>Ficha Dece</h1>
   </div>
-  
-  <section *ngIf="cambiarvista === null || cambiarvista === 7">
+
+  <section *ngIf="vistasService.numero === null || vistasService.numero === 7">
     <app-dece-editpdf></app-dece-editpdf>
   </section>
-  
+
   <br>
-  
-  <section *ngIf="cambiarvista === 8">
-  
+
+  <section *ngIf="vistasService.numero === 8">
+
     <div id="pdf-dece" >
       <div *ngIf="hoja1.length > 0">
-  
+
         <div class="hoja" id="hoja1-dece" *ngFor="let estudiante of hoja1">
-  
+
           <div class="encabezado">
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno.jpg" width="170px" alt="">
             </div>
-  
+
             <div>
               <h3>UNIDAD EDUCATIVA FISCAL “LUIS TELLO”</h3>
               <h3>
@@ -61,32 +61,32 @@
                 </label>
               </h3>
             </div>
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno2.jpg" width="100px" alt="">
             </div>
-  
+
           </div>
-  
+
           <div class="titulo-foto">
-  
+
             <div class="titulo-codigo">
-  
+
               <div class="png-perfil">
                 <img class="png-perfil" src="../../../assets/pdf/foto-perfil.avif" width="95px" height="90px" alt="" >
               </div>
-  
+
               <h2>REGISTRO ACUMULATIVO INDIVIDUAL</h2>
-  
+
               <p>N° CÓDIGO 001</p>
-  
+
             </div>
           </div>
-  
+
           <div class="parrafo1">
-  
+
             <h1>1.- DATOS DE IDENTIFICACION / INFORMACIÓN</h1>
-  
+
             <div class="sub-parrafo1">
               <p>APELLIDOS Y NOMBRES DEL/LA ESTUDIANTE {{estudiante.nombres}}</p>
               <div class="p2">
@@ -105,16 +105,16 @@
               <p>TELEFONOS ACTUALIZADOS: {{estudiante.telefono_deta}}, {{estudiante.celular_deta}}</p>
               <p>CURSO/GRADO: {{estudiante.curso}}, {{estudiante.especialidad}} </p>
             </div>
-  
+
           </div>
-  
-  
+
+
           <div class="parrafo2">
-  
+
             <h1>2.- DATOS FAMILIARES</h1>
-  
+
             <table class="tablas1">
-  
+
               <thead>
                 <tr>
                   <th>Nombres de la madre</th>
@@ -125,7 +125,7 @@
                   <th>Ocupación y lugar de trabajo</th>
                 </tr>
               </thead>
-  
+
               <tbody>
                 <tr>
                   <td>{{estudiante.nombres_madre}}</td>
@@ -136,35 +136,35 @@
                   <td>{{estudiante.ocupacion_madre}}</td>
                 </tr>
               </tbody>
-  
+
             </table>
-  
+
             <div class="contactos2">
-  
+
               <div class="wra-contactos-resultados">
-  
+
                 <p>Teléfono de contacto: </p>
                 <div class="contactos-resultados">
                   <label class="label2"> {{estudiante.telefono_madre}} </label>
                   <p>─────────────</p>
                 </div>
-  
+
               </div>
-  
+
               <div class="wra-contactos-resultados">
-  
+
                 <p>Correo: </p>
                 <div class="contactos-resultados">
                   <label> {{estudiante.correo_madre}} </label>
                   <p style="margin-left: -72px;">─────────────────────────────────────</p>
                 </div>
-  
+
               </div>
-  
+
             </div>
-  
+
             <table class="tablas1">
-  
+
               <thead>
                 <tr>
                   <th>Nombres del padre</th>
@@ -175,7 +175,7 @@
                   <th>Ocupación y lugar de trabajo</th>
                 </tr>
               </thead>
-  
+
               <tbody>
                 <tr>
                   <td>{{estudiante.nombres_padre}}</td>
@@ -186,35 +186,35 @@
                   <td>{{estudiante.ocupacion_padre}}</td>
                 </tr>
               </tbody>
-  
+
             </table>
-  
+
             <div class="contactos2">
-  
+
               <div class="wra-contactos-resultados">
-  
+
                 <p>Teléfono de contacto: </p>
                 <div class="contactos-resultados">
                   <label class="label2"> {{estudiante.telefono_padre}} </label>
                   <p>─────────────</p>
                 </div>
-  
+
               </div>
-  
+
               <div class="wra-contactos-resultados">
-  
+
                 <p>Correo: </p>
                 <div class="contactos-resultados">
                   <label> {{estudiante.correo_padre}} </label>
                   <p style="margin-left: -72px;">─────────────────────────────────────</p>
                 </div>
-  
+
               </div>
-  
+
             </div>
-  
+
             <table class="tablas1">
-  
+
               <thead>
                 <tr>
                   <th>Nombres del representante legal</th>
@@ -225,7 +225,7 @@
                   <th>Ocupación y lugar de trabajo</th>
                 </tr>
               </thead>
-  
+
               <tbody>
                 <tr>
                   <td>{{estudiante.nombres_repre}}</td>
@@ -236,55 +236,55 @@
                   <td>{{estudiante.ocupacion_repre}}</td>
                 </tr>
               </tbody>
-  
+
             </table>
-  
+
             <div class="contactos2">
-  
+
               <div class="wra-contactos-resultados">
-  
+
                 <p>Teléfono de contacto: </p>
                 <div class="contactos-resultados">
                   <label class="label2"> {{estudiante.telefono_repre}} </label>
                   <p>─────────────</p>
                 </div>
-  
+
               </div>
-  
+
               <div class="wra-contactos-resultados">
-  
+
                 <p>Correo: </p>
                 <div class="contactos-resultados">
                   <label> {{estudiante.correo_repre}} </label>
                   <p style="margin-left: -72px;">─────────────────────────────────────</p>
                 </div>
-  
+
               </div>
-  
+
             </div>
-  
+
             <div>
               <p><strong> Nombre de familiar o persona de referencia en caso de no podernos contactar con padre o madre: </strong> <label class="raya-p2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{estudiante.nombre_referencia}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>  <strong> Teléfono </strong> <label class="raya-p2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{estudiante.telefono_referencia}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> </p>
             </div>
-  
+
           </div>
-  
+
           <div class="parrafo3">
-  
+
             <h1>3.-REFERENCIAS FAMILIARES DEL /LA ESTUDIANTE</h1>
-  
+
             <p><strong>Personas con quien vive el estudiante: (especificar todas las personas que conforman la estructura familiar y viven en la misma casa)</strong></p>
-  
+
             <label class="raya-p1">{{estudiante.respuesta1_1}}</label>
-  
+
             <p><strong>Numero de hermanos/as y edades</strong></p>
-  
+
             <label class="raya-p1">{{estudiante.respuesta1_2}}</label>
-  
+
             <p><strong>Lugar que ocupa entre los hermanos/as:</strong> </p>
-  
+
             <label class="raya-p1">{{estudiante.respuesta1_3}}</label>
-  
+
             <div class="acad-rend">
               <div  class="item-acad-rend">
                 <p><strong>¿Los padres del estudiante están en proceso de separación y/o divorcio? </strong></p>
@@ -294,51 +294,51 @@
                 </div>
               </div>
             </div>
-  
+
             <p><strong>Nombre de hermanos que estudien en la misma institución, edades y cursos</strong></p>
-  
+
             <label class="raya-p1">{{estudiante.respuesta1_5}}</label>
-  
+
             <div class="espaciox1"></div>
-  
+
             <div class="cuadrado-input">
-  
+
               <p><strong>Algún familiar privado de libertad:</strong></p>
               <div class="espacio"></div>
-  
+
               <p><strong>PADRE</strong></p>
               <div class="cuadrado">
                 <p class="cuadrado-p" *ngIf="estudiante.presos === 'Padre'"><strong>X</strong></p>
               </div>
-  
+
               <p><strong>MADRE</strong></p>
               <div class="cuadrado">
                 <p class="cuadrado-p" *ngIf="estudiante.presos === 'Madre'"><strong>X</strong></p>
               </div>
-  
+
               <p><strong>HERMANO/A</strong></p>
               <div class="cuadrado">
                 <p class="cuadrado-p" *ngIf="estudiante.presos === 'Hermano/a'"><strong>X</strong></p>
               </div>
-  
+
             </div>
-  
+
           </div>
-  
+
         </div>
-  
+
         <br><br><br>
-  
-  
+
+
         <div class="hoja" id="hoja2-dece" *ngFor="let estudiante of hoja2">
-  
-  
+
+
           <div class="encabezado">
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno.jpg" width="170px" alt="">
             </div>
-  
+
             <h3>
             UNIDAD EDUCATIVA FISCAL “LUIS TELLO”<br>
             DEPARTAMENTO DE CONSEJERIA ESTUDIANTIL (DECE) <br>
@@ -346,62 +346,62 @@
             Tef: 062 700 425 – 700 426 – 700 427 <br>
             Correo: inst.tecno.ind.luistello@hotmail.com <br>
             </h3>
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno2.jpg" width="100px" alt="">
             </div>
-  
+
           </div>
-  
-  
+
+
           <div class="parrafo3">
             <div *ngFor="let estudiantex of hoja1">
               <div class="espaciox1"></div>
               <p> <strong>Descripción de la situación familiar y relaciones entre los mismos:</strong></p>
-  
+
               <p>Relación con el <strong>padre: </strong> <label class="raya-p2"> {{estudiantex.respuesta1_6}}</label>  </p>
-  
+
               <p>Relación con la<strong> madre: </strong> <label class="raya-p2"> {{estudiantex.respuesta1_7}}</label> </p>
-  
+
               <p>Relación con sus <strong>hermanos (as): </strong> <label class="raya-p2"> {{estudiantex.respuesta1_8}}</label> </p>
-  
+
               <p>Novedad en las relaciones con <strong>otros familiares: </strong> <label class="raya-p2"> {{estudiantex.respuesta1_9}}</label>  </p>
-  
+
               <p>Relación <strong>entre padre y madre</strong> del estudiante <label class="raya-p2"> {{estudiantex.respuesta1_10}}</label> </p>
-  
+
               <div class="espaciox2"></div>
-  
+
               <div class="cuadrado-input">
                 <p><strong>Familiares con algún tipo de discapacidad:</strong></p>
                 <div class="espacio"></div>
-  
+
                 <p>SI</p>
                 <div class="cuadrado">
                   <p class="cuadrado-p" *ngIf="estudiantex.discapacitados === 'Si'"><strong>X</strong></p>
                 </div>
-  
+
                 <p>NO</p>
                 <div class="cuadrado">
-  
+
                   <p class="cuadrado-p" *ngIf="estudiantex.discapacitados === 'No'"><strong>X</strong></p>
-  
+
                 </div>
               </div>
-  
+
               <p><strong>Determinar quiénes y el tipo de discapacidad</strong></p>
-  
+
               <label class="raya-p1">{{estudiantex.respuesta1_11}}</label>
-  
+
               <p><strong>Observaciones</strong></p>
-  
+
               <label class="raya-p1">{{estudiantex.respuesta1_12}}</label>
-  
+
             </div>
-  
+
             <h1>3.1 REFERENCIAS SOCIOECONOMICAS GENERALES</h1>
-  
+
             <p><strong>Detallar todos los miembros del grupo familiar con quienes vive el  estudiante o es dependiente.</strong></p>
-  
+
             <table class="tablas2">
               <thead>
                 <tr>
@@ -413,7 +413,7 @@
                   <th>Ingresos Mensuales</th>
                 </tr>
               </thead>
-  
+
               <tbody>
                 <tr>
                   <td>{{estudiante.nombres1}}</td>
@@ -423,7 +423,7 @@
                   <td>{{estudiante.ocupacion1}}</td>
                   <td>{{estudiante.ingresos1}}</td>
                 </tr>
-  
+
                 <tr>
                   <td>{{estudiante.nombres2}}</td>
                   <td>{{estudiante.parentesco2}}</td>
@@ -432,7 +432,7 @@
                   <td>{{estudiante.ocupacion2}}</td>
                   <td>{{estudiante.ingresos2}}</td>
                 </tr>
-  
+
                 <tr>
                   <td>{{estudiante.nombres3}}</td>
                   <td>{{estudiante.parentesco3}}</td>
@@ -441,7 +441,7 @@
                   <td>{{estudiante.ocupacion3}}</td>
                   <td>{{estudiante.ingresos3}}</td>
                 </tr>
-  
+
                 <tr>
                   <td>{{estudiante.nombres4}}</td>
                   <td>{{estudiante.parentesco4}}</td>
@@ -450,17 +450,17 @@
                   <td>{{estudiante.ocupacion4}}</td>
                   <td>{{estudiante.ingresos4}}</td>
                 </tr>
-  
+
               </tbody>
-  
+
             </table>
-  
+
             <h1>3.2. CONDICIONES DE VIVIENDA:</h1>
-  
+
             <div class="parrafo3-input3">
-  
+
               <div>
-  
+
                 <div class="parrafo3-input3-items">
                   <p>Villa</p>
                   <div class="rectangulo">
@@ -479,11 +479,11 @@
                     {{estudiante.hipotecas}}
                   </div>
                 </div>
-  
+
               </div>
-  
+
               <div>
-  
+
                 <div class="parrafo3-input3-items">
                   <p>Departamento</p>
                   <div class="rectangulo">
@@ -502,11 +502,11 @@
                     {{estudiante.compartida}}
                   </div>
                 </div>
-  
+
               </div>
-  
+
               <div>
-  
+
                 <div class="parrafo3-input3-items">
                   <p>Casa/Pisos</p>
                   <div class="rectangulo">
@@ -519,17 +519,17 @@
                     {{estudiante.prestada}}
                   </div>
                 </div>
-  
+
               </div>
-  
+
             </div>
-  
+
             <h1>3.3. SERVICIOS BÁSICOS DE VIVIENDA:</h1>
-  
+
             <div class="parrafo3-input3">
-  
+
               <div>
-  
+
                 <div class="parrafo3-input3-items">
                   <p>Luz Elétrica</p>
                   <div class="rectangulo">
@@ -542,12 +542,12 @@
                     {{estudiante.telefono_fijo}}
                   </div>
                 </div>
-  
+
               </div>
-  
-  
+
+
               <div>
-  
+
                 <div class="parrafo3-input3-items">
                   <p>Agua Potable</p>
                   <div class="rectangulo">
@@ -560,12 +560,12 @@
                     {{estudiante.tv_cable}}
                   </div>
                 </div>
-  
+
               </div>
-  
-  
+
+
               <div>
-  
+
                 <div class="parrafo3-input3-items">
                   <p>Alcantarillado</p>
                   <div class="rectangulo">
@@ -578,60 +578,60 @@
                     {{estudiante.internet}}
                   </div>
                 </div>
-  
+
               </div>
-  
+
             </div>
-  
-  
-  
+
+
+
           </div>
-  
-  
+
+
           <div class="parrafo4">
-  
+
             <h1>4. DATOS DE SALUD:</h1>
-  
+
             <div class="wrapper-cuadrado-input">
               <p><strong>El estudiante tiene algún tipo de discapacidad:</strong></p>
               <div class="espacio2"></div>
-  
+
               <div class="cuadrado-input">
                 <p><strong>SI</strong></p> <div class="espacio3"></div>
-  
+
                 <div class="wrapper-cuadrado">
                     <div class="cuadrado1">
                       <p class="cuadrado-p2" *ngIf="estudiante.discapacidad === 'Si'"><strong>X</strong></p>
                     </div>
                 </div>
               </div>
-  
+
               <div class="cuadrado-input">
                 <p><strong>NO</strong></p>
-  
+
                 <div class="wrapper-cuadrado">
                   <div class="cuadrado2">
                     <p class="cuadrado-p2" *ngIf="estudiante.discapacidad === 'No'"><strong>X</strong></p>
                   </div>
                 </div>
               </div>
-  
+
             </div>
-  
+
             <p><strong>Determinar ¿Cuál?</strong></p>
-  
+
             <label class="raya-p1">{{estudiante.detallar_disc}}</label>
-  
+
             <div class="text-raya2">
               <p><strong>Número de carnet de discapacidad:</strong><label class="raya-p">{{estudiante.num_carnet}}</label></p>
-  
+
             </div>
-  
+
             <p><strong>El estudiante recibe atención médica en:</strong></p>
             <br>
-  
+
             <div class="cuadrado-input-grid">
-  
+
               <div class="cuadrado-input">
                 <p><strong>Consulta privada</strong></p>
                 <div class="wrapper-cuadrado">
@@ -639,9 +639,9 @@
                     <p class="cuadrado-p2" *ngIf="estudiante.atencion_med === 'Privada'"><strong>X</strong></p>
                   </div>
               </div>
-  
+
               </div>
-  
+
               <div class="cuadrado-input">
                 <p><strong>Subcentro de salud</strong></p>
                 <div class="wrapper-cuadrado">
@@ -650,7 +650,7 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="cuadrado-input">
                 <p><strong>Hospital público</strong></p>
                 <div class="wrapper-cuadrado">
@@ -659,7 +659,7 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="cuadrado-input">
                 <p><strong>Hospital IESS</strong></p>
                 <div class="wrapper-cuadrado">
@@ -668,23 +668,23 @@
                   </div>
                 </div>
               </div>
-  
+
             </div>
-  
+
           </div>
-  
+
         </div>
-  
+
         <br><br><br>
-  
+
         <div class="hoja" id="hoja3-dece" *ngFor="let estudiante of hoja3">
-  
+
           <div class="encabezado">
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno.jpg" width="170px" alt="">
             </div>
-  
+
             <h3>
             UNIDAD EDUCATIVA FISCAL “LUIS TELLO”<br>
             DEPARTAMENTO DE CONSEJERIA ESTUDIANTIL (DECE) <br>
@@ -695,35 +695,35 @@
             <p>REGISTRO ACUMULATIVO INDIVIDUAL</p>
             -->
             </h3>
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno2.jpg" width="100px" alt="">
             </div>
-  
+
           </div>
-  
-  
+
+
           <div class="parrafo4">
-  
+
             <div *ngFor="let estudiantex of hoja2">
               <p><strong>Nombre del médico que atiende regularmente al estudiante</strong></p>
               <label class="raya-p1">{{estudiantex.medic_regular}}</label>
-  
+
               <p><strong>Observaciones</strong></p>
               <label class="raya-p1">{{estudiantex.observacion}}</label>
             </div>
-  
+
           </div>
-  
-  
+
+
           <div class="parrafo5">
-  
+
             <h1>DATOS ACADEMICOS Y DE RENDIMIENTO</h1>
-  
+
             <div class="parrafo5-fecha">
               <p><strong>Fecha de ingreso al plantel por primera vez:</strong></p>
               <div class="parrafo5-fecha-right">
-  
+
                 <table>
                   <tbody>
                     <tr>
@@ -731,15 +731,15 @@
                     </tr>
                   </tbody>
                 </table>
-  
+
                 <p><strong>(DD/MM/AA) &nbsp; _A</strong></p>
-  
+
               </div>
             </div>
-  
-  
+
+
             <div class="acad-rend">
-  
+
               <div class="item-acad-rend">
                 <p><strong>qué curso</strong></p>
                 <div class="result-acad-rend">
@@ -747,7 +747,7 @@
                   <p><strong>───────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>¿El estudiante ha repetido años? (especificar curso repetido):</strong></p>
                 <div class="result-acad-rend">
@@ -755,7 +755,7 @@
                   <p><strong>────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>Institución de la que proviene:</strong></p>
                 <div class="result-acad-rend">
@@ -763,7 +763,7 @@
                   <p><strong>────────────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p class="result-acad-rend-raya"><strong>────────────────</strong></p>
                 <p><strong>Lugar / dirección:</strong></p>
@@ -772,7 +772,7 @@
                   <p><strong>─────────────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>Tipos de problemas escolares que ha presentado últimamente: académicos</strong></p>
                 <div class="result-acad-rend">
@@ -780,7 +780,7 @@
                   <p><strong>───────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>disciplinarios/ comportamiento</strong></p>
                 <div class="result-acad-rend">
@@ -794,7 +794,7 @@
                 </div>
                 <p><strong>otros</strong></p>
               </div>
-  
+
               <div class="item-acad-rend">
                 <div class="result-acad-rend">
                   <label> {{estudiante.otros_renacad}} </label>
@@ -806,38 +806,38 @@
                   <p><strong>─────────────────────</strong></p>
                 </div>
               </div>
-  
+
             </div>
-  
-  
+
+
             <div class="espacios6"></div>
-  
+
             <p><strong>¿EL  ESTUDIANTE  PRESENTA  ALGUNA  DIFICULTAD  EN  EL  APRENDIZAJE  O  NEE  asociadas  o  no  a  una discapacidad de las mencionadas en el Reglamento-LOEI Art. 159 y 160? Mencione la dificultad, indique si posee diagnóstico y si requiere adaptaciones curriculares (en caso de tener informe psicopedagógico y/o diagnóstico particular o por UDAI debe presentar por escrito al rector del plantel)</strong></p>
-  
+
             <label class="raya-p1">{{estudiante.respuesta2_1}}</label>
-  
+
             <p><strong>¿Presenta alguna situación de vulnerabilidad de las señaladas en el Reglamento-LOEI Art. 156? Puntualice</strong></p>
-  
+
             <label class="raya-p1">{{estudiante.respuesta2_2}}</label>
-  
+
             <div class="espacios6"></div>
-  
+
             <p><strong>Mencione algún antecedente del estudiante en cuanto a sus relaciones con los demás que </strong></p>
-  
+
             <div class="text-raya6">
               <p><strong>según usted debe considerar la institución</strong></p>
               <label class="raya-p1">{{estudiante.respuesta2_3}}</label>
             </div>
-  
-  
+
+
             <div class="espacios6"></div>
-  
+
             <h1>5.1. DATOS ACADEMICOS</h1>
-  
-  
+
+
             <p class="ancho-max"><strong>Asignaturas en las que ha tenido bajo rendimiento: </strong></p>
-  
-  
+
+
             <div class="acad-rend">
               <div class="item-acad-rend">
                 <p><strong>Dignidades alcanzadas (méritos)</strong></p>
@@ -846,7 +846,7 @@
                   <p><strong>───────────────────────────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>Logros académicos: </strong></p>
                 <div class="result-acad-rend">
@@ -854,14 +854,14 @@
                   <p><strong> ──────────────────────────────────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
             </div>
-  
+
             <div class="text-raya6">
               <p><strong>Eventos o actividades en las que ha participado últimamente:</strong></p>
               <label class="raya-p1">{{estudiante.respuesta3_3}}</label>
             </div>
-  
+
             <div class="acad-rend">
               <div class="item-acad-rend">
                 <p><strong>Clubes o disciplinas  en los que participa:</strong></p>
@@ -871,20 +871,20 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="text-raya6">
               <p><strong>Actividades o cursos extracurriculares que realiza el estudiante: </strong></p>
               <label class="raya-p1">{{estudiante.respuesta3_5}}</label>
             </div>
-  
+
           </div>
-  
+
           <div class="parrafo6">
             <h1>6. HISTORIA VITAL DEL ESTUDIANTE</h1>
             <h2>6.1. Embarazo y parto</h2>
-  
+
             <div class="acad-rend">
-  
+
               <div class="item-acad-rend">
                 <p><strong>Edad de la madre al embarazo:</strong></p>
                 <div class="result-acad-rend">
@@ -892,7 +892,7 @@
                   <p><strong>──────────────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>Accidentes en el embarazo:</strong></p>
                 <div class="result-acad-rend">
@@ -900,7 +900,7 @@
                   <p><strong>────────────────────────────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>Medicamentos durante el embarazo:</strong></p>
                 <div class="result-acad-rend">
@@ -908,23 +908,23 @@
                   <p><strong>───────────────────────────────────────────────</strong></p>
                 </div>
               </div>
-  
+
             </div>
-  
+
           </div>
-  
+
         </div>
-  
+
         <br><br><br>
-  
+
         <div class="hoja" id="hoja4-dece" *ngFor="let estudiante of hoja4">
-  
+
           <div class="encabezado">
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno.jpg" width="170px" alt="">
             </div>
-  
+
             <h3>
             UNIDAD EDUCATIVA FISCAL “LUIS TELLO”<br>
             DEPARTAMENTO DE CONSEJERIA ESTUDIANTIL (DECE) <br>
@@ -932,34 +932,34 @@
             Tef: 062 700 425 – 700 426 – 700 427 <br>
             Correo: inst.tecno.ind.luistello@hotmail.com <br>
             </h3>
-  
+
             <div>
               <img src="../../../assets/pdf/logo-de-Gobierno2.jpg" width="100px" alt="">
             </div>
-  
+
           </div>
-  
+
           <div class="parrafo6">
-  
+
             <div class="cuadrados-input">
               <p><strong>Al termino</strong></p>
-  
+
               <div class="espacios"></div>
-  
+
               <div class="cuadrados"></div>
-  
+
               <div class="espacios2"></div>
-  
+
               <div class="cuadrados"></div>
-  
+
             </div>
-  
+
             <br> <br>
-  
+
             <p><strong>Especificar cualquier otra dificultad en el embarazo o al nacer el bebé (preeclampsia, hipoxia, traumas, etc.)</strong></p>
-  
+
             <div class="justiciar" *ngFor="let estudiantex of hoja3">
-  
+
               <div class="acad-rend">
                 <div class="item-acad-rend">
                   <div class="result-acad-rend">
@@ -969,7 +969,7 @@
                   <p><strong>años</strong></p>
                 </div>
                 <p><strong>del/la niño/a recién nacido:</strong></p> <br>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Peso al nacer: </strong></p>
                   <div class="result-acad-rend">
@@ -982,7 +982,7 @@
                     <p><strong>─────────────────────────</strong></p>
                   </div>
                 </div>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Edad en que empezó a caminar:</strong></p>
                   <div class="result-acad-rend">
@@ -990,7 +990,7 @@
                     <p><strong>────────────────────────</strong></p>
                   </div>
                 </div>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Edad a la que empezó a hablar: </strong></p>
                   <div class="result-acad-rend">
@@ -998,7 +998,7 @@
                     <p><strong>──────────────────────</strong></p>
                   </div>
                 </div>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Periodo de lactancia: </strong></p>
                   <div class="result-acad-rend">
@@ -1006,7 +1006,7 @@
                     <p><strong>──────────────────────────────────</strong></p>
                   </div>
                 </div>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Edad hasta la cual utilizo el biberón </strong></p>
                   <div class="result-acad-rend">
@@ -1014,7 +1014,7 @@
                     <p><strong>─────────────────────────────────────────────</strong></p>
                   </div>
                 </div>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Edad en la que aprendió a controlar esfínteres: orina </strong></p>
                   <div class="result-acad-rend">
@@ -1027,17 +1027,17 @@
                     <p><strong>───────────────</strong></p>
                   </div>
                 </div>
-  
+
               </div>
-  
+
             </div>
-  
+
             <h2>6.2 Enfermedades (desde la  infancia hasta la actualidad)</h2>
-  
+
             <div class="justiciar">
-  
+
               <div class="acad-rend">
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Enfermedades: </strong></p>
                   <div class="result-acad-rend">
@@ -1050,7 +1050,7 @@
                     <p><strong>──────────────────────</strong></p>
                   </div>
                 </div>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Alergias: </strong></p>
                   <div class="result-acad-rend">
@@ -1069,7 +1069,7 @@
                     <p><strong>────</strong></p>
                   </div>
                 </div>
-  
+
                 <div class="item-acad-rend">
                   <p><strong>Otros  </strong></p>
                   <div class="result-acad-rend">
@@ -1077,58 +1077,58 @@
                     <p><strong>───────────────────────────────────────────────────────────────</strong></p>
                   </div>
                 </div>
-  
+
               </div>
-  
+
             </div>
-  
+
             <h2>6.3 Antecedentes patológicos familiares</h2>
-  
-  
+
+
             <div class="cuadrados2-input">
-  
+
               <div class="cuadrados3"><p>Obesidad</p>
                 <div class="cuadrados2">
                   <p class="cuadrado-p" *ngIf="estudiante.obesidad === 'Si'">X</p>
                 </div>
               </div>
-  
+
               <div class="cuadrados3"><p>enfermedades cardiacas</p>
                 <div class="cuadrados2">
                   <p class="cuadrado-p" *ngIf="estudiante.cardiacas === 'Si'">X</p>
                 </div>
               </div>
-  
+
               <div class="cuadrados3"><p>hipertensión</p>
                 <div class="cuadrados2">
                   <p class="cuadrado-p" *ngIf="estudiante.hipertension === 'Si'">X</p>
                 </div>
               </div>
-  
+
             </div>
-  
+
             <div class="espacios8"></div>
-  
+
             <div class="cuadrados2-input">
-  
+
               <div class="cuadrados3"><p>Diabetes</p>
                 <div class="cuadrados2">
                   <p class="cuadrado-p" *ngIf="estudiante.diabetes === 'Si'">X</p>
                 </div>
               </div>
-  
+
               <div class="cuadrados3"><p>enfermedades mentales</p>
                 <div class="cuadrados2">
                   <p class="cuadrado-p" *ngIf="estudiante.mentales === 'Si'">X</p>
                 </div>
               </div>
-  
+
               <div class="cuadrados3"><p>otros </p>
                 <div class="cuadrados2">
                   <p class="cuadrado-p" *ngIf="estudiante.otros_pato === 'Si'">X</p>
                 </div>
               </div>
-  
+
               <div class="acad-rend2">
                 <div class="item-acad-rend">
                   <p><strong></strong></p>
@@ -1138,35 +1138,35 @@
                   </div>
                 </div>
               </div>
-  
+
             </div>
-  
-  
+
+
             <p class="espacios4"><strong>Observaciones</strong></p>
             <label class="raya-p1">{{estudiante.descripcion_hijo}}</label>
-  
+
             <h2>6.4 Realice una descripción de su hijo/a. Considere también sus costumbres, carácter, hábitos, actividades en el tiempo libre, nivel de organización y responsabilidad, valores,</h2>
-  
+
             <div class="text-raya6">
               <h2><strong>etc. </strong></h2>
             </div>
-  
+
             <label class="raya-p1">{{estudiante.descripcion_hijo}}</label>
-  
+
             <div class="espacios8"></div>
-  
+
             <p class="tamaño-max-p"><strong>Doy fe de que la información aquí proporcionada es fidedigna de lo cual  me responsabilizo firmando, pudiendo la misma ser sometida a verificación.</strong></p>
-  
+
             <div class="espacios7"></div>
-  
+
             <div class="text-raya1">
               <p><strong>Firma </strong></p><hr>
             </div>
-  
+
             <div class="espacios8"></div>
-  
+
             <div class="acad-rend">
-  
+
               <div class="item-acad-rend">
                 <p><strong>Nombre de Representante: &nbsp; </strong></p>
                 <pre>&nbsp;           </pre>
@@ -1175,7 +1175,7 @@
                   <p><strong>...........................................................................................................</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>Cédula identidad: &nbsp; </strong></p>
                 <pre>&nbsp;                   </pre>
@@ -1184,7 +1184,7 @@
                   <p><strong>...........................................................................................................</strong></p>
                 </div>
               </div>
-  
+
               <div class="item-acad-rend">
                 <p><strong>Fecha: &nbsp; </strong></p>
                 <pre>&nbsp;                            </pre>
@@ -1193,17 +1193,16 @@
                   <p><strong>...........................................................................................................</strong></p>
                 </div>
               </div>
-  
+
             </div>
-  
+
           </div>
-  
+
         </div>
-  
+
       </div>
     </div>
-  
+
     <br><br>
-  
+
   </section>
-  

@@ -1,0 +1,300 @@
+
+*,
+*:after,
+*:before {
+   box-sizing: border-box;
+}
+
+
+input,
+button,
+select,
+textarea {
+   font: inherit;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+
+.window-main-body {
+   display: flex;
+
+}
+
+
+.editor {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border-radius: 25px;
+   padding-top: 1.5rem;
+   padding-bottom: 2rem;
+   padding-left: 2.5vw;
+   padding-right: 1.5vw;
+   height: 100%;
+   overflow-y: auto;
+   background-color: #ffffff;
+   &::-webkit-scrollbar {
+      width: 15px;
+      background-color: #efefef;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      width: 5px;
+      border-radius: 99em;
+      background-color: #cdcdcd;
+      border: 5px solid #efefef;
+   }
+}
+.editor-input-group {
+   display: flex;
+   flex-direction: column;
+   & + * {
+      margin-top: 1.5rem;
+   }
+}
+
+.editor-input-label {
+   font-weight: 600;
+}
+
+
+
+.editor-toolbar {
+   background-color: #fff;
+   border: 1px solid #ddd;
+   padding: 0.5rem;
+   display: flex;
+   flex-wrap: wrap;
+   top: calc(-3rem - 1px);
+   position: sticky;
+   z-index: 200;
+   align-items: center;
+}
+
+.editor-toolbar-item {
+   background-color: transparent;
+   border: 0;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   border-radius: 6px;
+   transition: 0.15s ease;
+
+   &.icon {
+      width: 2rem;
+      height: 2rem;
+   }
+
+   &.dropdown {
+      min-width: 150px;
+      justify-content: space-between;
+      height: 2rem;
+   }
+
+   svg {
+      width: 1.25rem;
+      height: 1.25rem;
+   }
+   &:hover {
+      background-color: #ededed;
+   }
+}
+
+.separator {
+   height: 1rem;
+   width: 2px;
+   background-color: #DDD;
+   display: block;
+   margin-left: .625rem;
+   margin-right: .625rem;
+}
+
+
+
+.window-panel {
+   background-color: #19194a;
+   padding: 2rem;
+   position: relative;
+   overflow-y: auto;
+
+
+   &::-webkit-scrollbar {
+      width: 15px;
+      background-color: #19194a;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      width: 5px;
+      border-radius: 99em;
+      background-color: mix(#FFF,#19194a, 25%);
+      border: 5px solid #19194a;
+   }
+
+   &:after {
+      content: "";
+      width: calc(100% + 4rem);
+      height: 50px;
+      margin-left: -2rem;
+      bottom: -2rem;
+      background-image: linear-gradient(to top, #19194a 0%, transparent 100%);
+      display: block;
+      position: sticky;
+      z-index: 100;
+   }
+}
+
+.window-main-body-right {
+   background-color: #fff;
+   border-left: 1px solid #ddd;
+   overflow-y: auto;
+   padding-bottom: 3rem;
+   &::-webkit-scrollbar {
+	width: 15px;
+	background-color: #fff;
+ }
+
+ &::-webkit-scrollbar-thumb {
+	width: 5px;
+	border-radius: 99em;
+	background-color: #cdcdcd;
+	border: 5px solid #fff;
+ }
+}
+
+
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+
+
+@media print {
+  .nav-left{
+    display: none;
+  }
+  .window-main-body {
+    display: flex;
+    flex-direction: column;
+ }
+  .editor-toolbar{
+    display: none;
+  }
+}
+
+
+.encabezado{
+
+  h1{
+    font-size: 17px;
+    text-align: center;
+  }
+
+  h3{
+    text-align: center;
+  }
+
+}
+
+.region-año{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  h3{
+    font-size: 15px;
+  }
+}
+
+
+.parrafo-datos1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+
+  .parrafo-cont{
+    display: flex;
+
+    p{
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  }
+
+}
+
+
+
+
+
+
+table.tableizer-table {
+  font-size: 14px;
+  border: 1px solid #CCC;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.tcuerpo td {
+  padding: 8px;
+  margin: 16px 8px;
+  border: 1px solid #CCC;
+  text-align: center;
+
+}
+
+.tcabezera th {
+  background-color: #104E8B;
+  color: #FFF;
+  font-weight: bold;
+  padding: 8px;
+  margin: 8px;
+  text-align: center;
+
+}
+
+.tcuerpo2 td {
+  padding: 2px;
+
+}
+
+.tcabezera2 th {
+  color: #000000;
+  font-weight: bold;
+  padding: 2px;
+  margin: 2px;
+
+}
+
+.label-cuadrado{
+  text-align: center;
+}
+
+.cuadrado{
+  border: 1px solid #CCC;
+  width: 40px;
+  height: 25px;
+  text-align: center;
+}
+
+
+.tableizer-firstrow2{
+  text-align: left;
+
+}
+
+.tableizer-firstrow3{
+  font-size: 17px;
+}
+
+
+
+
+
+

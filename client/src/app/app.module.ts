@@ -59,6 +59,7 @@ import { LayoutRecordComponent } from './pdf/layout-record/layout-record.compone
 import { TextGeneroComponent } from './graficos/text-genero/text-genero.component';
 import { TextSegurosComponent } from './graficos/text-seguros/text-seguros.component';
 import { TextMatriculaComponent } from './graficos/text-matricula/text-matricula.component';
+import { SegurosResultComponent } from './pages-result/seguros-result/seguros-result.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { TextMatriculaComponent } from './graficos/text-matricula/text-matricula
     LayoutRecordComponent,
     TextGeneroComponent,
     TextSegurosComponent,
-    TextMatriculaComponent
+    TextMatriculaComponent,
+    SegurosResultComponent
   ],
   imports: [
     BrowserModule,

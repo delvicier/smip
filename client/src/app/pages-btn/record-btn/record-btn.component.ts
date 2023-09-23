@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VistasService } from 'src/app/services/vistas-service/vistas.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-record-btn',
@@ -8,16 +8,16 @@ import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 })
 export class RecordBtnComponent {
 
-  constructor(public vistas: VistasService) {
+  constructor(public vistas2: Vistas2Service) {
 
   }
 
   mostrarComponente(numeroComponente3: number) {
-    this.vistas.mostrarComponente3(numeroComponente3);
+    this.vistas2.mostrarComponente3(numeroComponente3);
   }
 
   ocultarComponente() {
-    this.vistas.ocultarComponente3();
+    this.vistas2.ocultarComponente3();
   }
 }
 

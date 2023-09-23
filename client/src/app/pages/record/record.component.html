@@ -1,68 +1,67 @@
 <div class="cuerpo">
 
     <div class="contenedor">
-  
+
       <div class="contenido2">
-  
+
           <div class="sub-contenido1">
-  
+
             <!-- BOTONES IZQUIERDA-->
-  
+
             <div>
               <app-nav-left3></app-nav-left3>
             </div>
-  
+
             <div>
               <app-grafic-matricula></app-grafic-matricula>
               <app-text-matricula></app-text-matricula>
             </div>
-  
-            <div *ngIf="vistas.numero3 === null || vistas.numero3 === 1 || vistas.numero3 === 2 || vistas.numero3 === 3">
+
+            <div *ngIf="vistas2.numero3 === null || vistas2.numero3 === 1 || vistas2.numero3 === 2 || vistas2.numero3 === 3">
               <app-record-search></app-record-search>
             </div>
-  
-            <div *ngIf="vistas.numero3 === 4">
+
+            <div *ngIf="vistas2.numero3 === 4">
               <app-record2-search></app-record2-search>
             </div>
-  
-  
+
+
             <!-- BOTONES DERECHA -->
             <div>
               <app-record-btn></app-record-btn>
             </div>
-  
+
           </div>
-  
+
           <div class="sub-contenido2">
-  
-  
+
+
             <div class="contenido-resultado">
-  
-              <div *ngIf="vistas.numero3 === 1">
+
+              <div *ngIf="vistas2.numero3 === 1">
                 <app-record-doc></app-record-doc>
               </div>
-  
-              <div *ngIf="vistas.numero3 === 2">
+
+              <div *ngIf="vistas2.numero3 === 2">
                 <app-record-add></app-record-add>
               </div>
-  
-              <div *ngIf="vistas.numero3 === 3">
-                <app-record-result></app-record-result>
+
+              <div *ngIf="vistas2.numero3 === 3">
+                <app-record-editpdf></app-record-editpdf>
               </div>
-  
-              <div *ngIf="vistas.numero3 === 4">
+
+              <div *ngIf="vistas2.numero3 === 4">
                 <app-record-edit></app-record-edit>
               </div>
-  
-  
+
+
             </div>
-  
-  
+
+
           </div>
       </div>
-  
+
     </div>
   </div>
-  
-  
-  
+
+

@@ -1,55 +1,54 @@
 <div class="cuerpo">
 
     <div class="contenedor">
-  
+
       <div class="contenido1">
         <app-nav-left2></app-nav-left2>
       </div>
-  
+
       <div class="contenido2">
-  
+
           <div class="sub-contenido1">
-  
+
             <div>
               <app-grafic-genero></app-grafic-genero>
               <app-text-genero></app-text-genero>
             </div>
-  
-            <div *ngIf="vistas.numero2 === null || vistas.numero2 === 1 || vistas.numero2 === 2 || vistas.numero2 === 3">
+
+            <div *ngIf="vistas2.numero2 === null || vistas2.numero2 === 1 || vistas2.numero2 === 2 || vistas2.numero2 === 3">
               <app-dece-search></app-dece-search>
             </div>
-  
+
             <!-- BOTONES -->
             <div>
               <app-dece-btn></app-dece-btn>
             </div>
-  
+
           </div>
-  
+
           <div class="sub-contenido2">
-  
-  
+
+
             <div class="contenido-resultado">
-  
-              <div *ngIf="vistas.numero2 === 1">
+
+              <div *ngIf="vistas2.numero2 === 1">
                 <app-dece-doc></app-dece-doc>
               </div>
-  
-              <div *ngIf="vistas.numero2 === 2">
+
+              <div *ngIf="vistas2.numero2 === 2">
                 <app-dece-add></app-dece-add>
               </div>
-  
-              <div *ngIf="vistas.numero2 === 3">
+
+              <div *ngIf="vistas2.numero2 === 3">
                 <app-dece-result></app-dece-result>
               </div>
-  
+
             </div>
-  
-  
+
+
           </div>
       </div>
-  
+
     </div>
   </div>
-  
-    
+

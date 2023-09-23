@@ -5,7 +5,8 @@ import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece'
 import { FormControl, FormGroup } from '@angular/forms';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
-
+import { HomeService } from 'src/app/services/home-service/home.service';
+import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 
 @Component({
   selector: 'app-pdf-dece',
@@ -129,21 +130,22 @@ export class PdfDeceComponent {
     },
   };
 
-  constructor(private matriculaService: MatriculaService, private deceService: DeceService ) {
+  constructor(private homeService: HomeService, private deceService: DeceService, public vistasService: VistasService ) {
 
   }
+
 
   ngOnInit() {
     this.deceService.labelClickEvent.subscribe(() => {
-      this.getVistaHoja1();
-      this.getVistaHoja2();
-      this.getVistaHoja3();
-      this.getVistaHoja4();
+      this.getformulario1();
+      this.getformulario2();
+      this.getformulario3();
+      this.getformulario4();
     });
   }
 
-  getVistaHoja1() {
-    const id = this.matriculaService.cedulaid;
+  getformulario1() {
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja1Dece(id).subscribe(
         response => {
@@ -153,8 +155,9 @@ export class PdfDeceComponent {
     }
   }
 
-  getVistaHoja2() {
-    const id = this.matriculaService.cedulaid;
+
+  getformulario2() {
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja2Dece(id).subscribe(
         response => {
@@ -164,8 +167,9 @@ export class PdfDeceComponent {
     }
   }
 
-  getVistaHoja3() {
-    const id = this.matriculaService.cedulaid;
+
+  getformulario3() {
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja3Dece(id).subscribe(
         response => {
@@ -175,8 +179,9 @@ export class PdfDeceComponent {
     }
   }
 
-  getVistaHoja4() {
-    const id = this.matriculaService.cedulaid;
+
+  getformulario4() {
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja4Dece(id).subscribe(
         response => {
@@ -185,6 +190,7 @@ export class PdfDeceComponent {
       );
     }
   }
+
 
 
 
@@ -236,11 +242,11 @@ export class PdfDeceComponent {
   }
 
   cambiarComponDece(numeroComponente: number) {
-    this.deceService.mostrarComponente(numeroComponente);
+    this.vistasService.mostrarComponente(numeroComponente);
   }
 
-  ocultarComponDece() {
-    this.deceService.ocultarComponente();
+  ocultarComponenteDece() {
+    this.vistasService.ocultarComponente();
   }
 
 }

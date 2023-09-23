@@ -1,68 +1,67 @@
 <div class="cuerpo">
 
     <div class="contenedor">
-  
+
       <div class="contenido1">
         <app-nav-left2></app-nav-left2>
       </div>
-  
+
       <div class="contenido2">
-  
+
           <div class="sub-contenido1">
-  
+
             <div>
               <app-grafic-matricula></app-grafic-matricula>
               <app-text-matricula></app-text-matricula>
             </div>
-  
-            <div *ngIf="vistas.numero=== null || vistas.numero=== 1 || vistas.numero=== 2 || vistas.numero=== 3">
+
+            <div *ngIf="vistas2.numero=== null || vistas2.numero=== 1 || vistas2.numero=== 2 || vistas2.numero=== 3">
               <app-matricula-search></app-matricula-search>
             </div>
-  
-            <div *ngIf="vistas.numero=== 4">
+
+            <div *ngIf="vistas2.numero=== 4">
               <app-matricula2-search></app-matricula2-search>
             </div>
-  
-  
+
+
             <!-- BOTONES -->
             <div>
               <app-matricula-btn></app-matricula-btn>
             </div>
-  
+
           </div>
-  
+
           <div class="sub-contenido2">
-  
-  
+
+
             <div class="contenido-resultado">
-  
-              <div *ngIf="vistas.numero=== 1">
+
+              <div *ngIf="vistas2.numero=== 1">
                 <app-matricula-doc></app-matricula-doc>
               </div>
-  
-              <div *ngIf="vistas.numero=== 2">
+
+              <div *ngIf="vistas2.numero=== 2">
                 <app-matricula-add></app-matricula-add>
               </div>
-  
-              <div *ngIf="vistas.numero=== 3">
+
+              <div *ngIf="vistas2.numero=== 3">
               <app-matricula-result></app-matricula-result>
               </div>
-  
-              <div *ngIf="vistas.numero=== 4">
+
+              <div *ngIf="vistas2.numero=== 4">
                 <app-matricula-edit></app-matricula-edit>
               </div>
-  
-              <div *ngIf="vistas.numero=== null" class="por-defecto">
+
+              <div *ngIf="vistas2.numero=== null" class="por-defecto">
               </div>
-  
-  
+
+
             </div>
-  
-  
+
+
           </div>
       </div>
-  
+
     </div>
   </div>
-  
-  
+

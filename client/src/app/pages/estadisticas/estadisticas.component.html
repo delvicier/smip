@@ -2,35 +2,35 @@
 <div class="cuerpo">
 
     <div class="contenido">
-  
+
       <app-nav-left2></app-nav-left2>
-  
+
       <div class="contenedor">
         <div class="titulo">
         </div>
-  
+
         <div class="tarjetas">
-  
+
           <div>
             <app-grafic-matricula></app-grafic-matricula>
-  
+
             <app-text-matricula></app-text-matricula>
           </div>
-  
+
           <div>
             <app-grafic-seguros></app-grafic-seguros>
           </div>
-  
+
           <div>
             <app-grafic-genero></app-grafic-genero>
-  
+
             <app-text-genero></app-text-genero>
           </div>
-  
+
         </div>
-  
+
         <div class="datos-estudiantes">
-  
+
           <div class="wrapper-botones">
             <div class="botones">
               <div class="radio-inputs">
@@ -47,7 +47,7 @@
                   <input (click)="mostrarComponente2(2)" type="radio" name="radio" />
                   <span class="name">Pag 2</span>
                 </label>
-  
+
                 <label class="radio">
                   <input (click)="mostrarComponente2(3)" type="radio" name="radio" />
                   <span class="name">Pag 3</span>
@@ -55,13 +55,13 @@
               </div>
             </div>
           </div>
-  
+
           <h2>Registro Total de Estudiantes</h2>
-  
+
           <br>
-  
-          <section *ngIf="componente2 === null || componente2 === 1">
-  
+
+          <section *ngIf="vistas2.numero2 === null || vistas2.numero2 === 1">
+
             <div class="wrapper-tabla">
               <table class="tableizer-table">
                 <div class="tabla">
@@ -82,7 +82,7 @@
                       <th>Fecha Matricula</th>
                     </tr>
                   </thead>
-  
+
                   <tbody class="tcuerpo">
                     <tr *ngFor="let item of estudiantes">
                       <td>{{item.id}}</td>
@@ -100,13 +100,13 @@
                 </div>
               </table>
             </div>
-  
+
           </section>
-  
+
           <br>
-  
-          <section *ngIf=" componente2 === 2">
-  
+
+          <section *ngIf=" vistas2.numero2 === 2">
+
             <div class="wrapper-tabla">
               <table class="tableizer-table">
                 <div class="tabla">
@@ -126,7 +126,7 @@
                       <th>Dirección</th>
                     </tr>
                   </thead>
-  
+
                   <tbody class="tcuerpo">
                     <tr *ngFor="let item of estudiantes">
                       <td>{{item.cedula}}</td>
@@ -143,13 +143,13 @@
                 </div>
               </table>
             </div>
-  
+
           </section>
-  
+
           <br>
-  
-          <section *ngIf=" componente2 === 3">
-  
+
+          <section *ngIf=" vistas2.numero2 === 3">
+
             <div class="wrapper-tabla">
               <table class="tableizer-table">
                 <div class="tabla">
@@ -167,7 +167,7 @@
                       <th>Celular</th>
                     </tr>
                   </thead>
-  
+
                   <tbody class="tcuerpo">
                     <tr *ngFor="let item of estudiantes">
                       <td>{{item.cedula}}</td>
@@ -182,19 +182,18 @@
                 </div>
               </table>
             </div>
-  
+
           </section>
-  
+
         </div>
-  
+
         <section style="text-align: center;">
-  
+
           <br> <br>
         </section>
-  
+
       </div>
-  
+
     </div>
-  
+
   </div>
-  

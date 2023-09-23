@@ -1,21 +1,21 @@
 enum Parentesco {
-    Padre = 'Padre',
-    Madre = 'Madre',
-    Abuelo = 'Abuelo/a',
-    Tio = 'Tio/a',
-    Hermano = 'Hermano/a',
-    Otros = 'Otros'
-  }
-  
-  enum Jornada {
-    Padre = 'Padre',
-    Madre = 'Madre',
-    Abuelo = 'Abuelo/a',
-    Tio = 'Tio/a',
-    Hermano = 'Hermano/a',
-    Otros = 'Otros'
-  }
-  
+  Padre = 'Padre',
+  Madre = 'Madre',
+  Abuelo = 'Abuelo/a',
+  Tio = 'Tio/a',
+  Hermano = 'Hermano/a',
+  Otros = 'Otros'
+}
+
+enum Jornada {
+  Padre = 'Padre',
+  Madre = 'Madre',
+  Abuelo = 'Abuelo/a',
+  Tio = 'Tio/a',
+  Hermano = 'Hermano/a',
+  Otros = 'Otros'
+}
+
   export interface Estudiantes {
     id: number;
     nombres?: string;
@@ -47,5 +47,4 @@ enum Parentesco {
     fecha_matri?: string;
     especialidad?: string;
   }
-  
-  
+

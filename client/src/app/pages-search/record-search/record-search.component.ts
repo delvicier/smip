@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Record } from 'src/app/models/record';
 import { FormControl, FormGroup } from '@angular/forms';
 import { RecordService } from 'src/app/services/record-service/record.service';
-import { VistasService } from 'src/app/services/vistas-service/vistas.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-record-search',
@@ -15,7 +15,7 @@ export class RecordSearchComponent {
   record: Record[] =[];
   searchForm: FormGroup;
 
-  constructor( private recordService:RecordService, public vistas: VistasService ) {
+  constructor( private recordService:RecordService, public vistas2: Vistas2Service ) {
     this.searchForm = new FormGroup({
       curso: new FormControl,
       jornada: new FormControl,
@@ -36,11 +36,11 @@ export class RecordSearchComponent {
   }
 
   mostrarComponente(numeroComponente3: number) {
-    this.vistas.mostrarComponente3(numeroComponente3);
+    this.vistas2.mostrarComponente3(numeroComponente3);
   }
 
   ocultarComponente() {
-    this.vistas.ocultarComponente3();
+    this.vistas2.ocultarComponente3();
   }
 
   busquedas(){

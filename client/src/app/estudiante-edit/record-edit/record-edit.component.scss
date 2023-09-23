@@ -1,0 +1,146 @@
+
+
+.tabla {
+  border-radius: 5px 5px 0px 0px;
+  background-color: #248de3;
+  overflow: hidden;
+  margin: 0px 45px;
+
+}
+
+.tableizer-table {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin: auto;
+
+}
+
+.tcabezera {
+  background: linear-gradient( #2f5390, #3161ae);
+
+}
+
+.tcabezera th {
+  border: 1px solid #248de3;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px;
+  margin: 8px;
+  text-align: center;
+
+}
+
+.tcuerpo {
+  border: 1px solid #248de3;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #fff;
+  overflow: hidden;
+
+}
+
+.tcuerpo td {
+  padding: 6px;
+  margin: 12px 6px;
+  border: 1px solid #248de3;
+  text-align: center;
+  background-color: #fff;
+
+}
+
+
+
+
+input{
+  outline: none;
+}
+
+.detalles-notas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 45px;
+  margin-bottom: 15px;
+}
+
+.input1{
+  text-align: center;
+  width: 37px;
+  height: 20px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  outline: none;
+  border: none;
+}
+
+.input2{
+  text-align: center;
+  max-width: 80px;
+  height: 20px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  outline: none;
+  border: none;
+}
+
+.input-text{
+  width: 800px;
+  height: 30px;
+  border: none;
+  text-align: start;
+  text-decoration: none;
+  box-shadow: 0 1px 3px 0 rgba(31, 71, 135, 0.37);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 8px;
+  padding: 4px 0px 4px 8px;
+  margin: 5px 4px;
+}
+
+.wrapper-botones{
+  position: relative;
+}
+
+.botones{
+  position: absolute;
+  top: -7;
+  right: 40px;
+}
+
+.boton{
+  margin-left: 10px;
+  padding: 0px 5px;
+  border: none;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.boton:hover{
+  scale: 1.1;
+
+}
+
+.titulo{
+  text-align: center;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+
+    h1{
+      font-size: 27px;
+      color: #03396e;
+      display: inline-block;
+      border-bottom: 4px solid #2ea0e2;
+    }
+}
+
+h3{
+  color: #03396e;
+  padding-bottom: 1px;
+  margin: 5px 0px;
+}
+
+.textarea1{
+  background-color: transparent;
+  outline: none;
+  border: none;
+}

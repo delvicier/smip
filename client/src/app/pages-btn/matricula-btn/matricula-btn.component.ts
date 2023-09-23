@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VistasService } from 'src/app/services/vistas-service/vistas.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
   selector: 'app-matricula-btn',
@@ -8,17 +8,17 @@ import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 })
 export class MatriculaBtnComponent {
 
-  constructor(public vistas: VistasService) {
+  constructor(public vistas2: Vistas2Service) {
 
   }
 
   mostrarComponente(numeroComponente: number) {
-    this.vistas.mostrarComponente(numeroComponente);
+    this.vistas2.mostrarComponente(numeroComponente);
   }
 
   ocultarComponente() {
-    this.vistas.ocultarComponente();
+    this.vistas2.ocultarComponente();
   }
-  
+
 }
 

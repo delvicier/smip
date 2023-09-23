@@ -16,6 +16,7 @@ export class DeceService {
 
   constructor( private http: HttpClient) { }
 
+  deceid: any;
   cedulaid: any;
 
   numero: number | null = null;

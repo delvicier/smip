@@ -30,21 +30,6 @@ app.post("/login", (req, res) => {
   res.send({token})
 })
 
-app.get ("/private", (req, res) => {
-  try {
-    const token = req.headers.authorization.split(" ") [1]
-    const payload = jwt.verify(token, secret)
-
-    if(Date.now() > payload.exp){
-      return res.status(401).send({error: "token expired"})
-    }
-    res.send("ready")
-
-  } catch (error) {
-    res.status(401).send({error: error.message})
-  }
-})
-
 app.use(estudiantesRoutes);
 
 app.listen(process.env.PUERTO, () => {

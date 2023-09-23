@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
 import { DeceService } from 'src/app/services/dece-service/dece.service';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-dece-editpdf',
@@ -22,7 +23,7 @@ export class DeceEditpdfComponent {
   formulario3: FormGroup;
   formulario4: FormGroup;
 
-  constructor(private matriculaService: MatriculaService, private deceService: DeceService ){
+  constructor(private homeService: HomeService, private deceService: DeceService ){
 
     this.formulario1 = new FormGroup({
       nombres: new FormControl(),
@@ -193,7 +194,7 @@ export class DeceEditpdfComponent {
   }
 
   getformulario1() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja1Dece(id).subscribe(
         response => {
@@ -204,7 +205,7 @@ export class DeceEditpdfComponent {
   }
 
   onSubmit1() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     const formValues = this.formulario1.value;
     this.deceService.updateHoja1Dece(id, formValues).subscribe(
       (response) => {
@@ -217,7 +218,7 @@ export class DeceEditpdfComponent {
   }
 
   getformulario2() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja2Dece(id).subscribe(
         response => {
@@ -228,7 +229,7 @@ export class DeceEditpdfComponent {
   }
 
   onSubmit2() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     const formValues = this.formulario2.value;
     this.deceService.updateHoja2Dece(id, formValues).subscribe(
       (response) => {
@@ -241,7 +242,7 @@ export class DeceEditpdfComponent {
   }
 
   getformulario3() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja3Dece(id).subscribe(
         response => {
@@ -252,7 +253,7 @@ export class DeceEditpdfComponent {
   }
 
   onSubmit3() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     const formValues = this.formulario3.value;
     this.deceService.updateHoja3Dece(id, formValues).subscribe(
       (response) => {
@@ -265,7 +266,7 @@ export class DeceEditpdfComponent {
   }
 
   getformulario4() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     if (id) {
       this.deceService.getHoja4Dece(id).subscribe(
         response => {
@@ -276,7 +277,7 @@ export class DeceEditpdfComponent {
   }
 
   onSubmit4() {
-    const id = this.matriculaService.cedulaid;
+    const id = this.homeService.cedulaid;
     const formValues = this.formulario4.value;
     this.deceService.updateHoja4Dece(id, formValues).subscribe(
       (response) => {

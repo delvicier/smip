@@ -5,6 +5,7 @@ import { HomeService } from 'src/app/services/home-service/home.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import { VistasService } from 'src/app/services/vistas-service/vistas.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./pdf-matricula.component.scss']
 })
 export class PdfMatriculaComponent {
-  
+
   formatoEstilos = {
     'hoja-pdf': {
       'margin': '0',
@@ -125,7 +126,7 @@ export class PdfMatriculaComponent {
   pdf = new jsPDF();
   vistapdf = 'estiloformulario';
 
-  constructor(private matriculaService: MatriculaService, public homeService: HomeService ){
+  constructor(public vistasService: VistasService, private homeService: HomeService ){
 
     this.formulario = new FormGroup({
       nombres: new FormControl(),
@@ -203,11 +204,11 @@ export class PdfMatriculaComponent {
   }
 
   cambiarComponente(numeroComponente: number) {
-    this.homeService.mostrarComponente(numeroComponente);
+    this.vistasService.mostrarComponente(numeroComponente);
   }
 
   ocultarComponente() {
-    this.homeService.ocultarComponente();
+    this.vistasService.ocultarComponente();
   }
 
 }

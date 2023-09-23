@@ -2,35 +2,34 @@
 <div class="titulo">
 
     <div class="titulo-foto">
-  
+
       <div class="titulo_matric">
         <h1>Matriculas</h1>
         <a class="btn-cambiar" (click)="ocultarComponente()">
-          <img src="../../../assets/icons/reload.png" width="54" height="54" alt="">
+          <img src="../../../assets/icons/reload.png" width="54" height="54" alt="recargar">
         </a>
       </div>
-  
+
         <img src="../../../assets/img/foto-perfil3.png" width="214" height="214"  alt="foto-perfil">
-  
+
         <div class="titulo-estudiante">
           <h2>Buscar por estudiante...</h2>
         </div>
-  
-        <form [formGroup]="searchForm" method="get" action="">
+
+        <form [formGroup]="searchForm" method="get">
           <div class="buscadorx">
-            <input formControlName="cedula" class="input-buscar" type="text" name="search_post" placeholder="Buscar...">
-  
+            <input formControlName="cedula" class="input-buscar" type="text"  placeholder="Buscar...">
+
             <button (click)="buscar()" class="buscador__btn">
-  
+
              <img class="icon-search" src="../../../assets/icons/search.png" width="18" height="18" alt="logo">
             </button>
           </div>
         </form>
-  
+
         <div class="titulo-detalles">
-  
+
         </div>
-  
+
     </div>
   </div>
-  

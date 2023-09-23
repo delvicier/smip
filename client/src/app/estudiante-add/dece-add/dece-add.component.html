@@ -1,1 +1,958 @@
-<p>dece-add works!</p>
+<div class="body">
+
+  <div class="titulo">
+    <h1>Agregar Estudiantes</h1>
+  </div>
+
+  <div class="contenedor">
+    <br>
+    <form [formGroup]="formulario1" (ngSubmit)="onSubmit1()">
+      <div class="hoja">
+        <h3>1.- DATOS DE IDENTIFICACION / INFORMACIÓN</h3>
+
+        <div class="datos-1">
+          <div class="conten-text">
+            <label><strong>APELLIDOS Y NOMBRES: </strong></label><br />
+            <input class="input5" type="text" placeholder="Nombres" formControlName="nombres" />
+          </div>
+
+          <div class="conten-text">
+            <label><strong>CEDULA: </strong></label><br />
+            <input class="input5" type="text" placeholder="cedula" formControlName="cedula" />
+          </div>
+
+          <div class="conten-text">
+            <label><strong>FECHA DE NACIMIENTO: </strong></label><br />
+            <input class="input5" type="text" placeholder="nacimiento" formControlName="nacimiento"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>LUGAR DE NACIMIENTO: </strong></label><br />
+            <input class="input5" type="text" placeholder="lugar_naci" formControlName="lugar_naci"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>NACIONALIDAD: </strong></label><br />
+            <input class="input5" type="text" placeholder="nacionalidad" formControlName="nacionalidad"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>EDAD ACTUAL: </strong></label><br />
+            <input class="input5" type="text" placeholder="edad" formControlName="edad"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>TIPO DE SANGRE: </strong></label><br />
+            <input class="input5" type="text" placeholder="tipo_sangre" formControlName="tipo_sangre"/>
+          </div>
+
+          <div class="conten-text2">
+            <label><strong>GRUPO ÉTNICO: </strong></label><br />
+            <input type="radio" name="etnia" value="blanco" placeholder="etnia" formControlName="etnia"/> blanco
+            <input type="radio" name="etnia" value="mestizo" placeholder="etnia" formControlName="etnia"/> mestizo
+            <input type="radio" name="etnia" value="indigena" placeholder="etnia" formControlName="etnia"/> indigena <br>
+            <input type="radio" name="etnia" value="afroecuatoriano" />
+            afroecuatoriano
+            <input type="radio" name="etnia" value="otros" placeholder="etnia" formControlName="etnia"/> otros
+          </div>
+
+          <div class="conten-text">
+            <label><strong>RELIGIÓN: </strong></label><br />
+            <input class="input5" type="text" placeholder="religion" formControlName="religion"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>DOMICILIO: </strong></label><br />
+            <input class="input5" type="text" placeholder="domicilio" formControlName="domicilio"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>SECTOR O REFERENCIA: </strong></label><br />
+            <input class="input5" type="text" placeholder="sector_refer" formControlName="sector_refer"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>CAMBIOS DE DOMICILIO RECIENTE: </strong></label><br />
+            <input class="input5" type="text" placeholder="cambio_domi" formControlName="cambio_domi"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>TELEFONO: </strong></label><br />
+            <input class="input5" type="text" placeholder="telefono_deta" formControlName="telefono_deta"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>CELULAR: </strong></label><br />
+            <input class="input5" type="text" placeholder="celular_deta" formControlName="celular_deta"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>CURSO/GRADO: </strong></label><br />
+            <input class="input5" type="text" placeholder="curso" formControlName="curso"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>ESPECIALIDAD: </strong></label><br />
+            <input class="input5" type="text" placeholder="especialidad" formControlName="especialidad"/>
+          </div>
+
+        </div>
+
+
+
+        <h3>2.- DATOS FAMILIARES</h3>
+
+        <table class="tableizer-table">
+          <div class="tabla">
+            <thead class="tcabezera">
+              <tr class="tableizer-firstrow">
+                <th>Nombres de la madre</th>
+                <th>Edad</th>
+                <th>Estado Civil</th>
+                <th>Instrucción</th>
+                <th>Bono solidario</th>
+                <th>Ocupación y lugar de trabajo</th>
+              </tr>
+            </thead>
+
+            <tbody class="tcuerpo">
+              <tr>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3" placeholder="nombres_madre" formControlName="nombres_madre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="4" rows="3"  placeholder="edad_madre" formControlName="edad_madre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="9" rows="3"  placeholder="civil_madre" formControlName="civil_madre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="14" rows="3"  placeholder="instruccion_madre" formControlName="instruccion_madre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3"  placeholder="bono_madre" formControlName="bono_madre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3" placeholder="ocupacion_madre" formControlName="ocupacion_madre"></textarea></td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+
+        <br />
+
+        <div class="datos-2">
+          <div class="conten-text">
+            <label><strong>Teléfono de contacto: </strong></label><br />
+            <input type="text" placeholder="telefono_madre" formControlName="telefono_madre"/>
+          </div>
+          <div class="conten-text">
+            <label><strong>Correo: </strong></label><br />
+            <input type="text" placeholder="correo_madre" formControlName="correo_madre"/>
+          </div>
+        </div>
+
+        <br />
+
+        <table class="tableizer-table">
+          <div class="tabla">
+            <thead class="tcabezera">
+              <tr class="tableizer-firstrow">
+                <th>Nombres del padre</th>
+                <th>Edad</th>
+                <th>Estado Civil</th>
+                <th>Instrucción</th>
+                <th>Bono solidario</th>
+                <th>Ocupación y lugar de trabajo</th>
+              </tr>
+            </thead>
+
+            <tbody class="tcuerpo">
+              <tr>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3"  placeholder="nombres_padre" formControlName="nombres_padre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="4" rows="3" placeholder="edad_padre" formControlName="edad_padre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="9" rows="3" placeholder="civil_padre" formControlName="civil_padre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="14" rows="3" placeholder="instruccion_padre" formControlName="instruccion_padre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="bono_padre" formControlName="bono_padre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3" placeholder="ocupacion_padre" formControlName="ocupacion_padre"></textarea></td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+
+        <br />
+
+        <div class="datos-2">
+          <div class="conten-text">
+            <label><strong>Teléfono de contacto: </strong></label><br />
+            <input type="text" placeholder="telefono_padre" formControlName="telefono_padre"/>
+          </div>
+          <div class="conten-text">
+            <label><strong>Correo: </strong></label><br />
+            <input type="text" placeholder="correo_padre" formControlName="correo_padre"/>
+          </div>
+        </div>
+
+        <br />
+
+        <table class="tableizer-table">
+          <div class="tabla">
+            <thead class="tcabezera">
+              <tr class="tableizer-firstrow">
+                <th>Nombres del representante legal</th>
+                <th>Edad</th>
+                <th>Estado Civil</th>
+                <th>Instrucción</th>
+                <th>Bono solidario</th>
+                <th>Ocupación y lugar de trabajo</th>
+              </tr>
+            </thead>
+
+            <tbody class="tcuerpo">
+              <tr>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3"  placeholder="nombres_repre" formControlName="nombres_repre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="4" rows="3"  placeholder="edad_repre" formControlName="edad_repre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="9" rows="3" placeholder="civil_repre" formControlName="civil_repre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="14" rows="3" placeholder="instruccion_repre" formControlName="instruccion_repre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="bono_repre" formControlName="bono_repre"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3" placeholder="ocupacion_repre" formControlName="ocupacion_repre"></textarea></td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+
+        <br />
+
+        <div class="datos-2">
+          <div class="conten-text">
+            <label><strong>Teléfono de contacto: </strong></label><br />
+            <input type="text" placeholder="telefono_repre" formControlName="telefono_repre"/>
+          </div>
+          <div class="conten-text">
+            <label><strong>Correo: </strong></label><br />
+            <input type="text" placeholder="correo_repre" formControlName="correo_repre"/>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >Nombre de familiar o persona de referencia en caso de no podernos
+              contactar con padre o madre:</strong
+            ></label
+          ><br />
+          <input class="input4" type="text" placeholder="nombre_referencia" formControlName="nombre_referencia"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Teléfono: </strong></label><br />
+          <input class="input1" type="text" placeholder="telefono_referencia" formControlName="telefono_referencia"/>
+        </div>
+
+        <h3>3.-REFERENCIAS FAMILIARES DEL /LA ESTUDIANTE</h3>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >Personas con quien vive el estudiante: (especificar todas las
+              personas que conforman la estructura familiar y viven en la misma
+              casa)</strong
+            ></label
+          ><br />
+          <input class="input6" type="text" placeholder="respuesta1_1" formControlName="respuesta1_1"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Numero de hermanos/as y edades: </strong></label><br />
+          <input class="input6" type="text" placeholder="respuesta1_2" formControlName="respuesta1_2"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Lugar que ocupa entre los hermanos/as: </strong></label
+          ><br />
+          <input class="input6" type="text" placeholder="respuesta1_3" formControlName="respuesta1_3"/>
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >¿Los padres del estudiante están en proceso de separación y/o
+              divorcio?
+            </strong></label
+          ><br />
+          <input class="input6" type="text" placeholder="respuesta1_4" formControlName="respuesta1_4"/>
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >Nombre de hermanos que estudien en la misma institución, edades y
+              cursos
+            </strong></label
+          ><br />
+          <input class="input6" type="text" placeholder="respuesta1_5" formControlName="respuesta1_5"/>
+        </div>
+
+        <div class="conten-text2">
+          <label><strong>Algún familiar privado de libertad: </strong></label
+          ><br />
+          <input type="radio" name="presos" value="Padre" placeholder="presos" formControlName="presos"/> PADRE
+          <input type="radio" name="presos" value="Madre" placeholder="presos" formControlName="presos"/> MADRE
+          <input type="radio" name="presos" value="Hermano/a" placeholder="presos" formControlName="presos"/> HERMANO/A
+        </div>
+
+        <H3>Descripción de la situación familiar y relaciones entre los
+          mismos:</H3>
+
+        <div class="datos-1">
+
+          <div class="conten-text">
+            <label><strong>Relación con el padre: </strong></label><br />
+            <input class="input5" type="text" placeholder="respuesta1_6" formControlName="respuesta1_6"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Relación con la madre: </strong></label><br />
+            <input class="input6" type="text" placeholder="respuesta1_7" formControlName="respuesta1_7"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Relación con sus hermanos (as): </strong></label><br />
+            <input class="input5" type="text" placeholder="respuesta1_8" formControlName="respuesta1_8"/>
+          </div>
+
+          <div class="conten-text">
+            <label
+              ><strong
+                >Novedad en las relaciones con otros familiares:
+              </strong></label
+            ><br />
+            <input class="input6" type="text" placeholder="respuesta1_9" formControlName="respuesta1_9"/>
+          </div>
+
+          <div class="conten-text">
+            <label
+              ><strong
+                >Relación entre padre y madre del estudiante
+              </strong></label
+            ><br />
+            <input class="input5" type="text" placeholder="respuesta1_10" formControlName="respuesta1_10"/>
+          </div>
+
+        </div>
+
+        <h3>Discapacidades familiares</h3>
+
+        <div class="conten-text2">
+          <label
+            ><strong>Familiares con algún tipo de discapacidad: </strong></label
+          ><br />
+          <input type="radio" name="discapacitados" value="Si" placeholder="discapacitados" formControlName="discapacitados"/> Si
+          <input type="radio" name="discapacitados" value="No" placeholder="discapacitados" formControlName="discapacitados"/> No
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong>Determinar quiénes y el tipo de discapacidad</strong></label
+          ><br />
+          <input class="input6" type="text"  placeholder="respuesta1_11" formControlName="respuesta1_11"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Observaciones</strong></label
+          ><br />
+          <input class="input6" type="text"  placeholder="respuesta1_12" formControlName="respuesta1_12"/>
+        </div>
+
+        <br>
+
+        <div class="pie-pagina">
+          <button class="boton" >Guardar</button>
+          <p>Pag 1</p>
+        </div>
+
+      </div>
+    </form>
+
+    <br />
+
+    <form [formGroup]="formulario2" (ngSubmit)="onSubmit2()">
+      <div class="hoja">
+        <h3>3.1 REFERENCIAS SOCIOECONOMICAS GENERALES</h3>
+
+        <p>
+          <strong
+            >Detallar todos los miembros del grupo familiar con quienes vive el
+            estudiante o es dependiente.</strong
+          >
+        </p>
+
+        <br />
+
+        <table class="tableizer-table">
+          <div class="tabla">
+            <thead class="tcabezera">
+              <tr class="tableizer-firstrow">
+                <th>Nombres</th>
+                <th>Parentesco</th>
+                <th>Edad</th>
+                <th>Instrucción <br> Profesión</th>
+                <th>Ocupación <br> actual</th>
+                <th>Ingresos <br> Mensuales</th>
+              </tr>
+            </thead>
+
+            <tbody class="tcuerpo">
+              <tr>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3" formControlName="nombres1"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3" placeholder="parentesco1" formControlName="parentesco1"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="3" rows="3" placeholder="edad1" formControlName="edad1"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="profesion1" formControlName="profesion1"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="ocupacion1" formControlName="ocupacion1"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3" placeholder="ingresos1" formControlName="ingresos1"></textarea></td>
+              </tr>
+
+              <tr>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3" placeholder="nombres2" formControlName="nombres2"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3" placeholder="parentesco2" formControlName="parentesco2"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="3" rows="3" placeholder="edad2" formControlName="edad2"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="profesion2" formControlName="profesion2"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="ocupacion2" formControlName="ocupacion2"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3" placeholder="ingresos2" formControlName="ingresos2"></textarea></td>
+              </tr>
+
+              <tr>
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3"  placeholder="nombres3" formControlName="nombres3"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3"  placeholder="parentesco3" formControlName="parentesco3"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="3" rows="3"  placeholder="edad3" formControlName="edad3"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3"  placeholder="profesion3" formControlName="profesion3"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3"  placeholder="ocupacion3" formControlName="ocupacion3"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3"  placeholder="ingresos3" formControlName="ingresos3"></textarea></td>
+              </tr>
+
+              <tr style="border: 0px 0px 20px 20px; background-color: #248de3; padding-bottom: 1px;">
+                <td><textarea class="textarea1" name="" id="" cols="17" rows="3" placeholder="nombres4" formControlName="nombres4"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3" placeholder="parentesco4" formControlName="parentesco4"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="3" rows="3" placeholder="edad4" formControlName="edad4"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="profesion4" formControlName="profesion4"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="12" rows="3" placeholder="ocupacion4" formControlName="ocupacion4"></textarea></td>
+                <td><textarea class="textarea1" name="" id="" cols="8" rows="3" placeholder="ingresos4" formControlName="ingresos4"></textarea></td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+
+        <h3>3.2. CONDICIONES DE VIVIENDA:</h3>
+
+        <div class="datos-3">
+          <div>
+            <div class="conten-text">
+              <label><strong>Villa </strong></label><br />
+              <input type="text"  placeholder="villa" formControlName="villa"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Propia </strong></label><br />
+              <input type="text"  placeholder="propia" formControlName="propia"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Hipotecada/Crédito </strong></label><br />
+              <input type="text"  placeholder="hipotecas" formControlName="hipotecas"/>
+            </div>
+          </div>
+
+          <div>
+            <div class="conten-text">
+              <label><strong>Departamento </strong></label><br />
+              <input  type="text"  placeholder="departamento" formControlName="departamento"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Arrendada </strong></label><br />
+              <input type="text"  placeholder="arrendada" formControlName="arrendada"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Compartida </strong></label><br />
+              <input type="text" placeholder="compartida" formControlName="compartida"/>
+            </div>
+          </div>
+
+          <div>
+            <div class="conten-text">
+              <label><strong>Casa/Pisos </strong></label><br />
+              <input type="text" placeholder="casa_pisos" formControlName="casa_pisos"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Prestada </strong></label><br />
+              <input type="text" placeholder="prestada" formControlName="prestada"/>
+            </div>
+          </div>
+        </div>
+
+        <h3>3.3. SERVICIOS BÁSICOS DE VIVIENDA:</h3>
+
+        <div class="datos-3">
+          <div>
+            <div class="conten-text">
+              <label><strong>Luz Elétrica </strong></label><br />
+              <input type="text"  placeholder="electricidad" formControlName="electricidad"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Teléfono Fijo </strong></label><br />
+              <input type="text" placeholder="telefono_fijo" formControlName="telefono_fijo"/>
+            </div>
+          </div>
+
+          <div>
+            <div class="conten-text">
+              <label><strong>Agua Potable </strong></label><br />
+              <input type="text" placeholder="agua" formControlName="agua"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Televisión Cable </strong></label><br />
+              <input type="text" placeholder="tv_cable" formControlName="tv_cable"/>
+            </div>
+          </div>
+
+          <div>
+            <div class="conten-text">
+              <label><strong>Alcantarillado </strong></label><br />
+              <input type="text"  placeholder="alcantarillado" formControlName="alcantarillado"/>
+            </div>
+            <div class="conten-text">
+              <label><strong>Internet </strong></label><br />
+              <input type="text"  placeholder="internet" formControlName="internet"/>
+            </div>
+          </div>
+        </div>
+
+        <h3>4. DATOS DE SALUD:</h3>
+
+        <div class="conten-text2">
+          <label
+            ><strong
+              >El estudiante tiene algún tipo de discapacidad:
+            </strong></label
+          ><br />
+          <input type="radio" name="discapacidad" value="Si" placeholder="discapacidad" formControlName="discapacidad"/> Si
+          <input type="radio" name="discapacidad" value="No" placeholder="discapacidad" formControlName="discapacidad"/> No
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Determinar ¿Cuál? </strong></label><br />
+          <input class="input6" type="text"  placeholder="detallar_disc" formControlName="detallar_disc"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Número de carnet de discapacidad: </strong></label><br />
+          <input class="input6" type="text"  placeholder="num_carnet" formControlName="num_carnet"/>
+        </div>
+
+        <div class="conten-text2">
+          <label
+            ><strong
+              >El estudiante recibe atención médica en:
+            </strong></label
+          ><br />
+          <input
+            type="radio"
+            name="atencion_med"
+            value="Privada"
+            placeholder="atencion_med" formControlName="atencion_med"/>
+          Consulta privada
+          <input
+            type="radio"
+            name="atencion_med"
+            value="Subcentro de salud"
+            placeholder="atencion_med" formControlName="atencion_med"/>
+          Subcentro de salud
+          <input
+            type="radio"
+            name="atencion_med"
+            value="Hospital Publico"
+            placeholder="atencion_med" formControlName="atencion_med"/>
+          Hospital público
+          <input type="radio" name="atencion_med" value="IESS" placeholder="atencion_med" formControlName="atencion_med"/>
+          Hospital IESS
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >Nombre del médico que atiende regularmente al estudiante
+            </strong></label
+          ><br />
+          <input class="input6" type="text" placeholder="medic_regular" formControlName="medic_regular"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Observaciones </strong></label><br />
+          <input class="input6" type="text" placeholder="observacion" formControlName="observacion"/>
+        </div>
+
+        <br>
+        <div class="pie-pagina">
+          <button class="boton" >Guardar</button>
+          <div class="cedula">
+            <p> <strong>Cedula:</strong> </p>
+            <input type="text" [ngModel]="cedulaid" formControlName="cedulaEstudiante"/>
+          </div>
+          <p>Pag 2</p>
+        </div>
+
+      </div>
+    </form>
+
+    <br />
+
+    <form [formGroup]="formulario3" (ngSubmit)="onSubmit3()">
+      <div class="hoja">
+        <h3>DATOS ACADEMICOS Y DE RENDIMIENTO</h3>
+
+        <div class="datos-1">
+
+          <div class="conten-text">
+            <label
+              ><strong>Fecha de ingreso al plantel por primera vez: </strong></label
+            ><br />
+            <input class="input6" type="text" placeholder="fecha_ingreso" formControlName="fecha_ingreso"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Qué curso </strong></label><br />
+            <input class="input6" type="text"  placeholder="ingreso_curso" formControlName="ingreso_curso"/>
+          </div>
+
+          <div class="conten-text">
+            <label
+              ><strong
+                >¿El estudiante ha repetido años? (especificar curso repetido):
+              </strong></label
+            ><br />
+            <input class="input6" type="text"  placeholder="repitio_anio" formControlName="repitio_anio"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Institución de la que proviene: </strong></label><br />
+            <input class="input6" type="text"  placeholder="institucion_origen" formControlName="institucion_origen"/>
+          </div>
+
+
+
+
+
+          <div class="conten-text">
+            <label><strong>Lugar / dirección: </strong></label><br />
+            <input class="input6" type="text" placeholder="institucion_lugar" formControlName="institucion_lugar"/>
+          </div>
+
+          <div class="conten-text">
+            <label
+              ><strong
+                >Tipos de problemas escolares que ha presentado últimamente:
+                académicos
+              </strong></label
+            ><br />
+            <input class="input6" type="text" placeholder="problem_academico" formControlName="problem_academico"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Disciplinarios/ comportamiento </strong></label><br />
+            <input class="input6" type="text" placeholder="problem_disciplina" formControlName="problem_disciplina"/>
+          </div>
+
+
+
+
+          <div class="conten-text">
+            <label><strong>Relación entre pares </strong></label><br />
+            <input class="input6" type="text" placeholder="relacion_pares" formControlName="relacion_pares"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Otros </strong></label><br />
+            <input class="input6" type="text"  placeholder="otros_renacad" formControlName="otros_renacad"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Bulliyng </strong></label><br />
+            <input class="input6" type="text"  placeholder="bulliyng" formControlName="bulliyng"/>
+          </div>
+
+      </div>
+
+      <br>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >¿EL ESTUDIANTE PRESENTA ALGUNA DIFICULTAD EN EL APRENDIZAJE O NEE
+              asociadas o no a una discapacidad de las mencionadas en el
+              Reglamento-LOEI Art. 159 y 160? Mencione la dificultad, indique si
+              posee diagnóstico y si requiere adaptaciones curriculares (en caso
+              de tener informe psicopedagógico y/o diagnóstico particular o por
+              UDAI debe presentar por escrito al rector del plantel)
+            </strong></label><br />
+            <textarea class="textarea2" name="" id="" cols="85" rows="3" placeholder="respuesta2_1" formControlName="respuesta2_1"></textarea>
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >¿Presenta alguna situación de vulnerabilidad de las señaladas en el Reglamento-LOEI Art. 156? Puntualice
+            </strong></label
+          ><br />
+          <input class="input6" type="text" placeholder="respuesta2_2" formControlName="respuesta2_2"/>
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >Mencione algún antecedente del estudiante en cuanto a sus
+              relaciones con los demás que según usted debe considerar la institución
+            </strong></label
+          ><br />
+          <input class="input6" type="text"  placeholder="respuesta2_3" formControlName="respuesta2_3"/>
+        </div>
+
+        <h3>5.1. DATOS ACADEMICOS</h3>
+
+        <h3>Asignaturas en las que ha tenido bajo rendimiento:</h3>
+
+        <div class="conten-text">
+          <label><strong>Dignidades alcanzadas (méritos) </strong></label><br />
+          <input class="input6" type="text"  placeholder="respuesta3_1" formControlName="respuesta3_1"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Logros académicos: </strong></label><br />
+          <input class="input6" type="text" placeholder="respuesta3_2" formControlName="respuesta3_2"/>
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >Eventos o actividades en las que ha participado últimamente:
+            </strong></label
+          ><br />
+          <input class="input6" type="text"  placeholder="respuesta3_3" formControlName="respuesta3_3"/>
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong>Clubes o disciplinas en los que participa: </strong></label
+          ><br />
+          <input class="input6" type="text"  placeholder="respuesta3_4" formControlName="respuesta3_4"/>
+        </div>
+
+        <div class="conten-text">
+          <label
+            ><strong
+              >Actividades o cursos extracurriculares que realiza el estudiante:
+            </strong></label
+          ><br />
+          <input class="input6" type="text" placeholder="respuesta3_5" formControlName="respuesta3_5"/>
+        </div>
+
+        <h3>6. HISTORIA VITAL DEL ESTUDIANTE</h3>
+        <h3>6.1. Embarazo y parto</h3>
+
+        <div class="conten-text">
+          <label><strong>Edad de la madre al embarazo: </strong></label><br />
+          <input class="input6" type="text"  placeholder="respuesta4_1" formControlName="respuesta4_1"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Accidentes en el embarazo </strong></label><br />
+          <input class="input6" type="text"  placeholder="respuesta4_2" formControlName="respuesta4_2"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Medicamentos durante el embarazo: </strong></label><br />
+          <input class="input6" type="text"  placeholder="respuesta4_3" formControlName="respuesta4_3"/>
+        </div>
+
+        <h3>
+          Especificar cualquier otra dificultad en el embarazo o al nacer el bebé
+          (preeclampsia, hipoxia, traumas, etc.)
+        </h3>
+
+        <div class="datos-1">
+          <div class="conten-text">
+            <label><strong>años del/la niño/a recién nacido </strong></label
+            ><br />
+            <input class="input6" type="text" placeholder="respuesta4_4" formControlName="respuesta4_4"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Peso al nacer: </strong></label><br />
+            <input class="input6" type="text"  placeholder="respuesta4_5" formControlName="respuesta4_5"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Talla al nacer </strong></label><br />
+            <input class="input6" type="text"  placeholder="respuesta4_6" formControlName="respuesta4_6"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Edad en que empezó a caminar: </strong></label><br />
+            <input class="input6" type="text"  placeholder="respuesta4_7" formControlName="respuesta4_7"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Edad a la que empezó a hablar: </strong></label><br />
+            <input class="input6" type="text"  placeholder="respuesta4_8" formControlName="respuesta4_8"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Periodo de lactancia: </strong></label><br />
+            <input class="input6" type="text"  placeholder="respuesta4_9" formControlName="respuesta4_9"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Edad hasta la cual utilizo el biberón </strong></label
+            ><br />
+            <input class="input6" type="text"  placeholder="respuesta4_10" formControlName="respuesta4_10"/>
+          </div>
+
+          <div class="conten-text">
+            <label
+              ><strong
+                >Edad en la que aprendió a controlar esfínteres: orina
+              </strong></label
+            ><br />
+            <input class="input6" type="text"  placeholder="respuesta4_11" formControlName="respuesta4_11"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Heces: </strong></label><br />
+            <input class="input6" type="text"  placeholder="respuesta4_12" formControlName="respuesta4_12"/>
+          </div>
+        </div>
+
+        <br>
+        <div class="pie-pagina">
+          <button class="boton" >Guardar</button>
+          <div class="cedula">
+            <p> <strong>Cedula:</strong> </p>
+            <input type="text" [ngModel]="cedulaid" formControlName="cedulaEstudiante"/>
+          </div>
+          <p>Pag 3</p>
+        </div>
+
+      </div>
+    </form>
+
+    <br />
+
+    <form [formGroup]="formulario4" (ngSubmit)="onSubmit4()">
+      <div class="hoja2" >
+        <h3>6.2 Enfermedades (desde la infancia hasta la actualidad)</h3>
+
+        <div class="datos-1">
+          <div class="conten-text">
+            <label><strong>Enfermedades: </strong></label><br />
+            <input class="input6" type="text"  placeholder="enfermedades" formControlName="enfermedades"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Accidentes: </strong></label><br />
+            <input class="input6" type="text"  placeholder="accidentes" formControlName="accidentes"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Alergias: </strong></label><br />
+            <input class="input6" type="text" placeholder="alergias" formControlName="alergias"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Cirugías </strong></label><br />
+            <input class="input6" type="text" placeholder="cirugias" formControlName="cirugias"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Perdidas de conocimiento </strong></label><br />
+            <input class="input6" type="text" placeholder="perdida_conoci" formControlName="perdida_conoci"/>
+          </div>
+
+          <div class="conten-text">
+            <label><strong>Otros: </strong></label><br />
+            <input class="input6" type="text" placeholder="otros" formControlName="otros"/>
+          </div>
+        </div>
+
+        <h3>6.3 Antecedentes patológicos familiares</h3>
+
+        <div class="datos-3">
+          <div class="conten-text2">
+            <label><strong>Obesidad </strong></label><br />
+            <input type="radio" name="obesidad" value="Si"  placeholder="obesidad" formControlName="obesidad"/> Si
+            <input type="radio" name="obesidad" value="No"  placeholder="obesidad" formControlName="obesidad"/> No
+          </div>
+          <div class="conten-text2">
+            <label><strong>Cardiacas </strong></label><br />
+            <input type="radio" name="cardiacas" value="Si"  placeholder="cardiacas" formControlName="cardiacas"/> Si
+            <input type="radio" name="cardiacas" value="No"  placeholder="cardiacas" formControlName="cardiacas"/> No
+          </div>
+          <div class="conten-text2">
+            <label><strong>Hipertension </strong></label><br />
+            <input type="radio" name="hipertension" value="Si"  placeholder="hipertension" formControlName="hipertension"/> Si
+            <input type="radio" name="hipertension" value="No"  placeholder="hipertension" formControlName="hipertension"/> No
+          </div>
+          <div class="conten-text2">
+            <label><strong>Diabetes </strong></label><br />
+            <input type="radio" name="diabetes" value="Si"  placeholder="diabetes" formControlName="diabetes"/> Si
+            <input type="radio" name="diabetes" value="No"  placeholder="diabetes" formControlName="diabetes"/> No
+          </div>
+          <div class="conten-text2">
+            <label><strong>Mentales </strong></label><br />
+            <input type="radio" name="mentales" value="Si"  placeholder="mentales" formControlName="mentales"/> Si
+            <input type="radio" name="mentales" value="No"  placeholder="mentales" formControlName="mentales"/> No
+          </div>
+          <div class="conten-text2">
+            <label><strong>Otros</strong></label
+            ><br />
+            <input type="radio" name="otros_pato" value="Si"  placeholder="otros_pato" formControlName="otros_pato"/> Si
+            <input type="radio" name="otros_pato" value="No"  placeholder="otros_pato" formControlName="otros_pato"/> No
+          </div>
+        </div>
+
+        <div class="conten-text2">
+          <label><strong>Otros Detalles: </strong></label><br />
+          <input class="input6" type="text"  placeholder="otros_detalle" formControlName="otros_detalle"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Observaciones </strong></label><br />
+          <input class="input6" type="text"  placeholder="observaciones" formControlName="observaciones"/>
+        </div>
+
+        <div class="conten-text">
+          <h3>
+            6.4 Realice una descripción de su hijo/a. Considere también sus
+            costumbres, carácter, hábitos, actividades en el tiempo libre, nivel
+            de organización y responsabilidad, valores, etc.
+          </h3>
+          <textarea class="textarea2" name="" id="" cols="85" rows="3"  placeholder="descripcion_hijo" formControlName="descripcion_hijo"></textarea>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Nombre de Representante: </strong></label><br />
+          <input class="input6" type="text"  placeholder="nombres_repre" formControlName="nombres_repre"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Cédula identidad: </strong></label><br />
+          <input class="input6" type="text"  placeholder="cedula_repre" formControlName="cedula_repre"/>
+        </div>
+
+        <div class="conten-text">
+          <label><strong>Fecha: </strong></label><br />
+          <input class="input6" type="text"  placeholder="fecha_repre" formControlName="fecha_repre"/>
+        </div>
+
+        <br>
+        <div class="pie-pagina">
+          <button class="boton" >Guardar</button>
+          <div class="cedula">
+            <p> <strong>Cedula:</strong> </p>
+            <input type="text" [ngModel]="cedulaid" formControlName="cedulaEstudiante"/>
+          </div>
+          <p>Pag 4</p>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+</div>
+
