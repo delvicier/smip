@@ -44,7 +44,7 @@ export class GraficMatriculaComponent {
 
   actualizarGraficos(){
     this.pieChartDatasets = [ {
-      data: [ this.matriculaServicio.matriculados, '12' ],
+      data: [ this.matriculaServicio.matriculados, this.matriculaServicio.matriculadosatras ],
       borderColor: ['#2ea2e2','#2ea2e2'],
       backgroundColor: ['#2288d1','#2f5492','#296baf','#28508b','#264981'],
     } ];

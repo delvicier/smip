@@ -1,60 +1,59 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
   }
-  
-  
+
+
   .fichas{
     margin-top: 10px;
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
-  
+
   }
-  
+
   .ficha{
-    padding: 10px 10px;
-    margin: 13px 10px;
+    padding: 8px 10px;
+    margin: 10px 10px;
     background-image: linear-gradient(to bottom right, #ffffff93, #ffffff);
     box-shadow: 2px 2px 6px rgba(11, 40, 83, 0.1);
     border-radius: 25px;
     width: 125px;
-  
+
     h3, h4{
-      margin: 5px 0px;
+      margin: 3px 0px;
       font-size: 18px;
       color: #000000;
     }
   }
-  
+
   .ficha:hover{
     scale: 1.1;
   }
-  
-  
+
+
   a:link,
   a:visited,
   a:active {
       text-decoration: none;
       color: #000000;
   }
-  
+
   a {
     border: none;
   }
-  
-  
-  
+
+
+
   @media (max-width: 1380px) {
-  
+
     .ficha{
       width: 100px;
     }
-  
+
     .ficha h3{
       font-size: 16px;
     }
-  
+
   }
-  
-  
+

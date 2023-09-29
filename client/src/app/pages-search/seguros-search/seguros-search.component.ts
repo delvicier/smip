@@ -43,7 +43,7 @@ export class SegurosSearchComponent {
   }
 
   busquedas(){
-    this.mostrarComponente(3);
+    this.mostrarComponente(2);
     this.buscar2();
   }
 

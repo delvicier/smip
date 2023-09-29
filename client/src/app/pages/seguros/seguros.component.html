@@ -13,14 +13,12 @@
 
           <div class="graficas-sub-contenido1">
 
-            <app-text-seguros></app-text-seguros>
+            <app-text-seguros2></app-text-seguros2>
           </div>
 
           <div *ngIf="vistas2.numero4 === null || vistas2.numero4 === 1 || vistas2.numero4 === 2 || vistas2.numero4 === 3">
             <app-seguros-search></app-seguros-search>
-
           </div>
-
 
           <!-- BOTONES -->
           <div>
@@ -38,8 +36,10 @@
               <app-seguros-doc></app-seguros-doc>
             </div>
 
-            <div *ngIf="vistas2.numero4 === null || vistas2.numero4 === 3">
-              <app-seguros-result></app-seguros-result>
+            <div *ngIf="vistas2.numero4 === 2">
+
+              <app-pdf-seguros></app-pdf-seguros>
+
             </div>
           </div>
 

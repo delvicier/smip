@@ -9,8 +9,8 @@ import { firstValueFrom } from 'rxjs';
 })
 export class MatriculaService {
 
-  private apiUrl = 'http://localhost:4000/estudiante';
-  private apiUrl2 = 'http://localhost:4000/';
+  private apiUrl = 'http://192.168.1.19:4000/estudiante';
+  private apiUrl2 = 'http://192.168.1.19:4000/';
 
   private resultadosSubject: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject2: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
@@ -27,6 +27,7 @@ export class MatriculaService {
   anioid: any;
 
   matriculados: any;
+  matriculadosatras: any;
   hombres: any;
   mujeres: any;
   electromecanica: any;
@@ -40,6 +41,14 @@ export class MatriculaService {
   estadisticas$: Observable<string> = this.estadisticasObs.asObservable();
 
   actualizarValor(nuevoValor: string) {
+    this.estadisticasObs.next(nuevoValor);
+  }
+
+  private estadisticasObs2 = new BehaviorSubject<string>('0');
+
+  estadisticas2$: Observable<string> = this.estadisticasObs2.asObservable();
+
+  actualizarValor2(nuevoValor: string) {
     this.estadisticasObs.next(nuevoValor);
   }
 
@@ -67,7 +76,7 @@ export class MatriculaService {
     this.numero2 = null;
   }
 
-  
+
   login(formValue: any) {
     return firstValueFrom(
       this.http.post<any>(`${this.apiUrl2}login`, formValue )
@@ -80,6 +89,10 @@ export class MatriculaService {
 
   getMatriEstudiante(cedula: string){
     return this.http.get<Estudiantes[]>(`${this.apiUrl}/${cedula}`);
+  }
+
+  getEstadisticas(anio: string){
+    return this.http.get<Estudiantes[]>(`${this.apiUrl2}estadisticas/${anio}`);
   }
 
   buscarPorCedula(cedula: string): void {
@@ -97,7 +110,7 @@ export class MatriculaService {
     return this.resultadosSubject.asObservable();
   }
 
-  
+
   getAllMatriEstudiante(curso: string, jornada: string, anioLectivo: string): Observable<any> {
     const url = `${this.apiUrl2}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`;
     return this.http.get(url);

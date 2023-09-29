@@ -8,7 +8,7 @@ import { Record } from 'src/app/models/record';
 })
 export class RecordService {
 
-  private apiURL = 'http://localhost:4000/';
+  private apiURL = 'http://192.168.1.19:4000/';
   private resultadosSubject3: BehaviorSubject<Record[]> = new BehaviorSubject<Record[]>([]);
   private resultadosSubject4: BehaviorSubject<Record[]> = new BehaviorSubject<Record[]>([]);
 

@@ -1,0 +1,117 @@
+
+.editor {
+  font-size: 9px;
+  border-radius: 1px;
+  padding: 1px;
+  background-color: #ffffff;
+}
+
+.editor-input-label {
+   font-weight: 600;
+}
+
+.editor-toolbar-item {
+   background-color: transparent;
+   border: 0;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 6px;
+   transition: 0.15s ease;
+}
+
+h1{
+  font-size: 11px;
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+  font-size: 11px;
+}
+
+.region-año{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+
+.parrafo-datos1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+
+}
+
+.parrafo-cont{
+  display: flex;
+}
+
+
+table.tableizer-table {
+  width: 297mm;
+  max-height: 210mm;
+  font-size: 9px;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tcuerpo td {
+  padding: 2px;
+  margin: 2px 1px;
+  border: 1px solid #000000;
+  text-align: center;
+
+}
+
+.tcabezera th {
+  background-color: #FFF;
+  border: 1px solid #000000;
+  color: #000000;
+  font-weight: bold;
+  padding: 2px;
+  text-align: center;
+
+}
+
+.tcuerpo2 td {
+  padding: 2px;
+
+}
+
+.tcabezera2 th {
+  color: #000000;
+  font-weight: bold;
+  padding: 2px;
+  margin: 2px;
+
+}
+
+.label-cuadrado{
+  text-align: center;
+}
+
+.cuadrado{
+  border: 1px solid #CCC;
+  height: 12px;
+  text-align: center;
+}
+
+.cuadrado2{
+  border: 1px solid #CCC;
+  height: 12px;
+  max-width: 30px;
+  text-align: center;
+}
+
+.tableizer-firstrow2{
+  text-align: left;
+
+}
+
+.tableizer-firstrow3{
+  font-size: 9px;
+}
+

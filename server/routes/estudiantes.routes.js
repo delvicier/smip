@@ -3,6 +3,7 @@ const {
   getEstudiante,
   getEstudiantes,
   getEstudiantesTotales,
+  getEstudiantesTotalesAnio,
   createEstudiantes,
   updateEstudiante,
   deleteEstudiante,
@@ -27,7 +28,8 @@ const {
   updateH4Dece,
 } = require("../controller/dece.controller.js");
 
-const authMiddleware = require("../middleware.js");
+const authMiddleware = require("../middleware/middleware.js");
+const authMiddleware2 = require("../middleware/middleware2.js");
 
 const router = Router();
 
@@ -36,6 +38,8 @@ router.get('/estudiante/:id', authMiddleware,getEstudiante);
 router.get('/estudiantes', authMiddleware, getEstudiantes);
 
 router.get('/estudiantestotales', authMiddleware, getEstudiantesTotales);
+
+router.get('/estadisticas/:id', authMiddleware2, getEstudiantesTotalesAnio);
 
 router.post('/estudiante', authMiddleware, createEstudiantes);
 
@@ -53,31 +57,31 @@ router.post('/record', authMiddleware, createRecord);
 router.put('/record/cedula/:cedula', authMiddleware, updateRecord);
 
 
-router.get('/deces', getDece);
+router.get('/deces', authMiddleware2, getDece);
 
-router.get('/decehoja1/:id', authMiddleware, getHoja1Dece);
+router.get('/decehoja1/:id', authMiddleware2, getHoja1Dece);
 
-router.get('/decehoja2/:id', authMiddleware, getHoja2Dece);
+router.get('/decehoja2/:id', authMiddleware2, getHoja2Dece);
 
-router.get('/decehoja3/:id', authMiddleware, getHoja3Dece);
+router.get('/decehoja3/:id', authMiddleware2, getHoja3Dece);
 
-router.get('/decehoja4/:id', authMiddleware, getHoja4Dece);
+router.get('/decehoja4/:id', authMiddleware2, getHoja4Dece);
 
-router.post('/deceh1', authMiddleware, createH1Dece);
+router.post('/deceh1', authMiddleware2, createH1Dece);
 
-router.post('/deceh2', authMiddleware, createH2Dece);
+router.post('/deceh2', authMiddleware2, createH2Dece);
 
-router.post('/deceh3', authMiddleware, createH3Dece);
+router.post('/deceh3', authMiddleware2, createH3Dece);
 
-router.post('/deceh4', authMiddleware, createH4Dece);
+router.post('/deceh4', authMiddleware2, createH4Dece);
 
-router.put('/deceh1/:cedula', authMiddleware, updateH1Dece);
+router.put('/deceh1/:cedula', authMiddleware2, updateH1Dece);
 
-router.put('/deceh2/:cedula', authMiddleware, updateH2Dece);
+router.put('/deceh2/:cedula', authMiddleware2, updateH2Dece);
 
-router.put('/deceh3/:cedula', authMiddleware, updateH3Dece);
+router.put('/deceh3/:cedula', authMiddleware2, updateH3Dece);
 
-router.put('/deceh4/:cedula', authMiddleware, updateH4Dece);
+router.put('/deceh4/:cedula', authMiddleware2, updateH4Dece);
 
 
 module.exports = router;

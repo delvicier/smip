@@ -8,6 +8,7 @@ import { MatriculaService } from 'src/app/services/matricula-service/matricula.s
 })
 export class TextMatriculaComponent {
 
+  matriculadosatras = "";
   matriculados = "";
   estadisticas = "";
 
@@ -18,6 +19,7 @@ export class TextMatriculaComponent {
     this.matriculaServicio.estadisticas$.subscribe(valor => {
       this.estadisticas = valor;
       this.matriculados = this.matriculaServicio.matriculados;
+      this.matriculadosatras = this.matriculaServicio.matriculadosatras;
     });
   }
 }

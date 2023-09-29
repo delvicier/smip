@@ -47,6 +47,18 @@ exports.getEstudiantesTotales = async (req, res) => {
   }
 };
 
+exports.getEstudiantesTotalesAnio = async (req, res) => {
+  try {
+    const [result] = await pool.query(
+      "SELECT * FROM estudiantes e JOIN detalles d ON e.id = d.estudiante_id JOIN matricula m ON e.id = m.estudiante_matri_id WHERE m.anio_lectivo = ?;",
+      [req.params.id]
+    );
+    res.json(result);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 exports.createEstudiantes = async (req, res) => {
   try {
     // Extraer los valores del cuerpo de la solicitud

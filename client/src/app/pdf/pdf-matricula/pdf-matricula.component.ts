@@ -126,6 +126,14 @@ export class PdfMatriculaComponent {
   pdf = new jsPDF();
   vistapdf = 'estiloformulario';
 
+  fechaActual: any;
+
+  anioActual: any;
+  anioDespues: any;
+  mesActual: any;
+  diaActual: any;
+  nombreMes: any;
+
   constructor(public vistasService: VistasService, private homeService: HomeService ){
 
     this.formulario = new FormGroup({
@@ -159,11 +167,28 @@ export class PdfMatriculaComponent {
   }
 
   ngOnInit(): void {
+    this.obtenerAnioActual();
+
     this.homeService.getResultadosbuscarPorCedula().subscribe(
       (resultados) => {
         this.estudiante = resultados as Estudiantes[];
       }
     );
+  }
+
+  obtenerAnioActual() {
+    const fechaActual = new Date();
+    const nombresMeses = [
+      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+    ];
+    this.anioActual = fechaActual.getFullYear();
+    this.anioDespues = this.anioActual +1;
+
+    this.mesActual = fechaActual.getMonth();
+    this.nombreMes = nombresMeses[this.mesActual];
+    this.diaActual = fechaActual.getDate();
+
   }
 
   cambiarEstilos() {

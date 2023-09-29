@@ -1,18 +1,36 @@
-const router = require('express').Router;
-const bcrypt = require('bcryptjs/dist/bcrypt');
+const express = require('express');
+const bcrypt = require('bcrypt');
+const router = express.Router();
+const fs = require('fs');
 
-router.post('registrarse', async (req, res) => {
+router.post('/registro', async (req, res) => {
+  try {
+    const { username, password, permissions } = req.body;
+
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+    const user = {
+      username,
+      password: hashedPassword,
+      permissions,
+    };
+
+    let users = [];
     try {
-
-        // npm install bcryptjs para encriptar
-        req.body.password = bcrypt.hashSync(req.body.password, 12);
-
-        //User es un modelo para Mongose
-        const user = await User.create(req.body);
-        res.json(user);
+      const data = await fs.promises.readFile('users.json', 'utf8');
+      users = JSON.parse(data);
     } catch (error) {
-        res.json({error: error.message });
     }
+
+    users.push(user);
+
+    await fs.promises.writeFile('users.json', JSON.stringify(users));
+
+    res.status(201).json({ message: 'Usuario creado con éxito' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error en el servidor' });
+  }
 });
 
 module.exports = router;

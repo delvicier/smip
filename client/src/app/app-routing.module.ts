@@ -7,6 +7,7 @@ import { RecordComponent } from './pages/record/record.component';
 import { DeceComponent } from './pages/dece/dece.component';
 import { SegurosComponent } from './pages/seguros/seguros.component';
 import { EstadisticasComponent } from './pages/estadisticas/estadisticas.component';
+import { guardianGuard } from './guard/guardian.guard';
 
 const routes: Routes = [
   {
@@ -17,27 +18,27 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'inicio', component: HomePageComponent
+    path: 'inicio', component: HomePageComponent, canActivate:[guardianGuard]
   },
   {
     path: 'matricula',
-    component: MatriculaComponent
+    component: MatriculaComponent, canActivate:[guardianGuard]
   },
   {
     path: 'record-escolar',
-    component: RecordComponent
+    component: RecordComponent, canActivate:[guardianGuard]
   },
   {
     path: 'dece',
-    component: DeceComponent
+    component: DeceComponent, canActivate:[guardianGuard]
   },
   {
   path: 'seguros',
-  component: SegurosComponent
+  component: SegurosComponent, canActivate:[guardianGuard]
   },
   {
     path: 'estadisticas',
-    component: EstadisticasComponent
+    component: EstadisticasComponent, canActivate:[guardianGuard]
   }
 ];
 

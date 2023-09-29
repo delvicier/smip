@@ -1,11 +1,11 @@
 <div class="wrapper-botones">
     <div class="botones">
 
-      <button (click)="cambiarComponDece(7)" (click)="onLabel3Click()" class="boton2">
+      <button (click)="cambiarComponDece(5)" (click)="onLabel3Click()" class="boton2">
         <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
       </button>
 
-      <button (click)="cambiarComponDece(8)" class="boton2">
+      <button (click)="cambiarComponDece(6)" class="boton2">
         <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
       </button>
 
@@ -29,13 +29,13 @@
     <h1>Ficha Dece</h1>
   </div>
 
-  <section *ngIf="vistasService.numero === null || vistasService.numero === 7">
+  <section *ngIf="vistasService.numero === null || vistasService.numero === 5">
     <app-dece-editpdf></app-dece-editpdf>
   </section>
 
   <br>
 
-  <section *ngIf="vistasService.numero === 8">
+  <section *ngIf="vistasService.numero === 6">
 
     <div id="pdf-dece" >
       <div *ngIf="hoja1.length > 0">

@@ -17,8 +17,8 @@ export class LoginComponent {
 
   constructor() {
     this.formulario = new FormGroup({
-      name: new FormControl(),
-      pass: new FormControl()
+      username: new FormControl(),
+      password: new FormControl()
     })
   }
 

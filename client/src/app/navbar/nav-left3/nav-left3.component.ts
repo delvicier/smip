@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NavLeft3Component {
 
+  onClickCerrar() {
+    localStorage.removeItem('token');
+  }
+
 }

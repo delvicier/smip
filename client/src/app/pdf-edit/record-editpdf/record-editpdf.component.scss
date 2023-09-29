@@ -1,6 +1,24 @@
 .body{
   border-radius: 25px;
-  max-width: 870px;
+
+}
+
+.fondo{
+  background-color: #ffffffd3;
+  box-shadow: 0 1px 0px 0 rgba(31, 76, 135, 0.122);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.wrapper-tabla{
+  box-shadow: 0 1px 8px 0 rgba(31, 76, 135, 0.291);
+  margin: 10px auto;
+  max-width: 297mm;
+  max-height: 210mm;
+}
+
+.pdf{
+  box-shadow: 0 1px 8px 0 rgba(31, 76, 135, 0.291);
 }
 
 h2{
@@ -8,27 +26,6 @@ h2{
   color: #03396e;
   font-size: 1.6rem;
 }
-
-.wrapper-botones{
-  position: relative;
-}
-
-.botones{
-  position: absolute;
-  top: -6px;
-  right: 3px;
-}
-
-.boton{
-  margin-left: 5px;
-  padding: 0px 5px;
-  border: none;
-  border-radius: 15px;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-
 
 .radio-inputs {
   position: relative;
@@ -44,40 +41,11 @@ h2{
 
 }
 
-.radio-inputs .radio {
-  flex: 1 1 auto;
-  text-align: center;
-}
-
-.radio-inputs .radio input {
-  display: none;
-}
-
-.radio-inputs .radio .name {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  border: none;
-  padding: .5rem 0;
-  color: #03396e;
-  transition: all .15s ease-in-out;
-}
-
-.radio-inputs .radio input:checked + .name {
-  background-color: #fff;
-  font-weight: 600;
-}
-
-
-
-
 .tabla {
   border-radius: 5px 5px 0px 0px;
   background-color: #248de3;
   overflow: hidden;
-  margin: 0px 45px;
+  margin: 0px 0px;
 
 }
 
@@ -120,8 +88,6 @@ h2{
   background-color: #fff;
 
 }
-
-
 
 
 input{
@@ -169,28 +135,21 @@ input{
   margin: 5px 4px;
 }
 
+
+h3{
+  color: #03396e;
+  padding-bottom: 1px;
+  margin: 5px 0px;
+}
+
 .wrapper-botones{
   position: relative;
 }
 
 .botones{
   position: absolute;
-  top: -7;
-  right: 40px;
-}
-
-.boton{
-  margin-left: 10px;
-  padding: 0px 5px;
-  border: none;
-  border-radius: 15px;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.boton:hover{
-  scale: 1.1;
-
+  top: -6px;
+  right: 25px;
 }
 
 .titulo{
@@ -206,8 +165,34 @@ input{
     }
 }
 
-h3{
-  color: #03396e;
-  padding-bottom: 1px;
-  margin: 5px 0px;
+.boton{
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: none;
+  background-image: linear-gradient(to bottom right, #2d5293, #356cb1);
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(31, 71, 135, 0.37);
+}
+
+.boton2{
+  margin-left: 10px;
+  padding: 0px 5px;
+  border: none;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.boton2:hover{
+  scale: 1.1;
+
+}
+
+.boton:hover{
+  background-image: linear-gradient(to bottom right, #2d5292, #468be0);
+  color: #ffffff;
+
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Estudiantes } from 'src/app/models/estudiantes';
 import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
 import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-estadisticas',
@@ -11,12 +12,17 @@ import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service'
 export class EstadisticasComponent {
 
   estudiantes: Estudiantes[] = [];
+  searchForm: FormGroup;
 
   constructor(private matriculaServicio: MatriculaService, public vistas2: Vistas2Service) {
 
+    this.searchForm = new FormGroup({
+      anio_lectivo: new FormControl
+    });
   }
 
   matriculadosAño = 0;
+  matriculadosAñoAtras = 0;
   hombres = 0;
   mujeres = 0;
   electromecanica = 0;
@@ -32,106 +38,186 @@ export class EstadisticasComponent {
     this.matriculaServicio.matriculados = this.matriculadosAño;
   }
 
-  ngOnInit() {
+  matriculaNum2 (){
+    const toStringMatri: string = this.matriculadosAñoAtras.toString();
+    this.matriculaServicio.matriculadosatras = toStringMatri;
+    this.matriculaServicio.actualizarValor2(toStringMatri);
+    this.matriculaServicio.matriculadosatras = this.matriculadosAñoAtras;
+  }
 
-    this.matriculaServicio.getAllMatriEstudiantes().subscribe(response => {
+  anio: any;
+  anioActual: any;
+  ejecutado1: boolean = false;
+  ejecutado2: boolean = false;
+  ejecutado3: boolean = false;
+  ejecutado4: boolean = false;
+  ejecutado5: boolean = false;
+  ejecutado6: boolean = false;
+  ejecutado7: boolean = false;
+
+
+  obtenerAnioActual() {
+    const fechaActual = new Date();
+    this.anioActual = fechaActual.getFullYear();
+  }
+
+  enviar(){
+    const curso = this.searchForm.get('anio_lectivo')?.value || this.anioActual;
+
+    this.matriculaServicio.getEstadisticas(curso).subscribe(
+    (response) => {
       this.estudiantes = response;
       this.matriculadosAño = response.length;
+
       this.matriculaNum ();
 
-      for (const obj of response) {
-        const genero = obj.genero;
-        if (genero && genero.toLowerCase() === "hombre") {
-          this.hombres++;
+      if (!this.ejecutado1) {
+
+        for (const obj of response) {
+          const genero = obj.genero;
+          if (genero && genero.toLowerCase() === "hombre") {
+            this.hombres++;
+          }
         }
+
+        const toStringHombres: string = this.hombres.toString();
+        this.matriculaServicio.hombres = toStringHombres;
+        this.matriculaServicio.actualizarValor(toStringHombres);
+
+        this.ejecutado1 = true;
       }
 
-      const toStringHombres: string = this.hombres.toString();
-      this.matriculaServicio.hombres = toStringHombres;
-      this.matriculaServicio.actualizarValor(toStringHombres);
+      if (!this.ejecutado2) {
 
-      for (const obj of response) {
-        const genero = obj.genero;
-        if (genero && genero.toLowerCase() === "mujer") {
-          this.mujeres++;
+        for (const obj of response) {
+          const genero = obj.genero;
+          if (genero && genero.toLowerCase() === "mujer") {
+            this.mujeres++;
+          }
         }
+
+        const toStringMujeres: string = this.mujeres.toString();
+        this.matriculaServicio.mujeres = toStringMujeres;
+        this.matriculaServicio.actualizarValor(toStringMujeres);
+
+        this.ejecutado2 = true;
       }
 
-      const toStringMujeres: string = this.mujeres.toString();
-      this.matriculaServicio.mujeres = toStringMujeres;
-      this.matriculaServicio.actualizarValor(toStringMujeres);
+      if (!this.ejecutado3) {
 
-      for (const obj of response) {
-        const especialidad1 = obj.especialidad;
-        const regex = /electromecanica/i; // 'i' hace que la búsqueda sea insensible a mayúsculas/minúsculas
+        for (const obj of response) {
+          const especialidad1 = obj.especialidad;
+          const regex = /electromecanica/i; // 'i' hace que la búsqueda sea insensible a mayúsculas/minúsculas
 
-        if (especialidad1 && regex.test(especialidad1)) {
-          this.electromecanica++;
+          if (especialidad1 && regex.test(especialidad1)) {
+            this.electromecanica++;
+          }
         }
+
+        const toStringElectromecanica: string = this.electromecanica.toString();
+        this.matriculaServicio.electromecanica = toStringElectromecanica;
+        this.matriculaServicio.actualizarValor(toStringElectromecanica);
+
+        this.ejecutado3 = true;
       }
 
-      const toStringElectromecanica: string = this.electromecanica.toString();
-      this.matriculaServicio.electromecanica = toStringElectromecanica;
-      this.matriculaServicio.actualizarValor(toStringElectromecanica);
+      if (!this.ejecutado4) {
 
+        for (const obj of response) {
+          const especialidad2 = obj.especialidad;
+          const regex = /instalaciones/i; // 'i' hace que la búsqueda sea insensible a mayúsculas/minúsculas
 
-      for (const obj of response) {
-        const especialidad2 = obj.especialidad;
-        const regex = /instalaciones/i; // 'i' hace que la búsqueda sea insensible a mayúsculas/minúsculas
-
-        if (especialidad2 && regex.test(especialidad2)) {
-          this.instalaciones++;
+          if (especialidad2 && regex.test(especialidad2)) {
+            this.instalaciones++;
+          }
         }
+
+        const toStringInstalaciones: string = this.instalaciones.toString();
+        this.matriculaServicio.instalaciones = toStringInstalaciones;
+        this.matriculaServicio.actualizarValor(toStringInstalaciones);
+
+        this.ejecutado4 = true;
       }
 
-      const toStringInstalaciones: string = this.instalaciones.toString();
-      this.matriculaServicio.instalaciones = toStringInstalaciones;
-      this.matriculaServicio.actualizarValor(toStringInstalaciones);
+      if (!this.ejecutado5) {
 
+        for (const obj of response) {
+          const especialidad3 = obj.especialidad;
+          const regex = /mecanizado/i;
 
-      for (const obj of response) {
-        const especialidad3 = obj.especialidad;
-        const regex = /mecanizado/i;
-
-        if (especialidad3 && regex.test(especialidad3)) {
-          this.mecanizado++;
+          if (especialidad3 && regex.test(especialidad3)) {
+            this.mecanizado++;
+          }
         }
+
+        const toStringMecanizado: string = this.mecanizado.toString();
+        this.matriculaServicio.mecanizado = toStringMecanizado;
+        this.matriculaServicio.actualizarValor(toStringMecanizado);
+
+        this.ejecutado5 = true;
       }
 
-      const toStringMecanizado: string = this.mecanizado.toString();
-      this.matriculaServicio.mecanizado = toStringMecanizado;
-      this.matriculaServicio.actualizarValor(toStringMecanizado);
+      if (!this.ejecutado6) {
 
+        for (const obj of response) {
+          const especialidad4 = obj.especialidad;
+          const regex = /seguridad/i;
 
-      for (const obj of response) {
-        const especialidad4 = obj.especialidad;
-        const regex = /seguridad/i;
-
-        if (especialidad4 && regex.test(especialidad4)) {
-          this.seguridad++;
+          if (especialidad4 && regex.test(especialidad4)) {
+            this.seguridad++;
+          }
         }
+
+        const toStringSeguridad: string = this.seguridad.toString();
+        this.matriculaServicio.seguridad = toStringSeguridad;
+        this.matriculaServicio.actualizarValor(toStringSeguridad);
+
+        this.ejecutado6 = true;
       }
 
-      const toStringSeguridad: string = this.seguridad.toString();
-      this.matriculaServicio.seguridad = toStringSeguridad;
-      this.matriculaServicio.actualizarValor(toStringSeguridad);
+      if (!this.ejecutado7) {
 
+        for (const obj of response) {
+          const especialidad5 = obj.especialidad;
+          const regex = /soldadura/i;
 
-      for (const obj of response) {
-        const especialidad5 = obj.especialidad;
-        const regex = /soldadura/i;
-
-        if (especialidad5 && regex.test(especialidad5)) {
-          this.soldadura++;
+          if (especialidad5 && regex.test(especialidad5)) {
+            this.soldadura++;
+          }
         }
-      }
 
-      const toStringsoldadura: string = this.soldadura.toString();
-      this.matriculaServicio.soldadura = toStringsoldadura;
-      this.matriculaServicio.actualizarValor(toStringsoldadura);
+        const toStringsoldadura: string = this.soldadura.toString();
+        this.matriculaServicio.soldadura = toStringsoldadura;
+        this.matriculaServicio.actualizarValor(toStringsoldadura);
+
+        this.ejecutado7 = true;
+      }
 
     });
 
+  }
+
+  enviar2(){
+    const curso = this.searchForm.get('anio_lectivo')?.value || this.anioActual;
+    if(curso){
+      this.anio = curso -1;
+
+      this.matriculaServicio.getEstadisticas(this.anio).subscribe(
+        (response) => {
+          this.matriculadosAñoAtras = response.length;
+          this.matriculaNum2 ();
+      });
+    }
+  }
+
+  enviar3(){
+    this.obtenerAnioActual();
+    this.enviar();
+    this.enviar2();
+  }
+
+  ngOnInit() {
+    this.enviar3();
   }
 
   mostrarComponente2(numero2: number) {
@@ -141,6 +227,5 @@ export class EstadisticasComponent {
   ocultarComponente2() {
     this.vistas2.ocultarComponente2();
   }
-
 
 }

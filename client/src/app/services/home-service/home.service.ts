@@ -10,9 +10,9 @@ import { firstValueFrom } from 'rxjs';
   providedIn: 'root'
 })
 export class HomeService {
-  
-  private apiUrl = 'http://localhost:4000/estudiante';
-  private apiUrl2 = 'http://localhost:4000/';
+
+  private apiUrl = 'http://192.168.1.19:4000/estudiante';
+  private apiUrl2 = 'http://192.168.1.19:4000/';
   private resultadosSubject: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject2: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject3: BehaviorSubject<Record[]> = new BehaviorSubject<Record[]>([]);
@@ -24,7 +24,7 @@ export class HomeService {
   constructor( private http: HttpClient) {
   }
 
-  
+
   numero: number | null = null;
 
   mostrarComponente(numeroComponente: number) {
@@ -34,7 +34,7 @@ export class HomeService {
   ocultarComponente() {
     this.numero = null;
   }
-  
+
   numero2: number | null = null;
 
   mostrarComponente2(numeroComponente2: number) {
@@ -164,7 +164,7 @@ export class HomeService {
     return this.http.put<any>(`${this.apiUrl2}record/cedula/${id}`, data);
   }
 
-  
+
   getHoja1Dece(id: string){
     return this.http.get<DeceHoja1[]>(`${this.apiUrl}/decehoja1/${id}`);
   }

@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DeceService {
 
-  private apiUrl = 'http://localhost:4000';
+  private apiUrl = 'http://192.168.1.19:4000';
 
   private resultadosSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
 

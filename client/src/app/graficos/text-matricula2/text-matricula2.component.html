@@ -1,0 +1,42 @@
+
+<div class="cuerpo">
+
+  <div class="tarjeta">
+
+    <div class="titulo">
+
+      <H1>Matriculas</H1>
+
+      <form class="wrapper-anio" [formGroup]="searchForm" method="get" action="submit">
+        <div class="anio">
+          <div>
+            <label for="Año"><strong>Año </strong></label>
+            <select formControlName="anio_lectivo" class="año" (change)="enviar3()">
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+            </select>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="contenido">
+
+      <p>Matriculados: <b>{{matriculados}}</b> </p> <div class="cuadrado1"></div>
+
+      <p>Sin Matricular: <b>{{matriculadosatras}}</b></p> <div class="cuadrado2"></div>
+
+    </div>
+
+
+    <hr>
+
+    <p class="footer">Matriculados año previo {{matriculadosatras}}</p>
+
+  </div>
+
+</div>

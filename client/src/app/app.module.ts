@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -60,6 +61,10 @@ import { TextGeneroComponent } from './graficos/text-genero/text-genero.componen
 import { TextSegurosComponent } from './graficos/text-seguros/text-seguros.component';
 import { TextMatriculaComponent } from './graficos/text-matricula/text-matricula.component';
 import { SegurosResultComponent } from './pages-result/seguros-result/seguros-result.component';
+import { TextMatricula2Component } from './graficos/text-matricula2/text-matricula2.component';
+import { TextGenero2Component } from './graficos/text-genero2/text-genero2.component';
+import { TextSeguros2Component } from './graficos/text-seguros2/text-seguros2.component';
+import { PdfSegurosComponent } from './pdf/pdf-seguros/pdf-seguros.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +118,11 @@ import { SegurosResultComponent } from './pages-result/seguros-result/seguros-re
     TextGeneroComponent,
     TextSegurosComponent,
     TextMatriculaComponent,
-    SegurosResultComponent
+    SegurosResultComponent,
+    TextMatricula2Component,
+    TextGenero2Component,
+    TextSeguros2Component,
+    PdfSegurosComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +131,8 @@ import { SegurosResultComponent } from './pages-result/seguros-result/seguros-re
     NgChartsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPrintModule
+    NgxPrintModule,
+    CommonModule
   ],
   providers: [
     {
