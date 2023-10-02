@@ -63,8 +63,7 @@ export class TextGenero2Component {
 
       this.matriculaNum ();
 
-      if (!this.ejecutado1) {
-
+        this.hombres = 0;
         for (const obj of response) {
           const genero = obj.genero;
           if (genero && genero.toLowerCase() === "hombre") {
@@ -76,11 +75,7 @@ export class TextGenero2Component {
         this.matriculaServicio.hombres = toStringHombres;
         this.matriculaServicio.actualizarValor(toStringHombres);
 
-        this.ejecutado1 = true;
-      }
-
-      if (!this.ejecutado2) {
-
+        this.mujeres = 0;
         for (const obj of response) {
           const genero = obj.genero;
           if (genero && genero.toLowerCase() === "mujer") {
@@ -91,10 +86,6 @@ export class TextGenero2Component {
         const toStringMujeres: string = this.mujeres.toString();
         this.matriculaServicio.mujeres = toStringMujeres;
         this.matriculaServicio.actualizarValor(toStringMujeres);
-
-        this.ejecutado2 = true;
-      }
-
 
     });
 

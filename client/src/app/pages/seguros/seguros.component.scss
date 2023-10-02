@@ -102,3 +102,10 @@ a {
   height: 130px;
   text-align: center;
 }
+
+
+@media (max-width: 1245px) {
+  .contenedor {
+    grid-template-columns: 160px 1fr;
+  }
+}

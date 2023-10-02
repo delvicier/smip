@@ -5,6 +5,7 @@
   .contenido{
     display: grid;
     grid-template-columns: 240px 3fr;
+    gap: 0px;
 
   }
 
@@ -175,8 +176,8 @@
 
 
 
-@media (max-width: 1240px) {
+@media (max-width: 1245px) {
   .contenido {
-    grid-template-columns: 145px 3fr;
+    grid-template-columns: 160px 1040px;
   }
 }

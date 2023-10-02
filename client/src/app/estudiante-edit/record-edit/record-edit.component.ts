@@ -65,14 +65,7 @@ export class RecordEditComponent {
     const id = this.recordService.recordid;
     const formValues = this.formrecord.value;
 
-    this.recordService.updateRecordEstudiante(id, formValues).subscribe(
-      (response) => {
-        console.log('Nota actualizada:', response);
-      },
-      (error) => {
-        console.error('Error al actualizar:', error);
-      }
-    );
+    this.recordService.updateRecordEstudiante(id, formValues).subscribe();
   }
 
 

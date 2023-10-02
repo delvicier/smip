@@ -47,14 +47,6 @@ export class EstadisticasComponent {
 
   anio: any;
   anioActual: any;
-  ejecutado1: boolean = false;
-  ejecutado2: boolean = false;
-  ejecutado3: boolean = false;
-  ejecutado4: boolean = false;
-  ejecutado5: boolean = false;
-  ejecutado6: boolean = false;
-  ejecutado7: boolean = false;
-
 
   obtenerAnioActual() {
     const fechaActual = new Date();
@@ -71,8 +63,8 @@ export class EstadisticasComponent {
 
       this.matriculaNum ();
 
-      if (!this.ejecutado1) {
 
+        this.hombres = 0;
         for (const obj of response) {
           const genero = obj.genero;
           if (genero && genero.toLowerCase() === "hombre") {
@@ -84,11 +76,7 @@ export class EstadisticasComponent {
         this.matriculaServicio.hombres = toStringHombres;
         this.matriculaServicio.actualizarValor(toStringHombres);
 
-        this.ejecutado1 = true;
-      }
-
-      if (!this.ejecutado2) {
-
+        this.mujeres = 0;
         for (const obj of response) {
           const genero = obj.genero;
           if (genero && genero.toLowerCase() === "mujer") {
@@ -100,11 +88,7 @@ export class EstadisticasComponent {
         this.matriculaServicio.mujeres = toStringMujeres;
         this.matriculaServicio.actualizarValor(toStringMujeres);
 
-        this.ejecutado2 = true;
-      }
-
-      if (!this.ejecutado3) {
-
+        this.electromecanica = 0;
         for (const obj of response) {
           const especialidad1 = obj.especialidad;
           const regex = /electromecanica/i; // 'i' hace que la búsqueda sea insensible a mayúsculas/minúsculas
@@ -118,11 +102,7 @@ export class EstadisticasComponent {
         this.matriculaServicio.electromecanica = toStringElectromecanica;
         this.matriculaServicio.actualizarValor(toStringElectromecanica);
 
-        this.ejecutado3 = true;
-      }
-
-      if (!this.ejecutado4) {
-
+        this.instalaciones = 0;
         for (const obj of response) {
           const especialidad2 = obj.especialidad;
           const regex = /instalaciones/i; // 'i' hace que la búsqueda sea insensible a mayúsculas/minúsculas
@@ -136,11 +116,7 @@ export class EstadisticasComponent {
         this.matriculaServicio.instalaciones = toStringInstalaciones;
         this.matriculaServicio.actualizarValor(toStringInstalaciones);
 
-        this.ejecutado4 = true;
-      }
-
-      if (!this.ejecutado5) {
-
+        this.mecanizado = 0;
         for (const obj of response) {
           const especialidad3 = obj.especialidad;
           const regex = /mecanizado/i;
@@ -154,11 +130,7 @@ export class EstadisticasComponent {
         this.matriculaServicio.mecanizado = toStringMecanizado;
         this.matriculaServicio.actualizarValor(toStringMecanizado);
 
-        this.ejecutado5 = true;
-      }
-
-      if (!this.ejecutado6) {
-
+        this.seguridad = 0;
         for (const obj of response) {
           const especialidad4 = obj.especialidad;
           const regex = /seguridad/i;
@@ -172,11 +144,7 @@ export class EstadisticasComponent {
         this.matriculaServicio.seguridad = toStringSeguridad;
         this.matriculaServicio.actualizarValor(toStringSeguridad);
 
-        this.ejecutado6 = true;
-      }
-
-      if (!this.ejecutado7) {
-
+        this.soldadura = 0;
         for (const obj of response) {
           const especialidad5 = obj.especialidad;
           const regex = /soldadura/i;
@@ -190,8 +158,6 @@ export class EstadisticasComponent {
         this.matriculaServicio.soldadura = toStringsoldadura;
         this.matriculaServicio.actualizarValor(toStringsoldadura);
 
-        this.ejecutado7 = true;
-      }
 
     });
 

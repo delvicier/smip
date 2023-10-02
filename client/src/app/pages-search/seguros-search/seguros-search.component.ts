@@ -34,12 +34,12 @@ export class SegurosSearchComponent {
     }
   }
 
-  mostrarComponente(numeroComponente4: number) {
-    this.vistas2.mostrarComponente4(numeroComponente4);
+  mostrarComponente(numeroComponente2: number) {
+    this.vistas2.mostrarComponente2(numeroComponente2);
   }
 
   ocultarComponente() {
-    this.vistas2.ocultarComponente4();
+    this.vistas2.ocultarComponente2();
   }
 
   busquedas(){

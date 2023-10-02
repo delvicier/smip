@@ -1,246 +1,905 @@
 
-<div class="hoja">
 
-  <div class="encabezado">
-    <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
-  </div>
+<div class="wrapper-botones">
+  <div class="botones">
 
-  <div class="titulo1">
+    <button (click)="convertirPDF()" class="boton2">
+      <img src="../../../assets/icons/descargar3.png" width="40" height="40" alt="descargar pdf">
+    </button>
 
-    <br>
-
-    <p class="fecha">Esmeraldas, {{nombreMes}} {{diaActual}} del {{anioActual}}</p>
-
-    <br>
-
-    <p>
-      Sra. Ingeniera <br>
-      Tania Obando Bone <br>
-      DIRECTORA DISTRITAL 08D01 E-E <br>
-      Presente. - <br>
-    </p>
-
-    <br>
-
-    <p>Estimada Compañera:</p>
-
-    <br>
-  </div>
-
-
-  <div class="parrafo1">
-    <p>
-      Según lo establecido en el Acuerdo Interministerial Nro. 002 de 30 de mayo de 2018,
-      artículo 13, que menciona: “Seguros para los estudiantes en prácticas estudiantiles en las
-      entidades receptoras. - Los estudiantes en práctica contarán con un seguro estudiantil,
-      que cubra los riesgos inherentes a la actividad que desarrolle, el que será cubierto por las
-      respectivas instituciones educativas, salvo el caso de aquellas de sostenimiento fiscal, en
-      cuyo caso será cubierto por el Ministerio de Educación y Deporte”.
-    </p>
-
-    <br>
-
-    <p>
-      Con la finalidad de salvaguardar la integridad de las y los estudiantes de tercero de
-      bachillerato Técnico que realizarán sus prácticas estudiantiles (FCT) en la oferta Educativa
-      de Bachillerato Técnico y Técnico Productivo solicitamos a usted muy comedidamente la
-      CONTRATACIÓN DEL SEGURO DE VIDA Y ASISTENCIA MEDICA PARA LOS ESTUDIANTES DEL
-      BACHILLERATO TECNICO Y BACHILLERATO TECNICO PRODUCTIVO PARA EL AÑO LECTIVO
-      2023-2024 DE LA UE. LUIS TELLO de las figuras profesionales Priorizadas por el MINEDUC.,
-      detalladas a continuación:
-    </p>
-
-    <br>
-
-    <h1>BACHILLERATO TECNICO</h1>
-
-    <table class="tableizer-table">
-      <thead>
-        <tr class="tcabezera">
-          <th>No. ORDEN</th>
-          <th>CÓDIGO AMIE</th>
-          <th>NOMBRE INSTITUCION EDUCATIVA </th>
-          <th>FIGURA PROFESIONAL</th>
-          <th>NÚMERO TOTAL DE ESTUDIANTES</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr class="tcuerpo">
-          <td rowspan="3">1</td>
-          <td rowspan="3">08H00371</td>
-          <td rowspan="3">UNIDAD EDUCATIVA FISCAL LUIS TELLO</td>
-          <td>ELECTROMECANICA AUTOMOTRÍZ</td>
-          <td>{{electromecanica}}</td>
-        </tr>
-
-        <tr class="tcuerpo">
-          <td>INSTALACIONES, EQUIPOS Y MÁQUINAS ELÉCTRICAS </td>
-          <td>{{instalaciones}}</td>
-        </tr>
-
-        <tr class="tcuerpo">
-          <td>MECANIZADO Y CONSTRUCCIONES METÁLICAS</td>
-          <td>{{mecanizado}}</td>
-        </tr>
-
-      </tbody>
-    </table>
+    <button
+      [printStyle]="formatoEstilos"
+      printTitle="Seguros"
+      printSectionId="h0"
+      ngxPrint
+      class="boton2" type="button">
+      <img src="../../../assets/icons/impresora3.png" width="40" height="40" alt="imprimir pdf">
+    </button>
 
   </div>
-
-
-  <footer>
-
-    <div class="pie-pagina">
-      <img src="../../../assets/pdf/footer.png" alt="footer-left">
-    </div>
-
-  </footer>
-
-
 </div>
 
+<br><br><br>
 
-<div class="hoja">
-
-  <div class="encabezado">
-    <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
-  </div>
-
-  <div class="parrafo1">
-
-    <h1>BACHILLERATO TECNICO PRODUCTIVO</h1>
-
-    <table class="tableizer-table">
-      <thead>
-        <tr class="tcabezera">
-          <th>No. ORDEN</th>
-          <th>CÓDIGO AMIE</th>
-          <th>NOMBRE INSTITUCION EDUCATIVA</th>
-          <th>FIGURA PROFESIONAL_BTP</th>
-          <th>No. DE ESTUDIANTES</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr class="tcuerpo">
-          <td rowspan="2">1</td>
-          <td rowspan="2">08H00371</td>
-          <td rowspan="2">UNIDAD EDUCATIVA FISCAL LUIS TELLO</td>
-          <td>SEGURIDAD INDUSTRIAL</td>
-          <td>{{seguridad}}</td>
-        </tr>
-
-        <tr class="tcuerpo">
-          <td>PROCESOS DE SOLDADURA</td>
-          <td>{{soldadura}}</td>
-        </tr>
-
-      </tbody>
-    </table>
-
-    <br>
-
-    <p>
-      Esta Unidad educativa cuenta hasta el momento con estudiantes legalmente matriculados
-      en el Bachillerato Técnico y en BTP., lo cual hacen un total de 227 para la contratación de
-      seguros, ese sería un número aproximado en vista que el proceso de inscripciones y
-      traslados se encuentra vigente. (ADJUNTO NOMINA DE ESTUDIANTES)
-    </p>
-
-    <br> <br> <br>
-
-    <p>
-      Con sentimiento de alta consideración y estima,
-    </p>
-
-    <br> <br> <br> <br> <br>
-
-    <p>
-      MSc.José Luis Cortez Cabrera
-    </p>
-
-    <p>
-      RECTOR DE LA UE. LUIS TELLO
-    </p>
-
-  </div>
+<div id="h0">
 
 
-  <footer>
+  <div class="hoja" id="h1">
 
-    <div class="pie-pagina">
-      <img src="../../../assets/pdf/footer.png" alt="footer-left">
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
     </div>
 
-  </footer>
+    <div class="titulo1">
 
-</div>
+      <br>
+
+      <p class="fecha">Esmeraldas, {{nombreMes}} {{diaActual}} del {{anioActual}}</p>
+
+      <br>
+
+      <p>
+        Sra. Ingeniera <br>
+        Tania Obando Bone <br>
+        DIRECTORA DISTRITAL 08D01 E-E <br>
+        Presente. - <br>
+      </p>
+
+      <br>
+
+      <p>Estimada Compañera:</p>
+
+      <br>
+    </div>
 
 
-<div class="hoja">
+    <div class="parrafo1">
+      <p>
+        Según lo establecido en el Acuerdo Interministerial Nro. 002 de 30 de mayo de 2018,
+        artículo 13, que menciona: “Seguros para los estudiantes en prácticas estudiantiles en las
+        entidades receptoras. - Los estudiantes en práctica contarán con un seguro estudiantil,
+        que cubra los riesgos inherentes a la actividad que desarrolle, el que será cubierto por las
+        respectivas instituciones educativas, salvo el caso de aquellas de sostenimiento fiscal, en
+        cuyo caso será cubierto por el Ministerio de Educación y Deporte”.
+      </p>
 
-  <div class="encabezado">
-    <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
-  </div>
+      <br>
 
-  <div class="parrafo1">
+      <p>
+        Con la finalidad de salvaguardar la integridad de las y los estudiantes de tercero de
+        bachillerato Técnico que realizarán sus prácticas estudiantiles (FCT) en la oferta Educativa
+        de Bachillerato Técnico y Técnico Productivo solicitamos a usted muy comedidamente la
+        CONTRATACIÓN DEL SEGURO DE VIDA Y ASISTENCIA MEDICA PARA LOS ESTUDIANTES DEL
+        BACHILLERATO TECNICO Y BACHILLERATO TECNICO PRODUCTIVO PARA EL AÑO LECTIVO
+        2023-2024 DE LA UE. LUIS TELLO de las figuras profesionales Priorizadas por el MINEDUC.,
+        detalladas a continuación:
+      </p>
 
-    <h1>&nbsp;NOMINA DE ESTUDIANTES BACHILLERATO TECNICO</h1>
+      <br>
 
-    <table class="tableizer-table2">
-      <thead>
-        <tr class="tcabezera2">
-          <th class="numero-tabla">Nº</th>
-          <th>AMIE</th>
-          <th>UNIDAD EDUCATIVA</th>
-          <th>FIGURA PROFESIONAL</th>
-          <th>Nº DE CEDULA</th>
-          <th>APELLIDOS Y NOMBRES</th>
-          <th>FECHA DE NACIMIENTO</th>
-          <th>AÑOS CUMPLIDOS</th>
-        </tr>
-      </thead>
+      <h1>BACHILLERATO TECNICO</h1>
 
-      <tbody *ngIf="estudiante.length > 0">
+      <table class="tableizer-table">
+        <thead>
+          <tr class="tcabezera">
+            <th>No. ORDEN</th>
+            <th>CÓDIGO AMIE</th>
+            <th>NOMBRE INSTITUCION EDUCATIVA </th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>NÚMERO TOTAL DE ESTUDIANTES</th>
+          </tr>
+        </thead>
 
-        <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante">
-          <td>1</td>
-          <td>08H00371</td>
-          <td>LUIS TELLO</td>
-          <td>{{estudiantes.especialidad}}</td>
-          <td>{{estudiantes.cedula}}</td>
-          <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
-          <td>{{estudiantes.nacimiento}}</td>
-          <td>{{estudiantes.nacimiento}}</td>
-        </tr>
+        <tbody>
+          <tr class="tcuerpo">
+            <td rowspan="3">1</td>
+            <td rowspan="3">08H00371</td>
+            <td rowspan="3">UNIDAD EDUCATIVA FISCAL LUIS TELLO</td>
+            <td>ELECTROMECANICA AUTOMOTRÍZ</td>
+            <td>{{electromecanica}}</td>
+          </tr>
 
-      </tbody>
+          <tr class="tcuerpo">
+            <td>INSTALACIONES, EQUIPOS Y MÁQUINAS ELÉCTRICAS </td>
+            <td>{{instalaciones}}</td>
+          </tr>
 
-    </table>
+          <tr class="tcuerpo">
+            <td>MECANIZADO Y CONSTRUCCIONES METÁLICAS</td>
+            <td>{{mecanizado}}</td>
+          </tr>
 
-  </div>
+        </tbody>
+      </table>
 
-  <footer>
+    </div>
 
-    <div class="footer-firmas">
-      <div class="firma1">
-        <p>MSc. José Luis Cortez Cabrera</p>
-        <p><strong>RECTOR</strong></p>
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
       </div>
-      <div class="firma2">
-        <p>MSc. Ivis Panchano Rayo </p>
-        <p><strong>SECRETARIA</strong></p>
+
+    </footer>
+
+
+  </div>
+
+  <div class="hoja" id="h2">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <h1>BACHILLERATO TECNICO PRODUCTIVO</h1>
+
+      <table class="tableizer-table">
+        <thead>
+          <tr class="tcabezera">
+            <th>No. ORDEN</th>
+            <th>CÓDIGO AMIE</th>
+            <th>NOMBRE INSTITUCION EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL_BTP</th>
+            <th>No. DE ESTUDIANTES</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="tcuerpo">
+            <td rowspan="2">1</td>
+            <td rowspan="2">08H00371</td>
+            <td rowspan="2">UNIDAD EDUCATIVA FISCAL LUIS TELLO</td>
+            <td>SEGURIDAD INDUSTRIAL</td>
+            <td>{{seguridad}}</td>
+          </tr>
+
+          <tr class="tcuerpo">
+            <td>PROCESOS DE SOLDADURA</td>
+            <td>{{soldadura}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <br>
+
+      <p>
+        Esta Unidad educativa cuenta hasta el momento con estudiantes legalmente matriculados
+        en el Bachillerato Técnico y en BTP., lo cual hacen un total de 227 para la contratación de
+        seguros, ese sería un número aproximado en vista que el proceso de inscripciones y
+        traslados se encuentra vigente. (ADJUNTO NOMINA DE ESTUDIANTES)
+      </p>
+
+      <br> <br> <br>
+
+      <p>
+        Con sentimiento de alta consideración y estima,
+      </p>
+
+      <br> <br> <br> <br> <br>
+
+      <p>
+        MSc.José Luis Cortez Cabrera
+      </p>
+
+      <p>
+        RECTOR DE LA UE. LUIS TELLO
+      </p>
+
+    </div>
+
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
       </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h3">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
     </div>
 
-    <br> <br>
+    <div class="parrafo1">
 
-    <div class="pie-pagina">
-      <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      <h1>&nbsp;NOMINA DE ESTUDIANTES BACHILLERATO TECNICO</h1>
+
+      <table class="tableizer-table2">
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody *ngIf="estudiante.length <= 37">
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 27); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+        <tbody *ngIf="estudiante.length > 37 && estudiante.length <= 72">
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+        <tbody *ngIf="estudiante.length > 72 && estudiante.length <= 109">
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+        <tbody *ngIf="estudiante.length > 109 && estudiante.length <= 146">
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+        <tbody *ngIf="estudiante.length > 146 && estudiante.length <= 183">
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
     </div>
 
-  </footer>
+    <footer *ngIf="estudiante.length <= 37">
+
+      <div class="footer-firmas">
+        <div class="firma1">
+          <p>MSc. José Luis Cortez Cabrera</p>
+          <p><strong>RECTOR</strong></p>
+        </div>
+        <div class="firma2">
+          <p>MSc. Ivis Panchano Rayo </p>
+          <p><strong>SECRETARIA</strong></p>
+        </div>
+      </div>
+
+      <br> <br>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <div class="hoja" id="h4" *ngIf="estudiante.length > 37 && estudiante.length <= 72">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-firmas">
+        <div class="firma1">
+          <p>MSc. José Luis Cortez Cabrera</p>
+          <p><strong>RECTOR</strong></p>
+        </div>
+        <div class="firma2">
+          <p>MSc. Ivis Panchano Rayo </p>
+          <p><strong>SECRETARIA</strong></p>
+        </div>
+      </div>
+
+      <br> <br>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h5"  *ngIf="estudiante.length > 72 && estudiante.length <= 109">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h6"  *ngIf="estudiante.length > 72 && estudiante.length <= 109">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-firmas">
+        <div class="firma1">
+          <p>MSc. José Luis Cortez Cabrera</p>
+          <p><strong>RECTOR</strong></p>
+        </div>
+        <div class="firma2">
+          <p>MSc. Ivis Panchano Rayo </p>
+          <p><strong>SECRETARIA</strong></p>
+        </div>
+      </div>
+
+      <br> <br>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h7"  *ngIf="estudiante.length > 109 && estudiante.length <= 146">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h8"  *ngIf="estudiante.length > 109 && estudiante.length <= 146">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h9"  *ngIf="estudiante.length > 109 && estudiante.length <= 146">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-firmas">
+        <div class="firma1">
+          <p>MSc. José Luis Cortez Cabrera</p>
+          <p><strong>RECTOR</strong></p>
+        </div>
+        <div class="firma2">
+          <p>MSc. Ivis Panchano Rayo </p>
+          <p><strong>SECRETARIA</strong></p>
+        </div>
+      </div>
+
+      <br> <br>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h10"  *ngIf="estudiante.length > 146 && estudiante.length <= 183">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h11"  *ngIf="estudiante.length > 146 && estudiante.length <= 183">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h12"  *ngIf="estudiante.length > 146 && estudiante.length <= 183">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class="hoja" id="h13"  *ngIf="estudiante.length > 146 && estudiante.length <= 183">
+
+    <div class="encabezado">
+      <img src="../../../assets/pdf/logo-2023-gob.png" width="140px" alt="logo">
+    </div>
+
+    <div class="parrafo1">
+
+      <table class="tableizer-table2">
+
+        <thead>
+          <tr class="tcabezera2">
+            <th class="numero-tabla">Nº</th>
+            <th>AMIE</th>
+            <th>UNIDAD EDUCATIVA</th>
+            <th>FIGURA PROFESIONAL</th>
+            <th>Nº DE CEDULA</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>AÑOS CUMPLIDOS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="tcuerpo2" *ngFor="let estudiantes of estudiante.slice(0, 37); let i = index">
+            <td>{{i + 1}}</td>
+            <td>08H00371</td>
+            <td>LUIS TELLO</td>
+            <td>{{estudiantes.especialidad}}</td>
+            <td>{{estudiantes.cedula}}</td>
+            <td>{{estudiantes.nombres}} {{estudiantes.apellidos}}</td>
+            <td>{{estudiantes.nacimiento}}</td>
+            <td>{{estudiantes.edad}}</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-firmas">
+        <div class="firma1">
+          <p>MSc. José Luis Cortez Cabrera</p>
+          <p><strong>RECTOR</strong></p>
+        </div>
+        <div class="firma2">
+          <p>MSc. Ivis Panchano Rayo </p>
+          <p><strong>SECRETARIA</strong></p>
+        </div>
+      </div>
+
+      <br> <br>
+
+      <div class="pie-pagina">
+        <img src="../../../assets/pdf/footer.png" alt="footer-left">
+      </div>
+
+    </footer>
+
+  </div>
+
 
 </div>

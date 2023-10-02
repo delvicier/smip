@@ -158,25 +158,25 @@ export class RecordEditpdfComponent {
 
 
   convertirADivsAPDF() {
-    const div1 = document.getElementById('hoja_pdf1');
+    const divToConvert = document.getElementById('hoja_pdf1');
 
-    if (div1) {
-      // Captura el contenido del primer div en un canvas
-      html2canvas(div1, { scale: 2 }).then((canvas1) => {
-
-          const pdf = new jsPDF('l', 'mm', 'a4');
-
-          // Convierte los canvas en imágenes y agrega al PDF
-          const imgData1 = canvas1.toDataURL('image/png');
-
-          pdf.addImage(imgData1, 'PNG', 0, 0, 297, 210);
-
-          // Guarda o muestra el PDF, según tus necesidades
-          pdf.save('record.pdf');
+    if (divToConvert) {
+      html2canvas(divToConvert).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF({
+          orientation: 'landscape',
+          unit: 'mm',
+          format: 'a4'
         });
-    } else {
-      console.error('No se encontro el pdf');
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('record.pdf');
+      });
     }
+
   }
 
   cambiarEstilos() {

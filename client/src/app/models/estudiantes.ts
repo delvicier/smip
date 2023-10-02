@@ -22,6 +22,7 @@ enum Jornada {
     apellidos?: string;
     cedula?: string;
     nacimiento?: string;
+    edad?: string;
     id_deta?: number;
     estudiante_id?: number;
     genero?: string;
