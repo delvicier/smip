@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 import { NgxPrintModule } from 'ngx-print';
 import { NgChartsModule } from 'ng2-charts';
 
@@ -65,6 +66,8 @@ import { TextMatricula2Component } from './graficos/text-matricula2/text-matricu
 import { TextGenero2Component } from './graficos/text-genero2/text-genero2.component';
 import { TextSeguros2Component } from './graficos/text-seguros2/text-seguros2.component';
 import { PdfSegurosComponent } from './pdf/pdf-seguros/pdf-seguros.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecordEditDialogComponent } from './pdf-edit/record-edit-dialog/record-edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -122,7 +125,8 @@ import { PdfSegurosComponent } from './pdf/pdf-seguros/pdf-seguros.component';
     TextMatricula2Component,
     TextGenero2Component,
     TextSeguros2Component,
-    PdfSegurosComponent
+    PdfSegurosComponent,
+    RecordEditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -132,7 +136,9 @@ import { PdfSegurosComponent } from './pdf/pdf-seguros/pdf-seguros.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgxPrintModule,
-    CommonModule
+    CommonModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

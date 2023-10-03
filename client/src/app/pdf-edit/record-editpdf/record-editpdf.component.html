@@ -75,72 +75,73 @@
           <!-- Calificaciones -->
 
           <tbody class="tcuerpo" *ngIf="record.length > 0; else tbody2">
-            <tr *ngFor="let item of record">
+            <tr *ngFor="let record of record">
               <td>
-                {{item.nombres}}, {{item.apellidos}}
+                {{record.nombres}}, {{record.apellidos}}
+                <button class="boton" (click)="editRecord(record)">Editar</button>
               </td>
               <td>
-                {{item.cedula}}
+                {{record.cedula}}
               </td>
               <td>
-                {{item.primero}}
+                {{record.primero}}
               </td>
               <td>
-                {{item.segundo}}
+                {{record.segundo}}
               </td>
               <td>
-                {{item.tercero}}
+                {{record.tercero}}
               </td>
               <td>
-                {{item.cuarto}}
+                {{record.cuarto}}
               </td>
               <td>
-                {{item.quinto}}
+                {{record.quinto}}
               </td>
               <td>
-                {{item.sexto}}
+                {{record.sexto}}
               </td>
               <td>
-                {{item.septimo}}
+                {{record.septimo}}
               </td>
               <td>
-                {{item.octavo}}
+                {{record.octavo}}
               </td>
               <td>
-                {{item.noveno}}
+                {{record.noveno}}
               </td>
               <td>
-                {{item.decimo}}
-              </td>
-              <td>
-
-                {{item.promedio_basic}}
+                {{record.decimo}}
               </td>
               <td>
 
-                {{item.primero_bgu}}
+                {{record.promedio_basic}}
               </td>
               <td>
 
-                {{item.segundo_bgu}}
+                {{record.primero_bgu}}
               </td>
               <td>
 
-                {{item.tercero_bgu}}
+                {{record.segundo_bgu}}
               </td>
               <td>
 
-                {{item.promedio_bgu}}
+                {{record.tercero_bgu}}
               </td>
               <td>
 
-                {{item.proyecto}}
+                {{record.promedio_bgu}}
               </td>
               <td>
-                {{item.participacion}}
+
+                {{record.proyecto}}
               </td>
               <td>
-                {{item.observaciones}}
+                {{record.participacion}}
+              </td>
+              <td>
+                {{record.observaciones}}
               </td>
             </tr>
           </tbody>

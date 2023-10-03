@@ -5,6 +5,8 @@ import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service'
 import { RecordService } from 'src/app/services/record-service/record.service';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import { MatDialog } from '@angular/material/dialog';
+import { RecordEditDialogComponent } from '../record-edit-dialog/record-edit-dialog.component';
 
 @Component({
   selector: 'app-record-editpdf',
@@ -111,6 +113,8 @@ export class RecordEditpdfComponent {
   };
 
   record: Record[] =[];
+  recordSeleccionado: Record | null = null;
+
   formrecord: FormGroup;
 
   pdf = new jsPDF();
@@ -120,7 +124,7 @@ export class RecordEditpdfComponent {
   jornadaid: any;
   anioid: any;
 
-  constructor(private recordService: RecordService, public vistas2: Vistas2Service){
+  constructor(private recordService: RecordService, public vistas2: Vistas2Service, public dialog: MatDialog){
 
     this.formrecord = new FormGroup({
       primero: new FormControl(),
@@ -154,6 +158,23 @@ export class RecordEditpdfComponent {
         this.anioid = this.recordService.anioid;
       }
     );
+  }
+
+  seleccionar(record: Record) {
+    this.recordSeleccionado = record;
+  }
+
+  editRecord(record: Record) {
+    const dialogRef = this.dialog.open(RecordEditDialogComponent, {
+      width: '1200px',
+      data: { record: { ...record } },
+    });
+
+    dialogRef.afterClosed().subscribe((updatedRecord: Record) => {
+      if (updatedRecord) {
+
+      }
+    });
   }
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Record } from 'src/app/models/record';
 import { FormControl, FormGroup } from '@angular/forms';
 import { RecordService } from 'src/app/services/record-service/record.service';
@@ -10,7 +10,6 @@ import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service'
   styleUrls: ['./record-search.component.scss']
 })
 export class RecordSearchComponent {
-
 
   record: Record[] =[];
   searchForm: FormGroup;

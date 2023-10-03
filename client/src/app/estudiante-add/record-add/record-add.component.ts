@@ -48,7 +48,7 @@ export class RecordAddComponent {
 
     this.recordService.postRecordEstudiante(formValues).subscribe(
       (response) => {
-        console.log('Nota creada:', response);
+        console.log('Estudiante creado:', response);
         this.formrecord.reset();
       },
     );

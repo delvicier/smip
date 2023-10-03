@@ -1,52 +1,16 @@
-.body{
-  border-radius: 25px;
-
-}
-
-.fondo{
-  background-color: #ffffffd3;
-  box-shadow: 0 1px 0px 0 rgba(31, 76, 135, 0.122);
-  padding: 20px;
-  border-radius: 25px;
-
-}
-
-.wrapper-tabla{
-  box-shadow: 0 1px 8px 0 rgba(31, 76, 135, 0.291);
-  margin: 10px auto;
-  max-width: 297mm;
-  max-height: 210mm;
-}
-
-.pdf{
-  box-shadow: 0 1px 8px 0 rgba(31, 76, 135, 0.291);
-}
-
 h2{
-  text-align: center;
-  color: #03396e;
-  font-size: 1.6rem;
+  margin: 10px 45px;
 }
 
-.radio-inputs {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 0.5rem;
-  background-color: #EEE;
-  box-sizing: border-box;
-  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-  padding: 0.25rem;
-  width: 160px;
-  font-size: 14px;
-
+.form-group{
+  margin: 10px 45px;
 }
 
 .tabla {
   border-radius: 5px 5px 0px 0px;
   background-color: #248de3;
   overflow: hidden;
-  margin: 0px 0px;
+  margin: 0px 20px;
 
 }
 
@@ -67,8 +31,8 @@ h2{
   border: 1px solid #248de3;
   color: #ffffff;
   font-weight: bold;
-  padding: 8px;
-  margin: 8px;
+  padding: 2px;
+  margin: 2px;
   text-align: center;
 
 }
@@ -82,13 +46,15 @@ h2{
 }
 
 .tcuerpo td {
-  padding: 6px;
-  margin: 12px 6px;
+  padding: 2px;
+  margin: 2px 2px;
   border: 1px solid #248de3;
   text-align: center;
   background-color: #fff;
 
 }
+
+
 
 
 input{
@@ -136,21 +102,28 @@ input{
   margin: 5px 4px;
 }
 
-
-h3{
-  color: #03396e;
-  padding-bottom: 1px;
-  margin: 5px 0px;
-}
-
 .wrapper-botones{
   position: relative;
 }
 
 .botones{
   position: absolute;
-  top: -6px;
-  right: 25px;
+  top: -7;
+  right: 20px;
+}
+
+.boton{
+  margin-left: 10px;
+  padding: 0px 5px;
+  border: none;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.boton:hover{
+  scale: 1.1;
+
 }
 
 .titulo{
@@ -166,25 +139,14 @@ h3{
     }
 }
 
-.boton{
-  background-color: transparent;
-  margin-top: 2px;
-  border: none;
-  color: #2f5492;
-  font-weight: bold;
-  cursor: pointer;
+h3{
+  color: #03396e;
+  padding-bottom: 1px;
+  margin: 5px 0px;
 }
 
-.boton2{
-  margin-left: 10px;
-  padding: 0px 5px;
-  border: none;
-  border-radius: 15px;
+.textarea1{
   background-color: transparent;
-  cursor: pointer;
-}
-
-.boton2:hover{
-  scale: 1.1;
-
+  outline: none;
+  border: none;
 }

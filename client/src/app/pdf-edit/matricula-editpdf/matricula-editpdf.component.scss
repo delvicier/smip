@@ -8,6 +8,8 @@
 
 }
 
+
+
 .fecha{
   white-space: nowrap;
   width: 82px;
@@ -94,5 +96,37 @@ input{
 .contenedor {
   p {
     margin: 10px 0px;
+  }
+}
+
+
+
+.exito-mensaje{
+  display: block;
+  margin-top: 2px;
+}
+
+.custom-loader {
+  width: 68px;
+  height: 14px;
+  border-radius: 20px;
+  color: #3e7fe0;
+  border: 2px solid;
+  position: relative;
+}
+
+.custom-loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: #3b70c0;
+  animation: p6 2s infinite;
+}
+
+@keyframes p6 {
+  100% {
+    inset: 0
   }
 }

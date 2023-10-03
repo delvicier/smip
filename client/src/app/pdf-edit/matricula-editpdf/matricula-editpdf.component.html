@@ -224,6 +224,11 @@
 
         <br>
         <button class="boton" >Guardar</button>
+        <br>
+        <div *ngIf="formularioEnviado" class="exito-mensaje">
+          Enviando..
+          <div class="custom-loader"></div>
+        </div>
       </div>
 
     </div>

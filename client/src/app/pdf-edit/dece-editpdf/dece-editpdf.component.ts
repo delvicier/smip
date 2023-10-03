@@ -12,6 +12,7 @@ import { HomeService } from 'src/app/services/home-service/home.service';
 })
 export class DeceEditpdfComponent {
 
+  formularioEnviado = false;
 
   dece1: DeceHoja1[] = [];
   dece2: DeceHoja2[] = [];
@@ -210,9 +211,10 @@ export class DeceEditpdfComponent {
     this.deceService.updateHoja1Dece(id, formValues).subscribe(
       (response) => {
         console.log('Nota actualizada:', response);
-      },
-      (error) => {
-        console.error('Error al actualizar:', error);
+        this.formularioEnviado = true;
+        setTimeout(() => {
+          this.formularioEnviado = false;
+        }, 1500);
       }
     );
   }
@@ -234,9 +236,10 @@ export class DeceEditpdfComponent {
     this.deceService.updateHoja2Dece(id, formValues).subscribe(
       (response) => {
         console.log('Nota actualizada:', response);
-      },
-      (error) => {
-        console.error('Error al actualizar:', error);
+        this.formularioEnviado = true;
+        setTimeout(() => {
+          this.formularioEnviado = false;
+        }, 1500);
       }
     );
   }
@@ -258,9 +261,10 @@ export class DeceEditpdfComponent {
     this.deceService.updateHoja3Dece(id, formValues).subscribe(
       (response) => {
         console.log('Nota actualizada:', response);
-      },
-      (error) => {
-        console.error('Error al actualizar:', error);
+        this.formularioEnviado = true;
+        setTimeout(() => {
+          this.formularioEnviado = false;
+        }, 1500);
       }
     );
   }
@@ -282,6 +286,10 @@ export class DeceEditpdfComponent {
     this.deceService.updateHoja4Dece(id, formValues).subscribe(
       (response) => {
         console.log('Nota actualizada:', response);
+        this.formularioEnviado = true;
+        setTimeout(() => {
+          this.formularioEnviado = false;
+        }, 1500);
       }
     );
   }
