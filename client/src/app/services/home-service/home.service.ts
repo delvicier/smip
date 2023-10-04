@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter  } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Estudiantes } from 'src/app/models/estudiantes';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
 import { Record } from 'src/app/models/record';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { firstValueFrom } from 'rxjs';
+import { LayoutRecordComponent } from 'src/app/pdf/layout-record/layout-record.component';
+import { DialogHomeComponent } from 'src/app/home/dialog-home/dialog-home.component';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +24,7 @@ export class HomeService {
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
   label2ClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor( private http: HttpClient) {
+  constructor( private http: HttpClient, private dialog: MatDialog ) {
   }
 
 
@@ -211,6 +214,15 @@ export class HomeService {
 
   updateHoja4Dece(id: any, data: any ){
     return this.http.put<any>(`${this.apiUrl}/deceh4/${id}`, data);
+  }
+
+  openContenidoModal() {
+    const dialogRef = this.dialog.open(DialogHomeComponent, {
+      width: '100px',
+    });
+    setTimeout(() => {
+      dialogRef.close();
+    }, 400);
   }
 
 }

@@ -222,13 +222,27 @@
           formControlName="anio_lectivo">
         </div>
 
-        <br>
-        <button class="boton" >Guardar</button>
-        <br>
-        <div *ngIf="formularioEnviado" class="exito-mensaje">
-          Enviando..
-          <div class="custom-loader"></div>
+        <div class="wrapper-btn">
+
+          <button class="boton" >Guardar </button>
+
+          <div *ngIf="formularioEnviado" class="exito-mensaje">
+            <div class="loading">
+              <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124">
+                <circle class="circle-loading" cx="62" cy="62" r="59" fill="none" stroke="#fff" stroke-width="6px"></circle>
+                <circle class="circle" cx="62" cy="62" r="59" fill="none" stroke="#2ea0e2" stroke-width="6px" stroke-linecap="round"></circle>
+                <polyline class="check" points="73.56 48.63 57.88 72.69 49.38 62" fill="none" stroke="#2ea0e2" stroke-width="6px" stroke-linecap="round"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div *ngIf="formularioNoEnviado" class="exito-mensaje">
+            Error!
+          </div>
+
         </div>
+
+
       </div>
 
     </div>

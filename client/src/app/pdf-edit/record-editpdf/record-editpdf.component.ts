@@ -7,6 +7,7 @@ import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 import { MatDialog } from '@angular/material/dialog';
 import { RecordEditDialogComponent } from '../record-edit-dialog/record-edit-dialog.component';
+import { RecordAddDialogComponent } from '../record-add-dialog/record-add-dialog.component';
 
 @Component({
   selector: 'app-record-editpdf',
@@ -166,6 +167,19 @@ export class RecordEditpdfComponent {
 
   editRecord(record: Record) {
     const dialogRef = this.dialog.open(RecordEditDialogComponent, {
+      width: '1200px',
+      data: { record: { ...record } },
+    });
+
+    dialogRef.afterClosed().subscribe((updatedRecord: Record) => {
+      if (updatedRecord) {
+
+      }
+    });
+  }
+
+  editRecord2(record: Record) {
+    const dialogRef = this.dialog.open(RecordAddDialogComponent, {
       width: '1200px',
       data: { record: { ...record } },
     });

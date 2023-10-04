@@ -48,5 +48,15 @@ export class Vistas2Service {
     this.numero4 = null;
   }
 
+  numero5: number | null = null;
+
+  mostrarComponente5(numeroComponente5: number) {
+    this.numero5 = numeroComponente5;
+  }
+
+  ocultarComponente5() {
+    this.numero5 = null;
+  }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Record } from 'src/app/models/record';
 import { FormControl, FormGroup } from '@angular/forms';
 import { RecordService } from 'src/app/services/record-service/record.service';
@@ -33,6 +33,14 @@ export class RecordSearchComponent {
       this.recordService.anioid = this.searchForm.get('anio_lectivo')?.value;
     }
   }
+
+
+  ngOnInit() {
+    this.recordService.buttonClick$.subscribe(() => {
+      this.buscar2();
+    });
+  }
+
 
   mostrarComponente(numeroComponente3: number) {
     this.vistas2.mostrarComponente3(numeroComponente3);

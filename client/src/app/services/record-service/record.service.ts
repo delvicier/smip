@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter  } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Record } from 'src/app/models/record';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,14 @@ export class RecordService {
   cursoid: any;
   jornadaid: any;
   anioid: any;
+
+  private buttonClickSubject = new Subject<void>();
+
+  buttonClick$ = this.buttonClickSubject.asObservable();
+
+  triggerButtonClick() {
+    this.buttonClickSubject.next();
+  }
 
   private estadisticasObs = new BehaviorSubject<string>('0');
 

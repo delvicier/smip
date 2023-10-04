@@ -68,6 +68,8 @@ import { TextSeguros2Component } from './graficos/text-seguros2/text-seguros2.co
 import { PdfSegurosComponent } from './pdf/pdf-seguros/pdf-seguros.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecordEditDialogComponent } from './pdf-edit/record-edit-dialog/record-edit-dialog.component';
+import { DialogHomeComponent } from './home/dialog-home/dialog-home.component';
+import { RecordAddDialogComponent } from './pdf-edit/record-add-dialog/record-add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -126,7 +128,9 @@ import { RecordEditDialogComponent } from './pdf-edit/record-edit-dialog/record-
     TextGenero2Component,
     TextSeguros2Component,
     PdfSegurosComponent,
-    RecordEditDialogComponent
+    RecordEditDialogComponent,
+    DialogHomeComponent,
+    RecordAddDialogComponent
   ],
   imports: [
     BrowserModule,

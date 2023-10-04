@@ -210,11 +210,7 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario1.value;
     this.deceService.updateHoja1Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
-        this.formularioEnviado = true;
-        setTimeout(() => {
-          this.formularioEnviado = false;
-        }, 1500);
+        this.mostrarContenidoModal();
       }
     );
   }
@@ -235,11 +231,7 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario2.value;
     this.deceService.updateHoja2Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
-        this.formularioEnviado = true;
-        setTimeout(() => {
-          this.formularioEnviado = false;
-        }, 1500);
+        this.mostrarContenidoModal();
       }
     );
   }
@@ -260,11 +252,7 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario3.value;
     this.deceService.updateHoja3Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
-        this.formularioEnviado = true;
-        setTimeout(() => {
-          this.formularioEnviado = false;
-        }, 1500);
+        this.mostrarContenidoModal();
       }
     );
   }
@@ -285,13 +273,13 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario4.value;
     this.deceService.updateHoja4Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
-        this.formularioEnviado = true;
-        setTimeout(() => {
-          this.formularioEnviado = false;
-        }, 1500);
+        this.mostrarContenidoModal();
       }
     );
+  }
+
+  mostrarContenidoModal() {
+    this.homeService.openContenidoModal();
   }
 
 }

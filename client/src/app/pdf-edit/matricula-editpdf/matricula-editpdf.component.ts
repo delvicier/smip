@@ -14,6 +14,7 @@ export class MatriculaEditpdfComponent {
   estudiante: Estudiantes[] =[];
   formulario: FormGroup;
   formularioEnviado = false;
+  formularioNoEnviado = false;
 
   constructor(private matriculaService: MatriculaService, private homeService: HomeService ){
 
@@ -59,13 +60,19 @@ export class MatriculaEditpdfComponent {
 
     this.matriculaService.updateMatriEstudiante(id, formValues).subscribe(
       (response) => {
-        console.log('Estudiante actualizado:', response);
-        this.formularioEnviado = true;
+        this.mostrarContenidoModal();
+      },
+      (error) => {
+        this.formularioNoEnviado = true;
         setTimeout(() => {
-          this.formularioEnviado = false;
+          this.formularioNoEnviado = false;
         }, 1500);
       }
     );
+  }
+
+  mostrarContenidoModal() {
+    this.homeService.openContenidoModal();
   }
 
 }

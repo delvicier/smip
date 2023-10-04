@@ -3,24 +3,24 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Record } from '../../models/record';
 import { RecordService } from 'src/app/services/record-service/record.service';
+import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 
 @Component({
-  selector: 'app-record-edit-dialog',
-  templateUrl: './record-edit-dialog.component.html',
-  styleUrls: ['./record-edit-dialog.component.scss']
+  selector: 'app-record-add-dialog',
+  templateUrl: './record-add-dialog.component.html',
+  styleUrls: ['./record-add-dialog.component.scss']
 })
-export class RecordEditDialogComponent {
+export class RecordAddDialogComponent {
 
   record: Record[] =[];
   formrecord: FormGroup;
 
   constructor( private recordService: RecordService,
-    public dialogRef: MatDialogRef<RecordEditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { record: Record }) {
+    public dialogRef: MatDialogRef<RecordAddDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { record: Record }, public vistas2: Vistas2Service
+  ) {
+
     this.formrecord = new FormGroup({
-      nombres: new FormControl(),
-      apellidos: new FormControl(),
-      cedula: new FormControl(),
       primero: new FormControl(),
       segundo: new FormControl(),
       tercero: new FormControl(),
@@ -53,7 +53,7 @@ export class RecordEditDialogComponent {
 
   onSubmit() {
     const formValues = this.formrecord.value;
-    this.recordService.updateRecordEstudiante(this.data.record.cedula, formValues).subscribe();
+    this.recordService.postRecordEstudiante(formValues).subscribe();
   }
 
   onCancel(): void {

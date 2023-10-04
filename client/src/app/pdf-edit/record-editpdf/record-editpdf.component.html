@@ -85,6 +85,7 @@
               </td>
               <td>
                 {{record.primero}}
+                <button class="boton" *ngIf="!record.primero" (click)="editRecord2(record)">Agregar notas</button>
               </td>
               <td>
                 {{record.segundo}}

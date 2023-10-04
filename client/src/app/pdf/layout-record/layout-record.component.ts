@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Record } from 'src/app/models/record';
 import { Estudiantes } from 'src/app/models/estudiantes';
-import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
 import { RecordService } from 'src/app/services/record-service/record.service';
 import { HomeService } from 'src/app/services/home-service/home.service';
 import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-layout-record',
@@ -13,10 +13,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LayoutRecordComponent {
 
-
   estudiante: Estudiantes[] =[];
   record: Record[] =[];
   formrecord: FormGroup;
+
+  mostrarDiv: boolean = false;
+  formularioEnviado = false;
+  formularioNoEnviado = false;
 
   constructor(private homeService: HomeService, private recordService: RecordService ){
 
@@ -68,14 +71,17 @@ export class LayoutRecordComponent {
 
     this.recordService.updateRecordEstudiante(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
+        this.mostrarContenidoModal();
+        this.todasLasMatriculas();
       },
       (error) => {
-        console.error('Error al actualizar:', error);
+
       }
     );
   }
 
+  mostrarContenidoModal() {
+    this.homeService.openContenidoModal();
+  }
 
 }
-
