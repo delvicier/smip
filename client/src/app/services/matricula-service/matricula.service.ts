@@ -14,6 +14,7 @@ export class MatriculaService {
 
   private resultadosSubject: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject2: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
+  private resultadosSubject3: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
 
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
@@ -44,6 +45,8 @@ export class MatriculaService {
     this.estadisticasObs.next(nuevoValor);
   }
 
+
+
   private estadisticasObs2 = new BehaviorSubject<string>('0');
 
   estadisticas2$: Observable<string> = this.estadisticasObs2.asObservable();
@@ -51,6 +54,8 @@ export class MatriculaService {
   actualizarValor2(nuevoValor: string) {
     this.estadisticasObs.next(nuevoValor);
   }
+
+
 
   emitLabelClickEvent() {
     this.labelClickEvent.emit();
@@ -130,6 +135,21 @@ export class MatriculaService {
 
   getResultadosbuscarAllMatri(): Observable<Estudiantes[]> {
     return this.resultadosSubject2.asObservable();
+  }
+
+  buscarAllMatri2(jornada: string, anioLectivo: string): void {
+    this.http.get<Estudiantes[]>(`${this.apiUrl2}seguros?jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
+      (resultados: Estudiantes[]) => {
+        this.resultadosSubject3.next(resultados);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getResultadosbuscarAllMatri2(): Observable<Estudiantes[]> {
+    return this.resultadosSubject3.asObservable();
   }
 
   updateMatriEstudiante(id: any, data: any ){

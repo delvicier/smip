@@ -118,6 +118,9 @@ export class RecordEditpdfComponent {
 
   formrecord: FormGroup;
 
+  ordenAlfabetico = true;
+
+
   pdf = new jsPDF();
   vistapdf = 'estiloformulario';
 
@@ -157,9 +160,24 @@ export class RecordEditpdfComponent {
         this.cursoid = this.recordService.cursoid;
         this.jornadaid = this.recordService.jornadaid;
         this.anioid = this.recordService.anioid;
+
+        this.record.sort((a, b) => a.apellidos.localeCompare(b.apellidos));
       }
     );
   }
+
+  toggleOrden() {
+    if (this.ordenAlfabetico) {
+
+      this.record.sort((a, b) => b.promedio_bgu - a.promedio_bgu);
+    } else {
+
+      this.record.sort((a, b) => b.promedio_basic - a.promedio_basic);
+    }
+
+    this.ordenAlfabetico = !this.ordenAlfabetico;
+  }
+
 
   seleccionar(record: Record) {
     this.recordSeleccionado = record;

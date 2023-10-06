@@ -54,15 +54,14 @@ export class EstadisticasComponent {
   }
 
   enviar(){
-    const curso = this.searchForm.get('anio_lectivo')?.value || this.anioActual;
+    const anio = this.searchForm.get('anio_lectivo')?.value || this.anioActual;
 
-    this.matriculaServicio.getEstadisticas(curso).subscribe(
+    this.matriculaServicio.getEstadisticas(anio).subscribe(
     (response) => {
       this.estudiantes = response;
       this.matriculadosAño = response.length;
 
       this.matriculaNum ();
-
 
         this.hombres = 0;
         for (const obj of response) {
@@ -157,7 +156,6 @@ export class EstadisticasComponent {
         const toStringsoldadura: string = this.soldadura.toString();
         this.matriculaServicio.soldadura = toStringsoldadura;
         this.matriculaServicio.actualizarValor(toStringsoldadura);
-
 
     });
 

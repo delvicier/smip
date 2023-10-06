@@ -195,12 +195,12 @@
 
       <thead class="tcabezera">
         <tr class="tableizer-firstrow">
-          <th class="title-tabla" colspan="21">DATOS DE LOS ESTUDIANTES</th>
+          <th class="title-tabla" colspan="20">DATOS DE LOS ESTUDIANTES</th>
         </tr>
         <tr class="tableizer-firstrow">
           <th rowspan="2">NOMBRES Y APELLIDOS</th>
           <th rowspan="2">No. CÉDULA</th>
-          <th colspan="10">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+          <th colspan="9">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
           <th rowspan="2">
             PROMEDIO <br />
             BASICA
@@ -218,7 +218,6 @@
           <th rowspan="2">OBSERVACIONES</th>
         </tr>
         <tr class="tableizer-firstrow">
-          <th>1°</th>
           <th>2°</th>
           <th>3°</th>
           <th>4°</th>
@@ -240,7 +239,6 @@
         <tr *ngFor="let item of record">
           <td>{{ item.nombres }}</td>
           <td>{{ item.cedula }}</td>
-          <td>{{ item.primero }}</td>
           <td>{{ item.segundo }}</td>
           <td>{{ item.tercero }}</td>
           <td>{{ item.cuarto }}</td>

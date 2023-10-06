@@ -23,7 +23,6 @@ export class DeceSearchComponent {
     if (cedula) {
       this.deceService.buscarPorCedula(cedula);
       this.deceService.cedulaid = this.searchForm.get('cedula')?.value;
-      console.log(cedula);
     }
     this.mostrarComponente(3);
     this.onLabel2Click();

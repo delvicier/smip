@@ -39,19 +39,57 @@ export class RecordAddComponent {
     })
   }
 
+
+  calcularPromedio1() {
+    const valores = this.formrecord.value;
+    const suma = (
+      parseFloat(valores.segundo) +
+      parseFloat(valores.tercero) +
+      parseFloat(valores.cuarto) +
+      parseFloat(valores.quinto) +
+      parseFloat(valores.sexto) +
+      parseFloat(valores.septimo) +
+      parseFloat(valores.octavo) +
+      parseFloat(valores.noveno) +
+      parseFloat(valores.decimo)
+    );
+    const promedio = ((suma / 9).toFixed(2));
+    this.formrecord.patchValue({ promedio_basic: promedio });
+    console.log(promedio);
+  }
+
+  calcularPromedio2() {
+    const valores = this.formrecord.value;
+    const suma = (
+      parseFloat(valores.primero_bgu) +
+      parseFloat(valores.segundo_bgu) +
+      parseFloat(valores.tercero_bgu)
+    );
+    const promedio2 = ((suma / 3).toFixed(2));
+    this.formrecord.patchValue({ promedio_bgu: promedio2 });
+    console.log(promedio2);
+  }
+
   ngOnInit() {
 
   }
 
   onSubmit() {
+    this.calcularPromedio1();
+    this.calcularPromedio2();
     const formValues = this.formrecord.value;
 
-    this.recordService.postRecordEstudiante(formValues).subscribe(
-      (response) => {
-        console.log('Estudiante creado:', response);
-        this.formrecord.reset();
-      },
-    );
+    const promedio = parseFloat(formValues.promedio_basic);
+    if (!isNaN(promedio) && promedio !== 0) {
+      this.recordService.postRecordEstudiante(formValues).subscribe(
+        (response) => {
+            console.log('Estudiante creado:', response);
+            this.formrecord.reset();
+        },
+      );
+    } else {
+      console.error("Promedio inválido");
+    }
   }
 
 }

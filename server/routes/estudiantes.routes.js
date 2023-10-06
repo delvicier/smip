@@ -4,6 +4,7 @@ const {
   getEstudiantes,
   getEstudiantesTotales,
   getEstudiantesTotalesAnio,
+  getEstudiantesSeguros,
   createEstudiantes,
   updateEstudiante,
   deleteEstudiante,
@@ -40,6 +41,8 @@ router.get('/estudiantes', authMiddleware, getEstudiantes);
 router.get('/estudiantestotales', authMiddleware, getEstudiantesTotales);
 
 router.get('/estadisticas/:id', authMiddleware2, getEstudiantesTotalesAnio);
+
+router.get('/seguros', authMiddleware, getEstudiantesSeguros);
 
 router.post('/estudiante', authMiddleware, createEstudiantes);
 

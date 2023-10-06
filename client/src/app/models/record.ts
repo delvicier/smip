@@ -16,14 +16,14 @@ export interface Record {
     octavo: number;
     noveno: number;
     decimo: number;
-    promedio_basic: string;
+    promedio_basic: number;
     primero_bgu: number;
     segundo_bgu: number;
     tercero_bgu: number;
-    promedio_bgu: string;
+    promedio_bgu: number;
     proyecto: string;
     participacion: string;
     observaciones: string;
     cedulaEstudiante?: string;
-  
+
   }

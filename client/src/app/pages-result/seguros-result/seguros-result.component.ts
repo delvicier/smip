@@ -27,7 +27,6 @@ export class SegurosResultComponent {
         this.cursoid = this.matriculaService.cursoid;
         this.jornadaid = this.matriculaService.jornadaid;
         this.anioid = this.matriculaService.anioid;
-        console.log(resultados);
       }
     );
   }

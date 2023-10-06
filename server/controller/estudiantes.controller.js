@@ -36,6 +36,28 @@ exports.getEstudiantes = async (req, res) => {
   }
 };
 
+exports.getEstudiantesSeguros = async (req, res) => {
+  const { jornada, anio_lectivo } = req.query;
+
+  try {
+    const [result] = await pool.query(
+      "SELECT * FROM estudiantes e " +
+        "JOIN detalles d ON e.id = d.estudiante_id " +
+        "JOIN matricula m ON e.id = m.estudiante_matri_id " +
+        "WHERE m.jornada = ? AND m.anio_lectivo = ?",
+      [jornada, anio_lectivo]
+    );
+
+    if (result.length === 0) {
+      return res.status(404).json({ message: "Estudiantes no encontrados :(" });
+    }
+
+    res.json(result);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 exports.getEstudiantesTotales = async (req, res) => {
   try {
     const [result] = await pool.query(

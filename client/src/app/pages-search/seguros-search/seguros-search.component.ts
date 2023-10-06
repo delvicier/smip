@@ -16,19 +16,18 @@ export class SegurosSearchComponent {
 
   constructor( private matriculaService: MatriculaService, public vistas2:Vistas2Service) {
     this.searchForm = new FormGroup({
-      curso: new FormControl,
       jornada: new FormControl,
       anio_lectivo: new FormControl
     });
   }
 
   buscar2(): void {
-    const curso = this.searchForm.get('curso')?.value;
     const jornada = this.searchForm.get('jornada')?.value;
     const anio_lectivo = this.searchForm.get('anio_lectivo')?.value;
-    if (curso) {
-      this.matriculaService.buscarAllMatri(curso, jornada, anio_lectivo);
-      this.matriculaService.cursoid = this.searchForm.get('curso')?.value;
+
+    if (jornada) {
+      this.matriculaService.buscarAllMatri2(jornada, anio_lectivo);
+
       this.matriculaService.jornadaid = this.searchForm.get('jornada')?.value;
       this.matriculaService.anioid = this.searchForm.get('anio_lectivo')?.value;
     }

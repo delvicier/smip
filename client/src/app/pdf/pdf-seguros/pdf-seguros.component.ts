@@ -26,7 +26,6 @@ export class PdfSegurosComponent {
   diaActual: any;
   nombreMes: any;
 
-  cursoid: any;
   jornadaid: any;
   anioid: any;
 
@@ -37,6 +36,23 @@ export class PdfSegurosComponent {
   seguridad = "";
   soldadura = "";
   estadisticas = "";
+
+  dirigido_a: String = "Sra. Ingeniera";
+  dirigido_profesion: String = "Tania Obando Bone";
+  dirigido_titulo: String = "DIRECTORA DISTRITAL 08D01 E-E";
+  presente: String = "Presente. -";
+  estimado: String = "Estimada Compañera:";
+
+  parrafo1: String = "Según lo establecido en el Acuerdo Interministerial Nro. 002 de 30 de mayo de 2018, artículo 13, que menciona: “Seguros para los estudiantes en prácticas estudiantiles en las entidades receptoras. - Los estudiantes en práctica contarán con un seguro estudiantil, que cubra los riesgos inherentes a la actividad que desarrolle, el que será cubierto por las respectivas instituciones educativas, salvo el caso de aquellas de sostenimiento fiscal, en cuyo caso será cubierto por el Ministerio de Educación y Deporte”.";
+
+  parrafo2: String = "Con la finalidad de salvaguardar la integridad de las y los estudiantes de tercero de bachillerato Técnico que realizarán sus prácticas estudiantiles (FCT) en la oferta Educativa de Bachillerato Técnico y Técnico Productivo solicitamos a usted muy comedidamente la CONTRATACIÓN DEL SEGURO DE VIDA Y ASISTENCIA MEDICA PARA LOS ESTUDIANTES DEL BACHILLERATO TECNICO Y BACHILLERATO TECNICO PRODUCTIVO PARA EL AÑO LECTIVO 2023-2024 DE LA UE. LUIS TELLO de las figuras profesionales Priorizadas por el MINEDUC., detalladas a continuación:";
+
+  parrafo3: String = "Esta Unidad educativa cuenta hasta el momento con estudiantes legalmente matriculados en el Bachillerato Técnico y en BTP., lo cual hacen un total de 227 para la contratación de seguros, ese sería un número aproximado en vista que el proceso de inscripciones y traslados se encuentra vigente. (ADJUNTO NOMINA DE ESTUDIANTES)";
+
+  sentimiento: String = "Con sentimiento de alta consideración y estima,";
+  rector: String = "MSc.José Luis Cortez Cabrera";
+  colegio: String = "RECTOR DE LA UE. LUIS TELLO";
+
 
   formatoEstilos = {
     'hoja-pdf': {
@@ -79,7 +95,24 @@ export class PdfSegurosComponent {
     '.parrafo1 p': {
       'text-align': 'justify',
     },
+    '.parrafo1 textarea': {
+      'border': 'none',
+      'resize': 'none',
+      'width': '100%',
+      'min-height': '110px',
+      'text-align': 'justify',
+      'overflow': 'hidden',
+      'font-family': '"Arial", sans-serif',
+    },
 
+    'input': {
+      'border': 'none',
+      'resize': 'none',
+      'width': '100%',
+      'text-align': 'justify',
+      'overflow': 'hidden',
+      'font-family': '"Arial", sans-serif',
+    },
 
     '.tableizer-table': {
       'font-size': '10px',
@@ -155,16 +188,14 @@ export class PdfSegurosComponent {
 
     this.obtenerAnioActual();
 
-    this.matriculaService.getResultadosbuscarAllMatri().subscribe(
+    this.matriculaService.getResultadosbuscarAllMatri2().subscribe(
       (resultados) => {
         this.estudiante = resultados as Estudiantes[];
+        this.estudiante = this.estudiante.filter(estudiante => estudiante.especialidad !== undefined && estudiante.especialidad !== null && estudiante.especialidad.trim() !== '');
+
         this.ordenarEstudiantes();
         this.calcularEdades();
-        this.cursoid = this.matriculaService.cursoid;
-        this.jornadaid = this.matriculaService.jornadaid;
-        this.anioid = this.matriculaService.anioid;
         this.organizarPorEspecialidad();
-
       }
     );
 
@@ -216,9 +247,6 @@ export class PdfSegurosComponent {
         }
       });
     }
-    console.log('ELECTROMECANICA:', this.electromecanicaData);
-    console.log('INSTALACIONES:', this.instalacionesData);
-    console.log('MECANIZADO:', this.mecanizadoData);
   }
 
   calcularEdades() {
@@ -279,18 +307,17 @@ export class PdfSegurosComponent {
     const div4 = document.getElementById('hoja4-dece');
 
     if (div1 && div2 && div3 && div4) {
-      // Captura el contenido del primer div en un canvas
+
       html2canvas(div1, { scale: 2 }).then((canvas1) => {
-        // Captura el contenido del segundo div en un canvas
+
         html2canvas(div2, { scale: 2 }).then((canvas2) => {
 
           html2canvas(div3, { scale: 2 }).then((canvas3) => {
 
             html2canvas(div4, { scale: 2 }).then((canvas4) => {
-              // Crea un objeto jsPDF con orientación 'p' (vertical) y unidad 'mm'
+
               const pdf = new jsPDF('p', 'mm', 'a4');
 
-              // Convierte los canvas en imágenes y agrega al PDF
               const imgData1 = canvas1.toDataURL('image/png');
               const imgData2 = canvas2.toDataURL('image/png');
               const imgData3 = canvas3.toDataURL('image/png');
@@ -304,7 +331,6 @@ export class PdfSegurosComponent {
               pdf.addPage();
               pdf.addImage(imgData4, 'PNG', 0, 0, 210, 297);
 
-              // Guarda o muestra el PDF, según tus necesidades
               pdf.save('dece.pdf');
             });
           });

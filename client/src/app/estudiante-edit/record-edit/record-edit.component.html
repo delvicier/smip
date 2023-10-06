@@ -24,11 +24,11 @@
         <!-- Encabezado 2 -->
         <thead class="tcabezera">
           <tr class="tableizer-firstrow">
-            <th class="title-tabla" colspan="19">DATOS DE LOS ESTUDIANTES</th>
+            <th class="title-tabla" colspan="18">DATOS DE LOS ESTUDIANTES</th>
           </tr>
           <tr class="tableizer-firstrow">
             <th rowspan="2">NOMBRES APELLIDOS</th>
-            <th colspan="10">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+            <th colspan="9">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
             <th rowspan="2">PROMEDIO <br> BASICA</th>
             <th colspan="3">CALIFICACIONES BACHILLERATO</th>
             <th rowspan="2">PROMEDIO <br> BACHILLER</th>
@@ -37,7 +37,6 @@
             <th rowspan="2">OBSERVACIONES</th>
           </tr>
           <tr class="tableizer-firstrow">
-            <th>1°</th>
             <th>2°</th>
             <th>3°</th>
             <th>4°</th>
@@ -62,9 +61,6 @@
               {{item.nombres}} {{item.apellidos}}
             </td>
 
-            <td>
-              <input class="input1" type="text" [(ngModel)]="item.primero" placeholder="primero" formControlName="primero">
-            </td>
             <td>
               <input class="input1" type="text" [(ngModel)]="item.segundo" placeholder="segundo" formControlName="segundo">
             </td>
@@ -122,9 +118,6 @@
         <ng-template #tbody2>
           <tbody class="tcuerpo">
             <tr>
-              <td>
-                Vacio
-              </td>
               <td>
                 Vacio
               </td>

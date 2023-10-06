@@ -23,16 +23,15 @@
           <!-- Encabezado 2 -->
           <thead class="tcabezera">
             <tr class="tableizer-firstrow">
-              <th class="title-tabla" colspan="15">DATOS DE LOS ESTUDIANTES</th>
+              <th class="title-tabla" colspan="14">DATOS DE LOS ESTUDIANTES</th>
             </tr>
             <tr class="tableizer-firstrow">
-              <th colspan="10">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+              <th colspan="9">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
               <th rowspan="2">PROMEDIO BASICA</th>
               <th colspan="3">CALIFICACIONES BACHILLERATO</th>
               <th rowspan="2">PROMEDIO BACHILLER</th>
             </tr>
             <tr class="tableizer-firstrow">
-              <th>1°</th>
               <th>2°</th>
               <th>3°</th>
               <th>4°</th>
@@ -52,9 +51,6 @@
 
           <tbody class="tcuerpo">
             <tr *ngFor="let item of record">
-              <td>
-                <input class="input1" type="text" [(ngModel)]="item.primero" placeholder="primero" formControlName="primero">
-              </td>
               <td>
                 <input class="input1" type="text" [(ngModel)]="item.segundo" placeholder="segundo" formControlName="segundo">
               </td>
@@ -83,7 +79,7 @@
                 <input class="input1"  type="text" [(ngModel)]="item.decimo" placeholder="decimo" formControlName="decimo">
               </td>
               <td>
-                <input class="input2" type="text" [(ngModel)]="item.promedio_basic" placeholder="promedio_basic" formControlName="promedio_basic">
+                <input class="input2" type="text" [(ngModel)]="item.promedio_basic" placeholder="promedio" formControlName="promedio_basic">
               </td>
               <td>
                 <input class="input1"  type="text" [(ngModel)]="item.primero_bgu" placeholder="primero_bgu" formControlName="primero_bgu">

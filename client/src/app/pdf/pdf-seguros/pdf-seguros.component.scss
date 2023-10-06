@@ -88,6 +88,16 @@
 .parrafo1{
   margin: 10px 100px;
 
+  textarea {
+    border: none; /* Eliminar borde */
+    resize: none; /* Evitar la redimensión del textarea */
+    width: 100%; /* Ocupar todo el ancho del contenedor */
+    min-height: 110px;
+    text-align: justify;
+    overflow: hidden; /* Evitar la barra de desplazamiento vertical */
+    font-family: Arial, sans-serif;
+  }
+
   h1{
     color: #202020;
     font-size: 17px;
@@ -101,7 +111,15 @@
 
 }
 
+input {
+  border: none; /* Eliminar borde */
+  resize: none; /* Evitar la redimensión del textarea */
+  width: 100%; /* Ocupar todo el ancho del contenedor */
 
+  text-align: justify;
+  overflow: hidden; /* Evitar la barra de desplazamiento vertical */
+  font-family: Arial, sans-serif;
+}
 
 .tableizer-table {
   font-size: 10px;

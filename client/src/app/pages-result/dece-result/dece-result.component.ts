@@ -281,8 +281,9 @@ export class DeceResultComponent {
     this.deceService.updateHoja4Dece(id, formValues).subscribe(
       (response) => {
         console.log('Nota actualizada:', response);
-        console.log(response);
-        console.log(formValues);
+      },
+      (error) => {
+        console.error('Error al actualizar:', error);
       }
     );
   }

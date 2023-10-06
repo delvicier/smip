@@ -10,20 +10,18 @@
         <img src="../../../assets/img/foto-perfil3.png" width="214" height="214"  alt="foto-perfil">
 
         <div class="titulo-estudiante">
-          <h2>Buscar por curso..</h2>
+          <h2>Buscar..</h2>
         </div>
 
         <form [formGroup]="searchForm" method="get" >
           <div class="buscadorx">
-            <input formControlName="curso" class="input-buscar" type="text" name="search_post" placeholder="Buscar...">
+            <input readonly class="input-buscar" type="text" name="search_post" placeholder="Buscar...">
 
             <button (click)="busquedas()" class="buscador__btn">
 
              <img class="icon-search" src="../../../assets/icons/search.png" width="18" height="18" alt="logo">
             </button>
           </div>
-
-
 
 
           <div class="titulo-detalles">
