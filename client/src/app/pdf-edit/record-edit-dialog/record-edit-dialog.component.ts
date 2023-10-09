@@ -115,7 +115,6 @@ export class RecordEditDialogComponent {
   }
 
   onButtonClick() {
-    this.calcularPromedio1();
     this.calcularPromedio3();
     this.onSubmit();
     this.recordService.triggerButtonClick();

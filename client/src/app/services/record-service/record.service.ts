@@ -3,19 +3,36 @@ import { Injectable, EventEmitter  } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Record } from 'src/app/models/record';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecordService {
 
-  private apiURL = 'http://192.168.1.19:4000/';
+  private apiUrl = environment.apiUrl;
+
+  private apiUrl2: string | undefined;
+
+  obtenerDireccionIP(): void {
+    if (!this.apiUrl) {
+      this.http.get<string>('http://localhost:4000/direccion').subscribe(
+        (ip) => {
+          this.apiUrl = ip;
+        },
+        (error) => {
+          console.error('Error al obtener IP:', error);
+        }
+      );
+    }
+  }
+
   private resultadosSubject3: BehaviorSubject<Record[]> = new BehaviorSubject<Record[]>([]);
   private resultadosSubject4: BehaviorSubject<Record[]> = new BehaviorSubject<Record[]>([]);
 
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor( private http: HttpClient) {
+  constructor( private http: HttpClient) { this.obtenerDireccionIP();
   }
 
   recordid: any;
@@ -55,11 +72,11 @@ export class RecordService {
   }
 
   getRecordEstudiante(id: string): Observable<Record[]> {
-    return this.http.get<Record[]>(`${this.apiURL}record/${id}`);
+    return this.http.get<Record[]>(`${this.apiUrl}record/${id}`);
   }
 
   buscarPorRecord(cedula: string): void {
-    this.http.get<Record[]>(`${this.apiURL}record/${cedula}`).subscribe(
+    this.http.get<Record[]>(`${this.apiUrl}record/${cedula}`).subscribe(
       (resultados: Record[]) => {
         this.resultadosSubject3.next(resultados);
       },
@@ -75,7 +92,7 @@ export class RecordService {
 
 
   buscarAllRecord(curso: string, jornada: string, anioLectivo: string): void {
-    this.http.get<Record[]>(`${this.apiURL}records?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
+    this.http.get<Record[]>(`${this.apiUrl}records?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
       (resultados: Record[]) => {
         this.resultadosSubject4.next(resultados);
       },
@@ -90,11 +107,11 @@ export class RecordService {
   }
 
   postRecordEstudiante(data: any): Observable<any> {
-    return this.http.post(`${this.apiURL}record`, data);
+    return this.http.post(`${this.apiUrl}record`, data);
   }
 
   updateRecordEstudiante(id: any, data: any ){
-    return this.http.put<any>(`${this.apiURL}record/cedula/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}record/cedula/${id}`, data);
   }
 
 }

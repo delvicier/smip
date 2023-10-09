@@ -1,14 +1,16 @@
-<form class="editor">
+<form class="editor" *ngIf="record.length > 0">
   <div class="editor-textarea">
     <table class="tableizer-table">
+
       <thead class="tcabezera2">
         <tr class="tableizer-firstrow3">
-          <th colspan="21">DIRECCIÓN NACIONAL DE REGULACIÓN DE LA EDUCACIÓN</th>
+          <th colspan="21">
+            <input style="text-align: center;" name="15" name="1" class="input-ngModel" type="text" [(ngModel)]="direccionNacio">
+          </th>
         </tr>
         <tr class="tableizer-firstrow3">
           <th colspan="21">
-            Anexo 1.- FICHA DE REGISTRO DE EXPEDIENTE ACADÉMICO DE LOS
-            ESTUDIANTES DE TERCER AÑO DE BACHILLERATO
+            <input style="text-align: center;" name="16" name="2" class="input-ngModel" type="text" [(ngModel)]="anexo">
           </th>
         </tr>
 
@@ -27,12 +29,9 @@
 
       <tbody class="tcuerpo2">
         <tr>
-          <td colspan="3">ZONA: 1</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td colspan="8">
+            <input name="3" class="input-ngModel" type="text" [(ngModel)]="zona">
+          </td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
@@ -40,84 +39,14 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td colspan="2">DISTRITO:</td>
-          <td colspan="2">08D01</td>
+          <td colspan="2">
+            <input name="ab" class="input-ngModel" type="text" [(ngModel)]="distrito">
+          </td>
           <td>&nbsp;</td>
         </tr>
-        <tr>
-          <td colspan="3">08D01</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td colspan="4">CÓDIGO AMIE: 08H00371</td>
-          <td>&nbsp;</td>
-        </tr>
-
-        <tr>
-          <td colspan="3">TIPO DE BACHILLERATO (BGU): TECNICO</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td colspan="5">FIGURA PROFESIONAL : {{especialidad}}</td>
-          <td>&nbsp;</td>
-        </tr>
-
-        <tr>
-          <td colspan="3">RESOLUCIÓN OFERTA EDUCATIVA ACTUALIZADA</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td class="label-cuadrado">SI</td>
-          <td><div class="cuadrado2"></div></td>
-          <td class="label-cuadrado">NO</td>
-          <td><div class="cuadrado"></div></td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-
-        <tr>
-          <td colspan="3">&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-
         <tr>
           <td colspan="3">
-            CONSEJO EJECUTIVO REGISTRADO y RATITIFCADO EN EL DISTRITO
+            <input name="ba" class="input-ngModel" type="text" [(ngModel)]="distrito">
           </td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
@@ -127,35 +56,107 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td class="label-cuadrado">SI</td>
-          <td><div class="cuadrado2"></div></td>
-          <td class="label-cuadrado">NO</td>
-          <td><div class="cuadrado"></div></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td colspan="4">
+            <input name="6" class="input-ngModel" type="text" [(ngModel)]="codigo">
+          </td>
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td colspan="10">
+            <input name="7" class="input-ngModel" type="text" [(ngModel)]="tipobachiller">
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+
+          <td colspan="4">FIGURA PROFESIONAL : {{especialidad}}</td>
+
+        </tr>
+
+        <tr>
+          <td colspan="10">
+            <input name="8" class="input-ngModel" type="text" [(ngModel)]="resolucion">
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+
+          <td class="label-cuadrado">Si</td>
+          <td><div class="cuadrado2">
+            <input name="4" type="text" [(ngModel)]="si1">
+          </div></td>
+          <td class="label-cuadrado">No</td>
+          <td><div class="cuadrado">
+            <input name="5" type="text" [(ngModel)]="noa">
+          </div></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td colspan="10">
+            <input name="55" class="input-ngModel" type="text" [(ngModel)]="vacio">
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td colspan="10">
+            <input name="11" class="input-ngModel" type="text" [(ngModel)]="consejo">
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+
+
+          <td class="label-cuadrado">Si</td>
+          <td>
+            <div class="cuadrado2">
+              <input name="9" type="text" [(ngModel)]="si2">
+            </div>
+          </td>
+
+          <td class="label-cuadrado">No</td>
+          <td>
+            <div class="cuadrado">
+              <input name="10" type="text" [(ngModel)]="nob">
+            </div>
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
         </tr>
 
         <tr >
-          <td colspan="3">&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td colspan="5">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; {{cursoid}} &nbsp;{{especialidad}}
+          <td colspan="10">
+            <input name="555" class="input-ngModel" type="text" [(ngModel)]="vacios">
           </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td colspan="4">
+            {{cursoid}} &nbsp;{{especialidad}}
+          </td>
+          <td>&nbsp;</td>
         </tr>
 
         <tr>
-          <td colspan="3">FECHA DE VERIFICACIÓN DEL EXPEDIENTE ACADÉMICO:</td>
+          <td colspan="10">
+            <input name="14" class="input-ngModel" type="text" [(ngModel)]="fechaverificar">
+          </td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
@@ -165,16 +166,12 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td colspan="2">&nbsp;</td>
         </tr>
 
         <tr>
-          <td colspan="3">&nbsp;</td>
+          <td colspan="10">
+            <input name="5555" class="input-ngModel" type="text" [(ngModel)]="vaciox">
+          </td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
@@ -183,13 +180,6 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td colspan="2">&nbsp;</td>
         </tr>
       </tbody>
 
@@ -235,7 +225,7 @@
 
       <!-- Calificaciones -->
 
-      <tbody class="tcuerpo" *ngIf="record.length > 0">
+      <tbody class="tcuerpo" >
         <tr *ngFor="let item of record">
           <td>{{ item.nombres }}</td>
           <td>{{ item.cedula }}</td>

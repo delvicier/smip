@@ -1,15 +1,15 @@
 <div class="wrapper-botones">
     <div class="botones">
 
-      <button (click)="cambiarComponDece(5)" (click)="onLabel3Click()" class="boton2">
+      <button title="editar" (click)="cambiarComponDece(5)" (click)="onLabel3Click()" class="boton2">
         <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
       </button>
 
-      <button (click)="cambiarComponDece(6)" class="boton2">
+      <button title="vista pdf" (click)="cambiarComponDece(6)" class="boton2">
         <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
       </button>
 
-      <button (click)="convertirPDF()" class="boton2">
+      <button title="descargar pdf" (click)="convertirPDF()" class="boton2">
         <img src="../../../assets/icons/descargar3.png" width="40" height="40" alt="descargar pdf">
       </button>
 
@@ -18,7 +18,7 @@
         printTitle="Dece"
         printSectionId="pdf-dece"
         ngxPrint
-        class="boton2" type="button">
+        class="boton2" type="button" title="Imprimir">
         <img src="../../../assets/icons/impresora3.png" width="40" height="40" alt="imprimir pdf dece">
       </button>
 
@@ -73,7 +73,7 @@
             <div class="titulo-codigo">
 
               <div class="png-perfil">
-                <img class="png-perfil" src="../../../assets/pdf/foto-perfil.avif" width="95px" height="90px" alt="" >
+                <img class="png-perfil" src="../../../assets/pdf/foto-perfil.png" width="90px" height="90px" alt="" >
               </div>
 
               <h2>REGISTRO ACUMULATIVO INDIVIDUAL</h2>

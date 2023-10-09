@@ -148,7 +148,6 @@ export class PdfSegurosComponent {
       'border-collapse': 'collapse',
     },
     '.tcuerpo2 td': {
-      'background-color': '#92cddc',
       'padding': '2px',
       'margin': '2px',
       'border': '1px solid #141414',
@@ -341,12 +340,12 @@ export class PdfSegurosComponent {
     }
   }
 
-  mostrarComponente2(numero2: number) {
-    this.vistas2.mostrarComponente2(numero2);
+  mostrarComponente2(numero5: number) {
+    this.vistas2.mostrarComponente5(numero5);
   }
 
   ocultarComponente2() {
-    this.vistas2.ocultarComponente2();
+    this.vistas2.ocultarComponente5();
   }
 
 }

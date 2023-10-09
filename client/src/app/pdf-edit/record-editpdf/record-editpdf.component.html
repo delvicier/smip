@@ -2,44 +2,68 @@
 
   <div class="wrapper-titulo">
 
-  <div class="wrapper-botones">
-    <div class="botones">
+    <div class="wrapper-botones">
 
-      <button class="boton2" (click)="toggleOrden()">
-        <img src="../../../assets/icons/reload.png" width="40" height="40" alt="editar doc">
-      </button>
+      <div class="botones2">
 
-      <button (click)="mostrarComponente2(1)" class="boton2">
-        <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
-      </button>
+        <button title="5to a 10mo" (click)="mostrarComponente2(3)" *ngIf="vistas2.numero2 === null || vistas2.numero2 === 1 || vistas2.numero2 === 2" class="boton2">
+          <img src="../../../assets/icons/reload.png" width="40" height="40" alt="5to a 10mo">
+        </button>
 
-      <button (click)="mostrarComponente2(2)" class="boton2">
-        <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
-      </button>
+        <button title="5to a 10mo" (click)="mostrarComponente2(1)" *ngIf="vistas2.numero2 === 3 || vistas2.numero2 === 4" class="boton2">
+          <img src="../../../assets/icons/reload.png" width="40" height="40" alt="5to a 10mo">
+        </button>
 
-      <button (click)="convertirADivsAPDF()" class="boton2">
-        <img src="../../../assets/icons/descargar3.png" width="40" height="40" alt="descargar pdf">
-      </button>
+        <button title="editar" (click)="mostrarComponente2(3)" class="boton2">
+          <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
+        </button>
 
-      <button
-        [printStyle]=formatoEstilos2
-        printTitle="Record"
-        printSectionId="pdf"
-        ngxPrint
-        class="boton2" type="button">
-        <img src="../../../assets/icons/impresora3.png" width="40" height="40" alt="imprimir pdf">
-      </button>
+        <button title="vista pdf" (click)="mostrarComponente2(4)" class="boton2">
+          <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
+        </button>
+
+
+      </div>
+
+      <div class="botones">
+
+        <button title="mejor promedio" (click)="toggleOrden()" class="boton2">
+          <img src="../../../assets/icons2/arriba.png" width="40" height="40" alt="mejor promedio">
+        </button>
+
+        <button title="editar" (click)="mostrarComponente2(1)" class="boton2">
+          <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
+        </button>
+
+        <button title="vista pdf" (click)="mostrarComponente2(2)" class="boton2">
+          <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
+        </button>
+
+        <button title="descargar" (click)="convertirADivsAPDF()" class="boton2">
+          <img src="../../../assets/icons/descargar3.png" width="40" height="40" alt="descargar pdf">
+        </button>
+
+        <button
+          [printStyle]=formatoEstilos2
+          printTitle="Record"
+          printSectionId="pdf"
+          ngxPrint
+          class="boton2" type="button" title="Imprimir">
+          <img src="../../../assets/icons/impresora3.png" width="40" height="40" alt="imprimir pdf">
+        </button>
+
+      </div>
 
     </div>
-  </div>
 
-  <h2>{{cursoid}} / {{jornadaid}} / {{anioid}}</h2>
+    <h2>{{cursoid}} / {{jornadaid}} / {{anioid}}</h2>
 
   </div>
 
   <br>
 
   <div class="wrapper-tabla">
+
     <table class="tableizer-table" *ngIf="vistas2.numero2 === null || vistas2.numero2 === 1">
         <div class="tabla">
 
@@ -210,11 +234,116 @@
 
         </div>
     </table>
+
+    <table class="tableizer-table" *ngIf="vistas2.numero2 === 3">
+      <div class="tabla">
+
+        <!-- Encabezado 2 -->
+        <thead class="tcabezera">
+          <tr class="tableizer-firstrow">
+            <th class="title-tabla" colspan="18">DATOS DE LOS ESTUDIANTES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th rowspan="2">NOMBRES Y APELLIDOS</th>
+            <th rowspan="2">No. CÉDULA</th>
+            <th colspan="6">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+            <th rowspan="2">PROMEDIO <br> BASICA</th>
+            <th colspan="3">CALIFICACIONES <br> BACHILLERATO</th>
+            <th rowspan="2">PROMEDIO <br> BACHILLER</th>
+            <th rowspan="2">PROYECTO</th>
+            <th rowspan="2">PARTICIPACIÓN</th>
+            <th rowspan="2">OBSERVACIONES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th>5°</th>
+            <th>6°</th>
+            <th>7°</th>
+            <th>8°</th>
+            <th>9°</th>
+            <th>10°</th>
+            <th>1°</th>
+            <th>2°</th>
+            <th>3°</th>
+          </tr>
+        </thead>
+
+        <!-- Calificaciones -->
+
+        <tbody class="tcuerpo" *ngIf="record.length > 0">
+          <tr *ngFor="let record of record">
+            <td>
+              {{record.nombres}}, {{record.apellidos}}
+              <button class="boton" (click)="editRecord(record)">Editar</button>
+            </td>
+            <td>
+              {{record.cedula}}
+            </td>
+            <td>
+              {{record.quinto}}
+              <button class="boton" *ngIf="!record.segundo" (click)="editRecord2(record)">Agregar notas</button>
+            </td>
+            <td>
+              {{record.sexto}}
+            </td>
+            <td>
+              {{record.septimo}}
+            </td>
+            <td>
+              {{record.octavo}}
+            </td>
+            <td>
+              {{record.noveno}}
+            </td>
+            <td>
+              {{record.decimo}}
+            </td>
+            <td>
+
+              {{record.promedio_basic}}
+            </td>
+            <td>
+
+              {{record.primero_bgu}}
+            </td>
+            <td>
+
+              {{record.segundo_bgu}}
+            </td>
+            <td>
+
+              {{record.tercero_bgu}}
+            </td>
+            <td>
+
+              {{record.promedio_bgu}}
+            </td>
+            <td>
+
+              {{record.proyecto}}
+            </td>
+            <td>
+              {{record.participacion}}
+            </td>
+            <td>
+              {{record.observaciones}}
+            </td>
+          </tr>
+        </tbody>
+
+      </div>
+    </table>
+
   </div>
 
   <div id="hoja_pdf1" *ngIf="vistas2.numero2 === 2">
     <div id="pdf" class="pdf">
       <app-pdf-record></app-pdf-record>
+    </div>
+  </div>
+
+  <div id="hoja_pdf1" *ngIf="vistas2.numero2 === 4">
+    <div id="pdf" class="pdf">
+      <app-record-result></app-record-result>
     </div>
   </div>
 

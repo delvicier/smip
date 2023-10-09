@@ -145,12 +145,19 @@ h3{
 
 .wrapper-botones{
   position: relative;
+  align-items: center;
 }
 
 .botones{
   position: absolute;
   top: -6px;
   right: 25px;
+}
+
+.botones2{
+  position: absolute;
+  top: -6px;
+  left: 25px;
 }
 
 .titulo{

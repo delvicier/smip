@@ -3,14 +3,29 @@ import { Injectable, EventEmitter  } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Estudiantes } from 'src/app/models/estudiantes';
 import { firstValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MatriculaService {
 
-  private apiUrl = 'http://192.168.1.19:4000/estudiante';
-  private apiUrl2 = 'http://192.168.1.19:4000/';
+  private apiUrl = environment.apiUrl;
+
+  private apiUrl2: string | undefined;
+
+  obtenerDireccionIP(): void {
+    if (!this.apiUrl) {
+      this.http.get<string>('http://localhost:4000/direccion').subscribe(
+        (ip) => {
+          this.apiUrl = ip;
+        },
+        (error) => {
+          console.error('Error al obtener IP:', error);
+        }
+      );
+    }
+  }
 
   private resultadosSubject: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject2: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
@@ -18,7 +33,7 @@ export class MatriculaService {
 
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor( private http: HttpClient ) {
+  constructor( private http: HttpClient ) { this.obtenerDireccionIP();
   }
 
   recordid: any;
@@ -84,24 +99,24 @@ export class MatriculaService {
 
   login(formValue: any) {
     return firstValueFrom(
-      this.http.post<any>(`${this.apiUrl2}login`, formValue )
+      this.http.post<any>(`${this.apiUrl}login`, formValue )
     );
   }
 
   getAllMatriEstudiantes(){
-    return this.http.get<Estudiantes[]>(this.apiUrl + 'stotales');
+    return this.http.get<Estudiantes[]>(this.apiUrl + 'estudiantestotales');
   }
 
   getMatriEstudiante(cedula: string){
-    return this.http.get<Estudiantes[]>(`${this.apiUrl}/${cedula}`);
+    return this.http.get<Estudiantes[]>(`${this.apiUrl}estudiante/${cedula}`);
   }
 
   getEstadisticas(anio: string){
-    return this.http.get<Estudiantes[]>(`${this.apiUrl2}estadisticas/${anio}`);
+    return this.http.get<Estudiantes[]>(`${this.apiUrl}estadisticas/${anio}`);
   }
 
   buscarPorCedula(cedula: string): void {
-    this.http.get<Estudiantes[]>(`${this.apiUrl}/${cedula}`).subscribe(
+    this.http.get<Estudiantes[]>(`${this.apiUrl}estudiante/${cedula}`).subscribe(
       (resultados: Estudiantes[]) => {
         this.resultadosSubject.next(resultados);
       },
@@ -117,13 +132,13 @@ export class MatriculaService {
 
 
   getAllMatriEstudiante(curso: string, jornada: string, anioLectivo: string): Observable<any> {
-    const url = `${this.apiUrl2}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`;
+    const url = `${this.apiUrl}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`;
     return this.http.get(url);
   }
 
 
   buscarAllMatri(curso: string, jornada: string, anioLectivo: string): void {
-    this.http.get<Estudiantes[]>(`${this.apiUrl2}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
+    this.http.get<Estudiantes[]>(`${this.apiUrl}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
       (resultados: Estudiantes[]) => {
         this.resultadosSubject2.next(resultados);
       },
@@ -138,7 +153,7 @@ export class MatriculaService {
   }
 
   buscarAllMatri2(jornada: string, anioLectivo: string): void {
-    this.http.get<Estudiantes[]>(`${this.apiUrl2}seguros?jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
+    this.http.get<Estudiantes[]>(`${this.apiUrl}seguros?jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
       (resultados: Estudiantes[]) => {
         this.resultadosSubject3.next(resultados);
       },
@@ -153,11 +168,11 @@ export class MatriculaService {
   }
 
   updateMatriEstudiante(id: any, data: any ){
-    return this.http.put<any>(`${this.apiUrl}/cedula/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}estudiante/cedula/${id}`, data);
   }
 
   postMatriEstudiante(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, data);
+    return this.http.post(`${this.apiUrl}estudiante`, data);
   }
 
 }

@@ -4,18 +4,33 @@ import { MatDialog } from '@angular/material/dialog';
 import { Estudiantes } from 'src/app/models/estudiantes';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
 import { Record } from 'src/app/models/record';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap } from 'rxjs';
 import { firstValueFrom } from 'rxjs';
-import { LayoutRecordComponent } from 'src/app/pdf/layout-record/layout-record.component';
 import { DialogHomeComponent } from 'src/app/home/dialog-home/dialog-home.component';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  private apiUrl = 'http://192.168.1.19:4000/estudiante';
-  private apiUrl2 = 'http://192.168.1.19:4000/';
+  private apiUrl = environment.apiUrl;
+
+  private apiUrl2: any;
+
+  obtenerDireccionIP(): void {
+    if (!this.apiUrl) {
+      this.http.get<string>('http://localhost:4000/direccion').subscribe(
+        (ip) => {
+          this.apiUrl = ip;
+        },
+        (error) => {
+          console.error('Error al obtener IP:', error);
+        }
+      );
+    }
+  }
+
   private resultadosSubject: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject2: BehaviorSubject<Estudiantes[]> = new BehaviorSubject<Estudiantes[]>([]);
   private resultadosSubject3: BehaviorSubject<Record[]> = new BehaviorSubject<Record[]>([]);
@@ -24,7 +39,7 @@ export class HomeService {
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
   label2ClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor( private http: HttpClient, private dialog: MatDialog ) {
+  constructor( private http: HttpClient, private dialog: MatDialog ) { this.obtenerDireccionIP();
   }
 
 
@@ -70,20 +85,20 @@ export class HomeService {
 
   login(formValue: any) {
     return firstValueFrom(
-      this.http.post<any>(`${this.apiUrl2}login`, formValue )
+      this.http.post<any>(`${this.apiUrl}login`, formValue )
     );
   }
 
   getAllMatriEstudiantes(){
-    return this.http.get<Estudiantes[]>(this.apiUrl + 'stotales');
+    return this.http.get<Estudiantes[]>(this.apiUrl + 'estudiantestotales');
   }
 
   getMatriEstudiante(id: string){
-    return this.http.get<Estudiantes[]>(`${this.apiUrl}/${id}`);
+    return this.http.get<Estudiantes[]>(`${this.apiUrl}estudiante/${id}`);
   }
 
   buscarPorCedula(cedula: string): void {
-    this.http.get<Estudiantes[]>(`${this.apiUrl}/${cedula}`).subscribe(
+    this.http.get<Estudiantes[]>(`${this.apiUrl}estudiante/${cedula}`).subscribe(
       (resultados: Estudiantes[]) => {
         this.resultadosSubject.next(resultados);
       },
@@ -98,7 +113,7 @@ export class HomeService {
   }
 
   buscarPorRecord(cedula: string): void {
-    this.http.get<Record[]>(`${this.apiUrl2}record/${cedula}`).subscribe(
+    this.http.get<Record[]>(`${this.apiUrl}record/${cedula}`).subscribe(
       (resultados: Record[]) => {
         this.resultadosSubject3.next(resultados);
       },
@@ -113,24 +128,24 @@ export class HomeService {
   }
 
   updateMatriEstudiante(id: any, data: any ){
-    return this.http.put<any>(`${this.apiUrl}/cedula/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}estudiante/cedula/${id}`, data);
   }
 
   postMatriEstudiante(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, data);
+    return this.http.post(`${this.apiUrl}estudiante`, data);
   }
 
   postRecordEstudiante(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl2}record`, data);
+    return this.http.post(`${this.apiUrl}record`, data);
   }
 
   getAllMatriEstudiante(curso: string, jornada: string, anioLectivo: string): Observable<any> {
-    const url = `${this.apiUrl2}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`;
+    const url = `${this.apiUrl}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`;
     return this.http.get(url);
   }
 
   buscarAllMatri(curso: string, jornada: string, anioLectivo: string): void {
-    this.http.get<Estudiantes[]>(`${this.apiUrl2}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
+    this.http.get<Estudiantes[]>(`${this.apiUrl}estudiantes?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
       (resultados: Estudiantes[]) => {
         this.resultadosSubject2.next(resultados);
       },
@@ -145,7 +160,7 @@ export class HomeService {
   }
 
   buscarAllRecord(curso: string, jornada: string, anioLectivo: string): void {
-    this.http.get<Record[]>(`${this.apiUrl2}records?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
+    this.http.get<Record[]>(`${this.apiUrl}records?curso=${curso}&jornada=${jornada}&anio_lectivo=${anioLectivo}`).subscribe(
       (resultados: Record[]) => {
         this.resultadosSubject4.next(resultados);
       },
@@ -160,60 +175,60 @@ export class HomeService {
   }
 
   getRecordEstudiante(id: string): Observable<Record[]> {
-    return this.http.get<Record[]>(`${this.apiUrl2}record/${id}`);
+    return this.http.get<Record[]>(`${this.apiUrl}record/${id}`);
   }
 
   updateRecordEstudiante(id: any, data: any ){
-    return this.http.put<any>(`${this.apiUrl2}record/cedula/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}record/cedula/${id}`, data);
   }
 
 
   getHoja1Dece(id: string){
-    return this.http.get<DeceHoja1[]>(`${this.apiUrl}/decehoja1/${id}`);
+    return this.http.get<DeceHoja1[]>(`${this.apiUrl}estudiante/decehoja1/${id}`);
   }
 
   postHoja1Dece(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/deceh1`, data);
+    return this.http.post(`${this.apiUrl}estudiante/deceh1`, data);
   }
 
   updateHoja1Dece(id: any, data: any ){
-    return this.http.put<any>(`${this.apiUrl}/deceh1/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}estudiante/deceh1/${id}`, data);
   }
 
   getHoja2Dece(id: string){
-    return this.http.get<DeceHoja2[]>(`${this.apiUrl}/decehoja2/${id}`);
+    return this.http.get<DeceHoja2[]>(`${this.apiUrl}estudiante/decehoja2/${id}`);
   }
 
   postHoja2Dece(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/deceh2`, data);
+    return this.http.post(`${this.apiUrl}estudiante/deceh2`, data);
   }
 
   updateHoja2Dece(id: any, data: any ){
-    return this.http.put<any>(`${this.apiUrl}/deceh2/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}estudiante/deceh2/${id}`, data);
   }
 
   getHoja3Dece(id: string){
-    return this.http.get<DeceHoja3[]>(`${this.apiUrl}/decehoja3/${id}`);
+    return this.http.get<DeceHoja3[]>(`${this.apiUrl}estudiante/decehoja3/${id}`);
   }
 
   postHoja3Dece(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/deceh3`, data);
+    return this.http.post(`${this.apiUrl}estudiante/deceh3`, data);
   }
 
   updateHoja3Dece(id: any, data: any ){
-    return this.http.put<any>(`${this.apiUrl}/deceh3/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}estudiante/deceh3/${id}`, data);
   }
 
   getHoja4Dece(id: string){
-    return this.http.get<DeceHoja4[]>(`${this.apiUrl}/decehoja4/${id}`);
+    return this.http.get<DeceHoja4[]>(`${this.apiUrl}estudiante/decehoja4/${id}`);
   }
 
   postHoja4Dece(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/deceh4`, data);
+    return this.http.post(`${this.apiUrl}estudiante/deceh4`, data);
   }
 
   updateHoja4Dece(id: any, data: any ){
-    return this.http.put<any>(`${this.apiUrl}/deceh4/${id}`, data);
+    return this.http.put<any>(`${this.apiUrl}estudiante/deceh4/${id}`, data);
   }
 
   openContenidoModal() {

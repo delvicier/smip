@@ -97,6 +97,7 @@ export class RecordEditpdfComponent {
     '.cuadrado': {
       'border': '1px solid #CCC',
       'height': '12px',
+      'max-width': '30px',
       'text-align': 'center',
     },
     '.cuadrado2': {
@@ -109,6 +110,23 @@ export class RecordEditpdfComponent {
       'text-align': 'left',
     },
     '.tableizer-firstrow3': {
+      'font-size': '9px',
+    },
+    'input': {
+      'border': 'none',
+      'resize': 'none',
+      'width': '20px',
+      'text-align': 'center',
+      'overflow': 'hidden',
+      'font-size': '9px',
+      'margin': '0px 1px',
+      'background-color': 'transparent',
+    },
+    '.input-ngModel': {
+      'border': 'none',
+      'resize': 'none',
+      'width': '100%',
+      'text-align': 'justify',
       'font-size': '9px',
     },
   };

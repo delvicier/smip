@@ -23,6 +23,24 @@ export class PdfRecordComponent {
   anioid: any;
   especialidad: any;
 
+  direccionNacio: String = "DIRECCIÓN NACIONAL DE REGULACIÓN DE LA EDUCACIÓN";
+  anexo: String = "Anexo 1.- FICHA DE REGISTRO DE EXPEDIENTE ACADÉMICO DE LOS ESTUDIANTES DE TERCER AÑO DE BACHILLERATO";
+  tipobachiller: String = "TIPO DE BACHILLERATO (BGU): TECNICO";
+  codigo: String = "CÓDIGO AMIE: 08H00371";
+  zona: String = "ZONA: 1";
+  resolucion: String = "RESOLUCIÓN OFERTA EDUCATIVA ACTUALIZADA";
+  consejo: String = "CONSEJO EJECUTIVO REGISTRADO y RATITIFCADO EN EL DISTRITO";
+  fechaverificar: String = "FECHA DE VERIFICACIÓN DEL EXPEDIENTE ACADÉMICO:";
+  si1: String = "";
+  si2: String = "";
+  noa: String = "";
+  nob: String = "";
+  vacio: String = "";
+  vacios: String = "";
+  vaciox: String = "";
+  distrito: String = "08D01";
+  presente: String = "Presente. -";
+
   constructor( private matriculaService: MatriculaService, private recordService: RecordService, public vistas2: Vistas2Service){
 
     this.formrecord = new FormGroup({

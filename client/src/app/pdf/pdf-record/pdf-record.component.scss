@@ -95,13 +95,14 @@ table.tableizer-table {
 
 .cuadrado{
   border: 1px solid #363636;
-  height: 12px;
+  height: 14px;
+  max-width: 30px;
   text-align: center;
 }
 
 .cuadrado2{
   border: 1px solid #363636;
-  height: 12px;
+  height: 14px;
   max-width: 30px;
   text-align: center;
 }
@@ -115,3 +116,23 @@ table.tableizer-table {
   font-size: 9px;
 }
 
+input{
+  border: none;
+  resize: none;
+  width: 28px;
+  text-align: justify;
+  overflow: hidden;
+  font-size: 9px;
+  text-align: center;
+  margin: 1px;
+  margin-top: 2px;
+  background-color: transparent;
+}
+
+.input-ngModel {
+  border: none;
+  resize: none;
+  width: 100%;
+  text-align: justify;
+  font-size: 9px
+}
