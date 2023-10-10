@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Record } from '../../models/record';
 import { RecordService } from 'src/app/services/record-service/record.service';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-record-edit-dialog',
@@ -13,7 +14,7 @@ export class RecordEditDialogComponent {
 
   formrecord: FormGroup;
 
-  constructor( private recordService: RecordService,
+  constructor( private recordService: RecordService, private homeService: HomeService,
     public dialogRef: MatDialogRef<RecordEditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { record: Record }) {
       this.data.record.primero = this.data.record.primero || 0;
@@ -106,7 +107,14 @@ export class RecordEditDialogComponent {
 
   onSubmit() {
     const formValues = this.formrecord.value;
-    this.recordService.updateRecordEstudiante(this.data.record.cedula, formValues).subscribe();
+    this.recordService.updateRecordEstudiante(this.data.record.cedula, formValues).subscribe(
+      (response) => {
+        this.homeService.openContenidoModal();
+      },
+      (error) => {
+        this.homeService.openContenidoModal2();
+      }
+    );
 
   }
 

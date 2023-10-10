@@ -210,7 +210,10 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario1.value;
     this.deceService.updateHoja1Dece(id, formValues).subscribe(
       (response) => {
-        this.mostrarContenidoModal();
+        this.homeService.openContenidoModal();
+      },
+      (error) => {
+        this.homeService.openContenidoModal2();
       }
     );
   }
@@ -231,7 +234,10 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario2.value;
     this.deceService.updateHoja2Dece(id, formValues).subscribe(
       (response) => {
-        this.mostrarContenidoModal();
+        this.homeService.openContenidoModal();
+      },
+      (error) => {
+        this.homeService.openContenidoModal2();
       }
     );
   }
@@ -252,7 +258,10 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario3.value;
     this.deceService.updateHoja3Dece(id, formValues).subscribe(
       (response) => {
-        this.mostrarContenidoModal();
+        this.homeService.openContenidoModal();
+      },
+      (error) => {
+        this.homeService.openContenidoModal2();
       }
     );
   }
@@ -273,7 +282,10 @@ export class DeceEditpdfComponent {
     const formValues = this.formulario4.value;
     this.deceService.updateHoja4Dece(id, formValues).subscribe(
       (response) => {
-        this.mostrarContenidoModal();
+        this.homeService.openContenidoModal();
+      },
+      (error) => {
+        this.homeService.openContenidoModal2();
       }
     );
   }

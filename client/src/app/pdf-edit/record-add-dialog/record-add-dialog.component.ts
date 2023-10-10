@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Record } from '../../models/record';
 import { RecordService } from 'src/app/services/record-service/record.service';
 import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-record-add-dialog',
@@ -14,7 +15,7 @@ export class RecordAddDialogComponent {
 
   formrecord: FormGroup;
 
-  constructor( private recordService: RecordService,
+  constructor( private recordService: RecordService, private homeService: HomeService,
     public dialogRef: MatDialogRef<RecordAddDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { record: Record }, public vistas2: Vistas2Service
   ) {

@@ -3,6 +3,7 @@ import { Record } from 'src/app/models/record';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Vistas2Service } from 'src/app/services/vistas-service/vistas2.service';
 import { RecordService } from 'src/app/services/record-service/record.service';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-record-edit',
@@ -14,7 +15,7 @@ export class RecordEditComponent {
   record: Record[] =[];
   formrecord: FormGroup;
 
-  constructor(private recordService: RecordService, public vistas2: Vistas2Service){
+  constructor(private homeService: HomeService, private recordService: RecordService, public vistas2: Vistas2Service){
 
     this.formrecord = new FormGroup({
       nombres: new FormControl(),
@@ -65,7 +66,14 @@ export class RecordEditComponent {
     const id = this.recordService.recordid;
     const formValues = this.formrecord.value;
 
-    this.recordService.updateRecordEstudiante(id, formValues).subscribe();
+    this.recordService.updateRecordEstudiante(id, formValues).subscribe(
+      (response) => {
+        this.homeService.openContenidoModal();
+      },
+      (error) => {
+        this.homeService.openContenidoModal2();
+      }
+    );
   }
 
 

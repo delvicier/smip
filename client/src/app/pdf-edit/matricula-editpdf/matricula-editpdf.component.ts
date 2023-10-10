@@ -50,6 +50,9 @@ export class MatriculaEditpdfComponent {
     this.homeService.getResultadosbuscarPorCedula().subscribe(
       (resultados) => {
         this.estudiante = resultados as Estudiantes[];
+      },
+      (error) => {
+        this.homeService.openContenidoModal2();
       }
     );
   }
@@ -60,19 +63,12 @@ export class MatriculaEditpdfComponent {
 
     this.matriculaService.updateMatriEstudiante(id, formValues).subscribe(
       (response) => {
-        this.mostrarContenidoModal();
+        this.homeService.openContenidoModal();
       },
       (error) => {
-        this.formularioNoEnviado = true;
-        setTimeout(() => {
-          this.formularioNoEnviado = false;
-        }, 1500);
+        this.homeService.openContenidoModal2();
       }
     );
-  }
-
-  mostrarContenidoModal() {
-    this.homeService.openContenidoModal();
   }
 
 }

@@ -3,6 +3,9 @@ import { Injectable, EventEmitter  } from '@angular/core';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { DialogHomeErrorComponent } from 'src/app/home/dialog-home-error/dialog-home-error.component';
+import { DialogHomeComponent } from 'src/app/home/dialog-home/dialog-home.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +24,7 @@ export class DeceService {
         },
         (error) => {
           console.error('Error al obtener IP:', error);
+          this.openContenidoModal2();
         }
       );
     }
@@ -30,7 +34,7 @@ export class DeceService {
 
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor( private http: HttpClient) { this.obtenerDireccionIP();}
+  constructor( private http: HttpClient, private dialog: MatDialog) { this.obtenerDireccionIP();}
 
   deceid: any;
   cedulaid: any;
@@ -56,6 +60,7 @@ export class DeceService {
       },
       error => {
         console.error(error);
+        this.openContenidoModal2();
       }
     );
   }
@@ -110,6 +115,27 @@ export class DeceService {
 
   updateHoja4Dece(id: any, data: any ){
     return this.http.put<any>(`${this.apiUrl}deceh4/${id}`, data);
+  }
+
+
+  openContenidoModal() {
+    const dialogRef = this.dialog.open(DialogHomeComponent, {
+      width: '260px',
+      height: '225px',
+    });
+    setTimeout(() => {
+      dialogRef.close();
+    }, 500);
+  }
+
+  openContenidoModal2() {
+    const dialogRef = this.dialog.open(DialogHomeErrorComponent, {
+      width: '340px',
+      height: '270px',
+    });
+    setTimeout(() => {
+      dialogRef.close();
+    }, 500);
   }
 
 }

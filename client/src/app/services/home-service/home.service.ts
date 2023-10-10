@@ -8,6 +8,7 @@ import { BehaviorSubject, Observable, switchMap } from 'rxjs';
 import { firstValueFrom } from 'rxjs';
 import { DialogHomeComponent } from 'src/app/home/dialog-home/dialog-home.component';
 import { environment } from '../../../environments/environment';
+import { DialogHomeErrorComponent } from 'src/app/home/dialog-home-error/dialog-home-error.component';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ export class HomeService {
         },
         (error) => {
           console.error('Error al obtener IP:', error);
+          this.openContenidoModal2();
         }
       );
     }
@@ -104,6 +106,8 @@ export class HomeService {
       },
       error => {
         console.error(error);
+        this.openContenidoModal2();
+
       }
     );
   }
@@ -119,6 +123,7 @@ export class HomeService {
       },
       error => {
         console.error(error);
+        this.openContenidoModal2();
       }
     );
   }
@@ -151,6 +156,7 @@ export class HomeService {
       },
       error => {
         console.error(error);
+        this.openContenidoModal2();
       }
     );
   }
@@ -166,6 +172,7 @@ export class HomeService {
       },
       error => {
         console.error(error);
+        this.openContenidoModal2();
       }
     );
   }
@@ -233,11 +240,22 @@ export class HomeService {
 
   openContenidoModal() {
     const dialogRef = this.dialog.open(DialogHomeComponent, {
-      width: '100px',
+      width: '260px',
+      height: '225px',
     });
     setTimeout(() => {
       dialogRef.close();
-    }, 400);
+    }, 500);
+  }
+
+  openContenidoModal2() {
+    const dialogRef = this.dialog.open(DialogHomeErrorComponent, {
+      width: '340px',
+      height: '270px',
+    });
+    setTimeout(() => {
+      dialogRef.close();
+    }, 500);
   }
 
 }

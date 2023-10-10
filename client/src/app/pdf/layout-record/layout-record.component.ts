@@ -80,7 +80,6 @@ export class LayoutRecordComponent {
     );
     const promedio = ((suma / 9).toFixed(2));
     this.formrecord.patchValue({ promedio_basic: promedio });
-    console.log(promedio);
   }
 
   calcularPromedio2() {
@@ -92,7 +91,6 @@ export class LayoutRecordComponent {
     );
     const promedio2 = ((suma / 3).toFixed(2));
     this.formrecord.patchValue({ promedio_bgu: promedio2 });
-    console.log(promedio2);
   }
 
   onSubmit() {
@@ -106,9 +104,11 @@ export class LayoutRecordComponent {
       this.recordService.updateRecordEstudiante(id, formValues).subscribe(
         (response) => {
           this.todasLasMatriculas();
+          this.homeService.openContenidoModal();
         }
       );
     } else {
+      this.homeService.openContenidoModal2();
       console.error("Promedio inválido");
     }
   }

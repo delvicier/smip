@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DeceService } from 'src/app/services/dece-service/dece.service';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-dece-add',
@@ -22,7 +23,7 @@ export class DeceAddComponent {
   formulario4: FormGroup;
   cedulaid: any;
 
-  constructor(private deceService: DeceService ){
+  constructor(private homeService: HomeService, private deceService: DeceService ){
     this.formulario1 = new FormGroup({
       nombres: new FormControl(),
       cedula: new FormControl(),
@@ -195,12 +196,14 @@ export class DeceAddComponent {
     const formValues = this.formulario1.value;
     this.deceService.postHoja1Dece(formValues).subscribe(
       (response) => {
-        console.log('Estudiante creado:', response);
         this.deceService.deceid = formValues.cedula;
         this.cedulaid = formValues.cedula;
-        console.log(formValues.cedula);
+        this.homeService.openContenidoModal();
         this.formulario1.reset();
       },
+      (error) => {
+        this.homeService.openContenidoModal2();
+      }
     );
   }
 
@@ -208,9 +211,12 @@ export class DeceAddComponent {
     const formValues = this.formulario2.value;
     this.deceService.postHoja2Dece(formValues).subscribe(
       (response) => {
-        console.log('Estudiante creado:', response);
+        this.homeService.openContenidoModal();
         this.formulario2.reset();
       },
+      (error) => {
+        this.homeService.openContenidoModal2();
+      }
     );
   }
 
@@ -218,9 +224,12 @@ export class DeceAddComponent {
     const formValues = this.formulario3.value;
     this.deceService.postHoja3Dece(formValues).subscribe(
       (response) => {
-        console.log('Estudiante creado:', response);
+        this.homeService.openContenidoModal();
         this.formulario3.reset();
       },
+      (error) => {
+        this.homeService.openContenidoModal2();
+      }
     );
   }
 
@@ -228,9 +237,12 @@ export class DeceAddComponent {
     const formValues = this.formulario4.value;
     this.deceService.postHoja4Dece(formValues).subscribe(
       (response) => {
-        console.log('Estudiante creado:', response);
+        this.homeService.openContenidoModal();
         this.formulario4.reset();
       },
+      (error) => {
+        this.homeService.openContenidoModal2();
+      }
     );
   }
 

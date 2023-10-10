@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DeceService } from 'src/app/services/dece-service/dece.service';
 import { DeceHoja1, DeceHoja2, DeceHoja3, DeceHoja4 } from 'src/app/models/dece';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-dece-result',
@@ -20,7 +21,7 @@ export class DeceResultComponent {
   formulario3: FormGroup;
   formulario4: FormGroup;
 
-  constructor(private deceService: DeceService ){
+  constructor( private homeService: HomeService, private deceService: DeceService ){
     this.formulario1 = new FormGroup({
       nombres: new FormControl(),
       cedula: new FormControl(),
@@ -208,9 +209,10 @@ export class DeceResultComponent {
     const formValues = this.formulario1.value;
     this.deceService.updateHoja1Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
+        this.homeService.openContenidoModal();
       },
       (error) => {
+        this.homeService.openContenidoModal2();
         console.error('Error al actualizar:', error);
       }
     );
@@ -232,9 +234,10 @@ export class DeceResultComponent {
     const formValues = this.formulario2.value;
     this.deceService.updateHoja2Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
+        this.homeService.openContenidoModal();
       },
       (error) => {
+        this.homeService.openContenidoModal2();
         console.error('Error al actualizar:', error);
       }
     );
@@ -256,9 +259,10 @@ export class DeceResultComponent {
     const formValues = this.formulario3.value;
     this.deceService.updateHoja3Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
+        this.homeService.openContenidoModal();
       },
       (error) => {
+        this.homeService.openContenidoModal2();
         console.error('Error al actualizar:', error);
       }
     );
@@ -280,9 +284,10 @@ export class DeceResultComponent {
     const formValues = this.formulario4.value;
     this.deceService.updateHoja4Dece(id, formValues).subscribe(
       (response) => {
-        console.log('Nota actualizada:', response);
+        this.homeService.openContenidoModal();
       },
       (error) => {
+        this.homeService.openContenidoModal2();
         console.error('Error al actualizar:', error);
       }
     );

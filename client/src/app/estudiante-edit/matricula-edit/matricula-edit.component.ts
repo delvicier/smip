@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Estudiantes } from 'src/app/models/estudiantes';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatriculaService } from 'src/app/services/matricula-service/matricula.service';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-matricula-edit',
@@ -14,7 +15,7 @@ export class MatriculaEditComponent {
   formulario: FormGroup;
   cedula: any;
 
-  constructor ( private matriculaService: MatriculaService ) {
+  constructor ( private homeService: HomeService, private matriculaService: MatriculaService ) {
     this.formulario = new FormGroup({
       nombres: new FormControl(),
       apellidos: new FormControl(),
@@ -60,10 +61,10 @@ export class MatriculaEditComponent {
 
     this.matriculaService.updateMatriEstudiante(id, formValues).subscribe(
       (response) => {
-        console.log('Estudiante actualizado:', response);
+        this.homeService.openContenidoModal();
       },
       (error) => {
-        console.error('Error al actualizar:', error);
+        this.homeService.openContenidoModal2();
       }
     );
   }

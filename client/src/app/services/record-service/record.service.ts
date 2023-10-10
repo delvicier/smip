@@ -4,6 +4,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Record } from 'src/app/models/record';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogHomeErrorComponent } from 'src/app/home/dialog-home-error/dialog-home-error.component';
+import { DialogHomeComponent } from 'src/app/home/dialog-home/dialog-home.component';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +24,7 @@ export class RecordService {
           this.apiUrl = ip;
         },
         (error) => {
+          this.openContenidoModal2();
           console.error('Error al obtener IP:', error);
         }
       );
@@ -32,7 +36,7 @@ export class RecordService {
 
   labelClickEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor( private http: HttpClient) { this.obtenerDireccionIP();
+  constructor( private http: HttpClient , private dialog: MatDialog) { this.obtenerDireccionIP();
   }
 
   recordid: any;
@@ -81,6 +85,7 @@ export class RecordService {
         this.resultadosSubject3.next(resultados);
       },
       error => {
+        this.openContenidoModal2();
         console.error(error);
       }
     );
@@ -97,6 +102,7 @@ export class RecordService {
         this.resultadosSubject4.next(resultados);
       },
       error => {
+        this.openContenidoModal2();
         console.error(error);
       }
     );
@@ -112,6 +118,27 @@ export class RecordService {
 
   updateRecordEstudiante(id: any, data: any ){
     return this.http.put<any>(`${this.apiUrl}record/cedula/${id}`, data);
+  }
+
+
+  openContenidoModal() {
+    const dialogRef = this.dialog.open(DialogHomeComponent, {
+      width: '260px',
+      height: '225px',
+    });
+    setTimeout(() => {
+      dialogRef.close();
+    }, 500);
+  }
+
+  openContenidoModal2() {
+    const dialogRef = this.dialog.open(DialogHomeErrorComponent, {
+      width: '340px',
+      height: '270px',
+    });
+    setTimeout(() => {
+      dialogRef.close();
+    }, 500);
   }
 
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Record } from 'src/app/models/record';
 import { FormControl, FormGroup } from '@angular/forms';
 import { RecordService } from 'src/app/services/record-service/record.service';
+import { HomeService } from 'src/app/services/home-service/home.service';
 
 @Component({
   selector: 'app-record-add',
@@ -14,7 +15,7 @@ export class RecordAddComponent {
   record: Record[] =[];
   formrecord: FormGroup;
 
-  constructor(private recordService: RecordService){
+  constructor(private homeService: HomeService, private recordService: RecordService){
 
     this.formrecord = new FormGroup({
       primero: new FormControl(),
@@ -83,11 +84,12 @@ export class RecordAddComponent {
     if (!isNaN(promedio) && promedio !== 0) {
       this.recordService.postRecordEstudiante(formValues).subscribe(
         (response) => {
-            console.log('Estudiante creado:', response);
+          this.homeService.openContenidoModal();
             this.formrecord.reset();
         },
       );
     } else {
+      this.homeService.openContenidoModal2();
       console.error("Promedio inválido");
     }
   }
