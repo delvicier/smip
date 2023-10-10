@@ -138,7 +138,6 @@ export class RecordEditpdfComponent {
 
   ordenAlfabetico = true;
 
-
   pdf = new jsPDF();
   vistapdf = 'estiloformulario';
 
@@ -149,6 +148,9 @@ export class RecordEditpdfComponent {
   constructor(private recordService: RecordService, public vistas2: Vistas2Service, public dialog: MatDialog){
 
     this.formrecord = new FormGroup({
+      nombres: new FormControl(),
+      apellidos: new FormControl(),
+      cedula: new FormControl(),
       primero: new FormControl(),
       segundo: new FormControl(),
       tercero: new FormControl(),
@@ -178,10 +180,69 @@ export class RecordEditpdfComponent {
         this.cursoid = this.recordService.cursoid;
         this.jornadaid = this.recordService.jornadaid;
         this.anioid = this.recordService.anioid;
-
         this.record.sort((a, b) => a.apellidos.localeCompare(b.apellidos));
       }
     );
+  }
+
+
+  sacarPromedio1(){
+    this.mostrarComponente2(7);
+    this.recordService.getResultadosbuscarAllRecord().subscribe(
+      (resultados) => {
+        this.record = resultados as Record[];
+        this.promedios1();
+        this.record.sort((a, b) => a.apellidos.localeCompare(b.apellidos));
+      }
+    );
+  }
+
+  sacarPromedio2(){
+    this.mostrarComponente2(8);
+    this.recordService.getResultadosbuscarAllRecord().subscribe(
+      (resultados) => {
+        this.record = resultados as Record[];
+        this.promedios2();
+        this.record.sort((a, b) => a.apellidos.localeCompare(b.apellidos));
+      }
+     );
+  }
+
+  promedios1() {
+    this.record.forEach((item, index) => {
+      const quinto = parseFloat(item.quinto.toString());
+      const sexto = parseFloat(item.sexto.toString());
+      const septimo = parseFloat(item.septimo.toString());
+      const octavo = parseFloat(item.octavo.toString());
+      const noveno = parseFloat(item.noveno.toString());
+      const decimo = parseFloat(item.decimo.toString());
+
+      const promedioTotal = ( quinto + sexto + septimo + octavo + noveno + decimo) / 6;
+
+      const promedio = parseFloat(promedioTotal.toFixed(2));
+
+      this.record[index].promedio_basic = promedio;
+    });
+  }
+
+  promedios2() {
+    this.record.forEach((item, index) => {
+      const segundo = parseFloat(item.segundo.toString());
+      const tercero = parseFloat(item.tercero.toString());
+      const cuarto = parseFloat(item.cuarto.toString());
+      const quinto = parseFloat(item.quinto.toString());
+      const sexto = parseFloat(item.sexto.toString());
+      const septimo = parseFloat(item.septimo.toString());
+      const octavo = parseFloat(item.octavo.toString());
+      const noveno = parseFloat(item.noveno.toString());
+      const decimo = parseFloat(item.decimo.toString());
+
+      const promedioTotal = ( segundo + tercero + cuarto + quinto + sexto + septimo + octavo + noveno + decimo) / 9;
+
+      const promedio = parseFloat(promedioTotal.toFixed(2));
+
+      this.record[index].promedio_basic = promedio;
+    });
   }
 
   toggleOrden() {

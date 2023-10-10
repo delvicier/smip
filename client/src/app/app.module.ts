@@ -70,6 +70,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecordEditDialogComponent } from './pdf-edit/record-edit-dialog/record-edit-dialog.component';
 import { DialogHomeComponent } from './home/dialog-home/dialog-home.component';
 import { RecordAddDialogComponent } from './pdf-edit/record-add-dialog/record-add-dialog.component';
+import { DialogHomeErrorComponent } from './home/dialog-home-error/dialog-home-error.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +131,8 @@ import { RecordAddDialogComponent } from './pdf-edit/record-add-dialog/record-ad
     PdfSegurosComponent,
     RecordEditDialogComponent,
     DialogHomeComponent,
-    RecordAddDialogComponent
+    RecordAddDialogComponent,
+    DialogHomeErrorComponent
   ],
   imports: [
     BrowserModule,

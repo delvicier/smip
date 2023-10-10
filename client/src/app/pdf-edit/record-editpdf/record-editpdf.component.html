@@ -6,20 +6,16 @@
 
       <div class="botones2">
 
-        <button title="5to a 10mo" (click)="mostrarComponente2(3)" *ngIf="vistas2.numero2 === null || vistas2.numero2 === 1 || vistas2.numero2 === 2" class="boton2">
-          <img src="../../../assets/icons/reload.png" width="40" height="40" alt="5to a 10mo">
-        </button>
-
-        <button title="5to a 10mo" (click)="mostrarComponente2(1)" *ngIf="vistas2.numero2 === 3 || vistas2.numero2 === 4" class="boton2">
-          <img src="../../../assets/icons/reload.png" width="40" height="40" alt="5to a 10mo">
-        </button>
-
-        <button title="editar" (click)="mostrarComponente2(3)" class="boton2">
-          <img src="../../../assets/icons/editar.png" width="40" height="40" alt="editar doc">
+        <button title= "promedio 5to a 10mo" (click)="sacarPromedio1()" class="boton2">
+          <img src="../../../assets/icons2/ordenar.png" width="40" height="40" alt="vista pdf">
         </button>
 
         <button title="vista pdf" (click)="mostrarComponente2(4)" class="boton2">
           <img src="../../../assets/icons/pdf.png" width="40" height="40" alt="vista pdf">
+        </button>
+
+        <button title="promedio 2do a 10mo" (click)="sacarPromedio2()" class="boton2">
+          <img src="../../../assets/icons2/ordenar2.png" width="40" height="40" alt="vista pdf">
         </button>
 
 
@@ -101,7 +97,7 @@
 
           <!-- Calificaciones -->
 
-          <tbody class="tcuerpo" *ngIf="record.length > 0; else tbody2">
+          <tbody class="tcuerpo" *ngIf="record.length > 0">
             <tr *ngFor="let record of record">
               <td>
                 {{record.nombres}}, {{record.apellidos}}
@@ -139,7 +135,6 @@
                 {{record.decimo}}
               </td>
               <td>
-
                 {{record.promedio_basic}}
               </td>
               <td>
@@ -171,66 +166,6 @@
             </tr>
           </tbody>
 
-          <ng-template #tbody2>
-            <tbody class="tcuerpo">
-              <tr>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-                <td>
-                  Vacio
-                </td>
-              </tr>
-            </tbody>
-          </ng-template>
 
         </div>
     </table>
@@ -332,6 +267,214 @@
 
       </div>
     </table>
+
+    <table class="tableizer-table" *ngIf="vistas2.numero2 === 7">
+      <div class="tabla">
+
+        <!-- Encabezado 2 -->
+        <thead class="tcabezera">
+          <tr class="tableizer-firstrow">
+            <th class="title-tabla" colspan="18">DATOS DE LOS ESTUDIANTES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th rowspan="2">NOMBRES Y APELLIDOS</th>
+            <th rowspan="2">No. CÉDULA</th>
+            <th colspan="6">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+            <th rowspan="2">PROMEDIO <br> BASICA</th>
+            <th colspan="3">CALIFICACIONES <br> BACHILLERATO</th>
+            <th rowspan="2">PROMEDIO <br> BACHILLER</th>
+            <th rowspan="2">PROYECTO</th>
+            <th rowspan="2">PARTICIPACIÓN</th>
+            <th rowspan="2">OBSERVACIONES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th>5°</th>
+            <th>6°</th>
+            <th>7°</th>
+            <th>8°</th>
+            <th>9°</th>
+            <th>10°</th>
+            <th>1°</th>
+            <th>2°</th>
+            <th>3°</th>
+          </tr>
+        </thead>
+
+        <!-- Calificaciones -->
+
+        <tbody class="tcuerpo" *ngIf="record.length > 0">
+          <tr *ngFor="let record of record">
+            <td>
+              {{record.nombres}}, {{record.apellidos}}
+              <button class="boton" (click)="editRecord(record)">Editar</button>
+            </td>
+            <td>
+              {{record.cedula}}
+            </td>
+            <td>
+              {{record.quinto}}
+              <button class="boton" *ngIf="!record.segundo" (click)="editRecord2(record)">Agregar notas</button>
+            </td>
+            <td>
+              {{record.sexto}}
+            </td>
+            <td>
+              {{record.septimo}}
+            </td>
+            <td>
+              {{record.octavo}}
+            </td>
+            <td>
+              {{record.noveno}}
+            </td>
+            <td>
+              {{record.decimo}}
+            </td>
+            <td>
+
+              {{record.promedio_basic}}
+            </td>
+            <td>
+
+              {{record.primero_bgu}}
+            </td>
+            <td>
+
+              {{record.segundo_bgu}}
+            </td>
+            <td>
+
+              {{record.tercero_bgu}}
+            </td>
+            <td>
+
+              {{record.promedio_bgu}}
+            </td>
+            <td>
+
+              {{record.proyecto}}
+            </td>
+            <td>
+              {{record.participacion}}
+            </td>
+            <td>
+              {{record.observaciones}}
+            </td>
+          </tr>
+        </tbody>
+
+      </div>
+    </table>
+
+    <table class="tableizer-table" *ngIf="vistas2.numero2 === 8">
+      <div class="tabla">
+
+        <!-- Encabezado 2 -->
+        <thead class="tcabezera">
+          <tr class="tableizer-firstrow">
+            <th class="title-tabla" colspan="21">DATOS DE LOS ESTUDIANTES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th rowspan="2">NOMBRES Y APELLIDOS</th>
+            <th rowspan="2">No. CÉDULA</th>
+            <th colspan="9">CALIFICACIONES EDUCACIÓN GENERAL BÁSICA</th>
+            <th rowspan="2">PROMEDIO <br> BASICA</th>
+            <th colspan="3">CALIFICACIONES <br> BACHILLERATO</th>
+            <th rowspan="2">PROMEDIO <br> BACHILLER</th>
+            <th rowspan="2">PROYECTO</th>
+            <th rowspan="2">PARTICIPACIÓN</th>
+            <th rowspan="2">OBSERVACIONES</th>
+          </tr>
+          <tr class="tableizer-firstrow">
+            <th>2°</th>
+            <th>3°</th>
+            <th>4°</th>
+            <th>5°</th>
+            <th>6°</th>
+            <th>7°</th>
+            <th>8°</th>
+            <th>9°</th>
+            <th>10°</th>
+            <th>1°</th>
+            <th>2°</th>
+            <th>3°</th>
+          </tr>
+        </thead>
+
+        <!-- Calificaciones -->
+
+        <tbody class="tcuerpo" *ngIf="record.length > 0">
+          <tr *ngFor="let record of record">
+            <td>
+              {{record.nombres}}, {{record.apellidos}}
+              <button class="boton" (click)="editRecord(record)">Editar</button>
+            </td>
+            <td>
+              {{record.cedula}}
+            </td>
+            <td>
+              {{record.segundo}}
+              <button class="boton" *ngIf="!record.segundo" (click)="editRecord2(record)">Agregar notas</button>
+            </td>
+            <td>
+              {{record.tercero}}
+            </td>
+            <td>
+              {{record.cuarto}}
+            </td>
+            <td>
+              {{record.quinto}}
+            </td>
+            <td>
+              {{record.sexto}}
+            </td>
+            <td>
+              {{record.septimo}}
+            </td>
+            <td>
+              {{record.octavo}}
+            </td>
+            <td>
+              {{record.noveno}}
+            </td>
+            <td>
+              {{record.decimo}}
+            </td>
+            <td>
+              {{record.promedio_basic}}
+            </td>
+            <td>
+
+              {{record.primero_bgu}}
+            </td>
+            <td>
+
+              {{record.segundo_bgu}}
+            </td>
+            <td>
+
+              {{record.tercero_bgu}}
+            </td>
+            <td>
+
+              {{record.promedio_bgu}}
+            </td>
+            <td>
+
+              {{record.proyecto}}
+            </td>
+            <td>
+              {{record.participacion}}
+            </td>
+            <td>
+              {{record.observaciones}}
+            </td>
+          </tr>
+        </tbody>
+
+
+      </div>
+  </table>
 
   </div>
 

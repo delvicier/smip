@@ -85,7 +85,7 @@ export class RecordEditDialogComponent {
 
     const suma = quinto + sexto + septimo + octavo + noveno + decimo;
 
-    this.promedio = parseFloat((suma / 9).toFixed(2));
+    this.promedio = parseFloat((suma / 6).toFixed(2));
   }
 
   calcularPromedio3() {
@@ -107,6 +107,7 @@ export class RecordEditDialogComponent {
   onSubmit() {
     const formValues = this.formrecord.value;
     this.recordService.updateRecordEstudiante(this.data.record.cedula, formValues).subscribe();
+
   }
 
 
@@ -117,12 +118,12 @@ export class RecordEditDialogComponent {
   onButtonClick() {
     this.calcularPromedio3();
     this.onSubmit();
-    this.recordService.triggerButtonClick();
-    this.recordService.triggerButtonClick();
-    this.recordService.triggerButtonClick();
+
+    setTimeout(() => {
+      this.recordService.triggerButtonClick();
+    }, 200)
+
     this.dialogRef.close(this.data.record);
-    this.recordService.triggerButtonClick();
-    this.recordService.triggerButtonClick();
   }
 
 }

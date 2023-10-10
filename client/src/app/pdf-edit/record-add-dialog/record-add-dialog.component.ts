@@ -84,7 +84,7 @@ export class RecordAddDialogComponent {
 
     const suma = quinto + sexto + septimo + octavo + noveno + decimo;
 
-    this.promedio = parseFloat((suma / 9).toFixed(2));
+    this.promedio = parseFloat((suma / 6).toFixed(2));
   }
 
   calcularPromedio3() {
