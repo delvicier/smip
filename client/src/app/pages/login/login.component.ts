@@ -28,6 +28,8 @@ export class LoginComponent {
       localStorage.setItem('token', response.token);
       this.router.navigate(['inicio'])
     }
+    console.log(response);
+    console.log(localStorage.getItem('token'));
   }
 
 }
